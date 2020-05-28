@@ -1,6 +1,6 @@
 ---
 layout: post
-permalink: /003_absolut_using_gif_with_giphy/
+permalink: /absolut_using_gif_with_giphy/
 title: '움짤로 조회수 24억 뽑은 브랜드가 있다?'
 date: 2020-05-25 17:30:00 +09:00
 feature: '/img/posts/002/002_thumbnail.png'
