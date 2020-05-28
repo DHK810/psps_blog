@@ -13,7 +13,8 @@ twitter_username:   twitter_username
 instagram_username: instagram_username
 facebook_username:  facebook_username
 linkedin_username:  linkedin_username
-
+disqus :
+  shortname : psps-world
 # Build settings
 markdown:           kramdown
 permalink:          /:title
