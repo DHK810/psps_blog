@@ -27,7 +27,7 @@ description: '코로나 때문에 집에 있는 시간이 많은 시민들과 �
 
 <img src='/img/psps/1punch.png' class = 'ramen'>**뿌)** 전염병 위기 속 고객과 접점 기회를 크라우드소싱으로 만들어 낸 m&m.
 
-<img src='/img/psps/2punch.png' class = 'ramen'>**셔)** 다음 광고 스토리보드 중 일부를 대중에게 공개해 컬러를 입힐 수 있는 이벤트 공개
+<img src='/img/psps/2punch.png' class = 'ramen'>**셔)** 다음 광고 스토리보드 중 일부를 공개해 컬러를 입힐 수 있는 이벤트 공개
 
 <img src='/img/psps/3punch.png' class = 'ramen'>**뿌)** 스트레스 해소 액티비티 제공 + 브랜드와의 접촉 시간 확보
 
