@@ -1,6 +1,6 @@
 ---
 layout: post
-permalink: /absolut_gif_on_giphy/
+permalink: /003_absolut_using_gif_with_giphy/
 title: '움짤로 조회수 24억 뽑은 브랜드가 있다?'
 date: 2020-05-25 17:30:00 +09:00
 feature: '/img/posts/002/002_thumbnail.png'
@@ -52,7 +52,7 @@ description: '하루 7억명이 들어오는 움짤 플랫폼에서 앱솔루트
 
 ## 움짤계의 구글, 지피(GIPHY)
 
-2013년 창립되서 현재 **하루 이용자 약 7억명**에 달하고 facebook, twitter, instagram, watsapp 등의 sns에서 움짤을 검색하는 기능이 모두 giphy와 연결되어 있습니다. 7년 만에 대규모 움짤 데이터베이스 회사가 된 것이죠. 
+2013년 창립되서 현재 **하루 이용자 약 7억명**에 달하고 facebook, twitter, instagram, watsapp 등의 sns에서 움짤을 검색하는 기능이 모두 giphy와 연결되어 있습니다. 7년 만에 대규모 움짤 데이터베이스 회사가 된 것이죠.
 
 얼마나 많냐고요?
 
