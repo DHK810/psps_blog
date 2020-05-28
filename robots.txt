@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: http://psps.world/sitemap.xml
