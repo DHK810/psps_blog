@@ -29,7 +29,7 @@ description: '하루 7억명이 들어오는 움짤 플랫폼에서 앱솔루트
 
 <img src='/img/psps/1punch.png' class = 'ramen'>**뿌)** 하루 약 7억 명이 활동하는 움짤계의 구글, GIPHY
 
-<img src='/img/psps/2punch.png' class = 'ramen'>**셔)** ABSOLUT VODKA GIPHY에 공식 채널을 만들고 잔 부딫히고 술 따르는 움짤 게시.
+<img src='/img/psps/2punch.png' class = 'ramen'>**셔)** 앱솔루트는 GIPHY에 공식 채널을 만들고 잔 부딫히고 술 따르는 움짤 게시.
 
 <img src='/img/psps/3punch.png' class = 'ramen'>**뿌)** 결과: 움짤 업로드 568개, 총 조회수 24억회
 
