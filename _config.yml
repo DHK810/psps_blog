@@ -1,0 +1,23 @@
+title:              "PSPS"
+tagline:            "먹기 좋게 뿌셔 먹는 해외 이슈"
+email:              "dhkmarket@gmail.com"
+description:        "해외 이슈 및 마케팅 소식을 바쁜 시간 속에서 먹기 좋게 뿌셔드립니다."
+author:             "PSPS"
+baseurl:            "/"
+url:                "https://psps.world"
+locale:             "ko_KR"
+thumbnail:          "/img/psps_thumbnail.png"
+background:         "/img/psps_background.png"
+# Social Profiles
+twitter_username:   twitter_username
+instagram_username: instagram_username
+facebook_username:  facebook_username
+linkedin_username:  linkedin_username
+
+# Build settings
+markdown:           kramdown
+permalink:          /:title
+paginate:           5
+paginate_path:      "/posts/page:num/"
+plugins:
+  - jekyll-paginate
