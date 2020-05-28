@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Posts
-background: '/img/psps_thumbnail.png'
+background: '/img/bg-post.jpg'
 ---
 
 {% for post in paginator.posts %}
@@ -9,7 +9,7 @@ background: '/img/psps_thumbnail.png'
 <article class="post-preview">
   <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
     {% if post.feature %}
-      <!-- <img class="post-feature" src="{{ post.feature }}" alt=""> -->
+      <img class="post-feature" src="{{ post.feature }}" alt="">
     {% endif %}
     <h2 class="post-title">{{ post.title }}</h2>
     {% if post.description %}
