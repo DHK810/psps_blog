@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;900&display=swap');
 
 // Global styling for this template
-.text_justify{
-  text-align : justify;
+.reference{
+  font-size : 10pt;
 }
 .img_small_to_full{
   width: 600px;
@@ -21,24 +21,20 @@ p.gif_text_center{
   margin : 0px auto;
 
 }
-.ramen{
-  width: 50px;
-  height: 50px;
-}
 .youtube{
   width: 100%;
   height: 100%;
 }
 body {
-  font-size: 20px;
+  font-size: 16px;
   color: $gray-900;
   font-family: 'Noto Sans KR', sans-serif;;
 }
 
 p {
   line-height: 1.5;
-  margin: 30px 0;
-  word-break : keep-all;
+  margin: 20px 0;
+  text-align : justify !important;
   a {
     text-decoration: underline;
   }
@@ -62,7 +58,7 @@ a {
 }
 
 blockquote {
-  font-style: italic;
+  border-left : 0.25em solid #b8b8b8;
   color: $gray-600;
 }
 

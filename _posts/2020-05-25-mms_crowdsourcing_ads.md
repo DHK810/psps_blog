@@ -7,9 +7,21 @@ feature: '/img/posts/001/001_thumbnail.png'
 background: '/img/posts/001/001_bg.png'
 categories:
   - marketing
-  - branding
 tags:
   - m&m
+  - 크라우드소싱
+  - crowdsourcing
+  - 광고
+  - ads
+  - 마케팅
+  - 브랜딩
+  - 해외이슈
+  - 해외소식
+  - 마케팅이슈
+  - marketing
+  - branding
+  - issue
+  - issues
   - 마케팅
   - 브랜딩
   - 해외이슈
@@ -20,31 +32,34 @@ description: '코로나 때문에 집에 있는 시간이 많은 시민들과 �
 
 
 # 크라우드소싱으로 광고 만드는 M&M.
+오늘은 손에 털어 먹는 m&m의 크라우드소싱을 활용한 광고 대해 알아보겠습니다.
 
+우리 독자분들이 간편하게 한 입에 먹을 수 있도록 정보를 뿌셔놨습니다.
 
+혹시 '아! 나는 통으로 먹는거 좋아해요 psps님. 저 배려 좀 해주세요!'라고 느끼신 분들이 있을까봐 아래에 통째로 먹을 수 있도록 자리를 마련해 놓았습니다.
 
-### psps의 뿌셔뿌셔
+입 맛에 맞게 즐겨주세요.
 
-<img src='/img/psps/1punch.png' class = 'ramen'>**뿌)** 전염병 위기 속 고객과 접점 기회를 크라우드소싱으로 만들어 낸 m&m.
+### 간편하게 먹고 싶다면:
 
-<img src='/img/psps/2punch.png' class = 'ramen'>**셔)** 다음 광고 스토리보드 중 일부를 공개해 컬러를 입힐 수 있는 이벤트 공개
+#### 뿌셔먹기
 
-<img src='/img/psps/3punch.png' class = 'ramen'>**뿌)** 스트레스 해소 액티비티 제공 + 브랜드와의 접촉 시간 확보
+1. 전염병 위기 속 고객과 접점 기회를 크라우드소싱으로 만들어 낸 m&m.
 
-<img src='/img/psps/lastpunch.png' class = 'ramen'>**셔!)** 이 캠페인을 긍정적으로 보는 이유:
+2. 다음 광고 스토리보드 중 일부를 공개해 컬러를 입힐 수 있는 컬러링 이벤트 공개
 
-1.	m&m 안에서 스트레스를 해소하며 브랜드와 친해질 수 있는 시간을 마련했다는 점.
-2.	제출하고 나면 누구의 작품이 어떻게 광고에 나올 지 궁금함.
+3. 스트레스 해소 액티비티 제공 + 브랜드와의 접촉 시간 확보
 
+4. 이 캠페인을 긍정적으로 보는 이유:
 
+   - 브랜드 안에서 스트레스를 해소하며 무의식 속에 긍정적인 경험을 마련했다는 점.
 
+   - 누구의 작품이 어떻게 광고에 나올 지 궁금함.
 
-빠사삭!             
-
-통째로 보고 싶으신 분은
+### 통째로 먹고 싶다면:
 
 <details>
-<summary><img src='/img/psps/whole.png' class = 'ramen'>통째로 보기</summary>
+<summary>통째로 먹기</summary>
 <div markdown = "1">
 ## 크라우드소싱이란?
 

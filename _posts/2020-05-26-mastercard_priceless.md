@@ -30,26 +30,30 @@ description: '마스터카드는 격리된 사람들에게 어떤 경험을 제�
 
 # 돈으로 살 수 없는 경험, 온라인에서 느끼다. 마스터카드
 
-### psps의 뿌셔뿌셔
+오늘은 마스터카드의 Priceless Experience 온라인 캠페인에 대해 알아보겠습니다.
 
-<img src='/img/psps/1punch.png' class = 'ramen'>**뿌)** 마스터카드 소지자들만을 위한 'Priceless' 온라인 캠페인 진행
+우리 독자분들이 간편하게 한 입에 먹을 수 있도록 정보를 뿌셔놨습니다.
 
-<img src='/img/psps/2punch.png' class = 'ramen'>**셔)** 예술, 요리, 음악, 스포츠 등 분야의 유명인들과 파트너십 계약
+혹시 '아! 나는 통으로 먹는거 좋아해요 psps님. 저 배려 좀 해주세요!'라고 느끼신 분들이 있을까봐 아래에 통째로 먹을 수 있도록 자리를 마련해 놓았습니다.
 
-<img src='/img/psps/3punch.png' class = 'ramen'>**뿌)** 온라인에서 마스터카드 고객만 '값진' 경험을 할 수 있는 콘텐츠 제공
+입 맛에 맞게 즐겨주세요.
 
-<img src='/img/psps/lastpunch.png' class = 'ramen'>**셔!)** 온라인으로도 충분히 고객과 브랜드간의 경험을 풍부하게 만들어낼 수 있다.
+### 간편하게 먹고 싶다면:
 
-빠사삭!             
+##### 뿌셔먹기
 
-​          
+1. 마스터카드 소지자들만을 위한 'Priceless' 온라인 캠페인 진행
+2. 예술, 요리, 음악, 스포츠 등 분야의 유명인들과 파트너십 계약
+3. 온라인에서 마스터카드 고객만 '값진' 경험을 할 수 있는 콘텐츠 제공
+4. 온라인으로도 충분히 고객과 브랜드간의 경험을 풍부하게 만들어낼 수 있음
 
-통째로 보고 싶으신 분은
+
+
+### 통으로 먹고 싶다면:
 
 <details>
-<summary><img src='/img/psps/whole.png' class = 'ramen'>통째로 보기</summary>
+<summary>통째로 먹기</summary>
 <div markdown = "1">
-<div class = 'text_justify'>
 우리나라 은행에서 체크/신용 카드를 발급받을 때 해외구매를 가능하게 해주는 브랜드가 있죠. 가장 유명한 건 바로 VISA와 mastercard.
 </div>
 ![비자_마스터카드_로고](/img/posts/003/visa_mastercard.png)
@@ -144,5 +148,6 @@ Priceless 캠페인은 레스토랑, 프라이빗 콘서트, 유명인과의 만
 
 오프라인의 경험이 온라인으로 옮겨가는 요즘, VR이 대세가 되는 세상을 연결하는 다리가 만들어지는 과정인 것 같네요.
 
+[다음 포스트: 전염병 이전으로 돌아가지 말자](/durex_letsnotgobacktonormal)
 </div>
 </details>

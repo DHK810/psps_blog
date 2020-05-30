@@ -7,12 +7,13 @@ feature: '/img/posts/002/002_thumbnail.png'
 background: '/img/posts/002/002_bg.jpg'
 categories:
   - marketing
-  - branding
 tags:
   - absolut
   - 앱솔루트
   - 지피
   - giphy
+  - 움짤
+  - gif
   - marketing
   - branding
   - issue
@@ -24,24 +25,28 @@ tags:
   - 마케팅이슈
 description: '하루 7억명이 들어오는 움짤 플랫폼에서 앱솔루트는 어떻게 24억번의 노출을 만들었을까?'
 ---
-## 앱솔루트는 어떻게 움짤로 24억 조회수를 뽑았을까?
-### psps의 뿌셔뿌셔
+# 앱솔루트는 어떻게 움짤로 24억 조회수를 뽑았을까?
+오늘은 보드카 브랜드 Absolut의 24억 뷰 움짤 마케팅에 대해 알아보겠습니다.
 
-<img src='/img/psps/1punch.png' class = 'ramen'>**뿌)** 하루 약 7억 명이 활동하는 움짤계의 구글, GIPHY
+우리 독자분들이 간편하게 한 입에 먹을 수 있도록 정보를 뿌셔놨습니다.
 
-<img src='/img/psps/2punch.png' class = 'ramen'>**셔)** 앱솔루트는 GIPHY에 공식 채널을 만들고 잔 부딫히고 술 따르는 움짤 게시.
+혹시 '아! 나는 통으로 먹는거 좋아해요 psps님. 저 배려 좀 해주세요!'라고 느끼신 분들이 있을까봐 아래에 통째로 먹을 수 있도록 자리를 마련해 놓았습니다.
 
-<img src='/img/psps/3punch.png' class = 'ramen'>**뿌)** 결과: 움짤 업로드 568개, 총 조회수 24억회
+입 맛에 맞게 즐겨주세요.
 
-<img src='/img/psps/lastpunch.png' class = 'ramen'>**셔!)** 무엇이 트렌드인지 아는 건 보통이지만 트렌드 위에 올라타는 건 일류
+### 간편하게 먹고 싶다면:
 
-빠사삭!             
+##### 뿌셔먹기
 
-통째로 보고 싶으신 분은
+1. 하루 약 7억 명이 활동하는 움짤계의 구글, GIPHY
+2. 앱솔루트는 GIPHY에 공식 채널을 만들고 잔 부딫히고 술 따르는 움짤 게시.
+3. 결과: 움짤 업로드 568개, 총 조회수 24억회
+4. 무엇이 트렌드인지 아는 건 보통이지만 트렌드 위에 올라타는 건 일류
 
+### 통째로 먹고 싶다면:
 
 <details>
-<summary><img src='/img/psps/whole.png' class = 'ramen'>통째로 보기</summary>
+<summary>통째로 먹기</summary>
 <div markdown = '1'>
 ## 관짝 소년단
 
@@ -56,10 +61,13 @@ description: '하루 7억명이 들어오는 움짤 플랫폼에서 앱솔루트
 
 얼마나 많냐고요?
 
-하루 10,000,000,000. 무려 10억개의 움짤이 유저들 사이에서 움직인다고 하니 어마무시합니다.
+하루 10,000,000,000. 무려 100억개의 움짤이 유저들 사이에서 움직인다고 하니 어마무시합니다.
 
 하루 이용자 7억명이라니 엄청난 숫자가 아닐 수가 없는데 이 정도 규모의 잠재 고객이 있는 플랫폼은 매력적이지 않을 수가 없습니다. 온갖 인터넷에 유행하는 gif파일이 이 곳에 올라와 있어 gif계의 구글이라는 별명도 있죠. 움짤에 뭐이리 사람들이 모일까 하는 궁금증이 생기실 텐데요. **외국의 움짤은 우리나라 카톡의 이모티콘과 같습니다.**
-<iframe src="https://giphy.com/embed/LoGh1t5iGxFOE" width="480" height="336" frameBorder="0" class="giphy-embed img_center" allowFullScreen></iframe><p class = 'gif_text_center'><a href="https://giphy.com/gifs/bert-meme-LoGh1t5iGxFOE" alt = '놀라는 인형'>그렇단 말이지..?</a></p>
+<iframe src="https://giphy.com/embed/LoGh1t5iGxFOE" width="480" height="336" frameBorder="0" class="giphy-embed img_center" allowFullScreen></iframe><p class = 'gif_text_center'><a href="https://giphy.com/gifs/bert-meme-LoGh1t5iGxFOE" alt = '놀라는 인형'></a></p>
+
+> *그런단 말이지..?*
+
 이모티콘만 있으면 대화가 가능한 것처럼 외국에선 움짤이 그 역할을 하죠. 하지만 움짤이든 이모티콘이든 쓰일려면 재밌거나 생활 속 대화에 어울려야 한다는 공통점이 있습니다. 이런 조건을 만족해 **움짤로 24억 명에게 다가간** 브랜드가 있습니다. 보드카 브랜드 중 가장 잘 알려진 앱솔루트가 그 주인공.
 
 ![앱솔루트 콜라보 사진](/img/posts/002/absol_collabo.png)
