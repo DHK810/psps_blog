@@ -3,7 +3,7 @@ layout: post
 permalink: /durex_letsnotgobacktonormal/
 title: '전염병 이전으로 돌아가지 말자'
 date: 2020-05-29 16:00:00 +09:00
-feature: '/img/posts/004/letsnotgobacktonormal.png'
+feature: '/img/posts/004/letsnotgobacktonormal_1.png'
 background: '/img/posts/004/durex_letsnotgobacktonormal_poster.jpg'
 categories:
   - marketing
