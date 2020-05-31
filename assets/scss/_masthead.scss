@@ -6,10 +6,13 @@ header.masthead {
   background-color: $gray-600;
   background-attachment: scroll;
   position: relative;
+<<<<<<< HEAD
   background-image: url("{{'/img/psps_thumbnail_mobile.png' | site.baseurl | replace: '//', '/'   }}");
   @media only screen and (min-width: 768px) {
     background-image: url("{{'/img/psps_thumbnail_fullscreen.png' | site.baseurl | replace: '//', '/'   }}");
     }
+=======
+>>>>>>> parent of 53eabc5... PC와 모바일 간 이미지 최적화
   @include background-cover;
   .overlay {
     position: absolute;
