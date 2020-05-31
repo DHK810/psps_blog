@@ -6,9 +6,10 @@ header.masthead {
   background-color: $gray-600;
   background-attachment: scroll;
   position: relative;
-  background-image: url('/img/psps_thumbnail_mobile.png');
+  background-image: url("https://psps.world/img/posts/psps_thumbnail_mobile.png");
+
   @media only screen and (min-width: 768px) {
-    background-image: url('/img/psps_thumbnail_fullscreen.png');
+    background-image: url("https://psps.world/img/posts/psps_thumbnail_fullscreen.png");
     }
   @include background-cover;
   .overlay {
