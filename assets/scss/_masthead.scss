@@ -6,6 +6,14 @@ header.masthead {
   background-color: $gray-600;
   background-attachment: scroll;
   position: relative;
+<<<<<<< HEAD
+=======
+  background-image: url("https://psps.world/img/posts/psps_thumbnail_mobile.png");
+
+  @media only screen and (min-width: 768px) {
+    background-image: url("https://psps.world/img/posts/psps_thumbnail_fullscreen.png");
+    }
+>>>>>>> parent of 9d64e03... Revert "테스팅"
   @include background-cover;
   .overlay {
     position: absolute;
