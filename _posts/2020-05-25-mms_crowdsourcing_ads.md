@@ -59,7 +59,7 @@ description: '코로나 때문에 집에 있는 시간이 많은 시민들과 �
 ### 통째로 먹고 싶다면:
 
 <details>
-<summary>통째로 먹기</summary>
+<summary>통째로 먹기 (눌러주세요!)</summary>
 <div markdown = "1">
 ## 크라우드소싱이란?
 

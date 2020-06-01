@@ -52,7 +52,7 @@ description: '마스터카드는 격리된 사람들에게 어떤 경험을 제�
 ### 통으로 먹고 싶다면:
 
 <details>
-<summary>통째로 먹기</summary>
+<summary>통째로 먹기 (눌러주세요!)</summary>
 <div markdown = "1">
 우리나라 은행에서 체크/신용 카드를 발급받을 때 해외구매를 가능하게 해주는 브랜드가 있죠. 가장 유명한 건 바로 VISA와 mastercard.
 </div>

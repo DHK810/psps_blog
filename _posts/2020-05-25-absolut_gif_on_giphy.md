@@ -46,7 +46,7 @@ description: '하루 7억명이 들어오는 움짤 플랫폼에서 앱솔루트
 ### 통째로 먹고 싶다면:
 
 <details>
-<summary>통째로 먹기</summary>
+<summary>통째로 먹기 (눌러주세요!)</summary>
 <div markdown = '1'>
 ## 관짝 소년단
 
