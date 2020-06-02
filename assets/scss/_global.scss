@@ -9,12 +9,20 @@
   width: 600px;
   height: 314px;
 }
+.img_big_to_small{
+  width: 50%;
+  height: 250px;
+}
 .gif_inline{
   float: left;
   margin-left : 10% auto;
 }
 p.gif_text_center{
   text-align : center;
+}
+.img_inline{
+  float: left;
+  margin : 0px auto;
 }
 .img_center{
   display : block;
