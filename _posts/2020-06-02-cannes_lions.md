@@ -79,9 +79,9 @@ description: '칸 라이언즈, 세계에서 가장 큰 광고제. 500만원에�
 
 칸의 여왕 전도연 그리고 디렉터 봉, 봉준호 감독.
 
-<img class = 'img_inline img_big_to_small' src="/img/posts/005/jeon_doyeon.jpg" alt="jeon_doyeon"/>
+<img class = 'img_inline img_big_to_small' src="/img/posts/005/jeon_doyeon.jpg" alt="전도연"/>
 
-<img class = 'img_big_to_small' src="/img/posts/005/dir_bong.jpg" alt="dir_bong"/>
+<img class = 'img_big_to_small' src="/img/posts/005/dir_bong.jpg" alt="봉준호"/>
 
 우리나라 배우나 감독이 칸에서 수상했다라고 하면 "우와! 대단해! 자랑스럽다!"라며 우리가 되려 자랑스러움을 느끼죠. 왜냐면 글로벌에서 가장 크고 영향력이 으마무시한 영화제에서 우리나라 사람이 상을 받았기 때문입니다. 김연아 선수가 올림픽 금메달을 목에 달았을 때 만큼이나 우리나라를 단결시키는 힘을 가진 게 칸 영화제입니다.
 
@@ -130,7 +130,7 @@ description: '칸 라이언즈, 세계에서 가장 큰 광고제. 500만원에�
 
 작년 30,953점의 작품 중 932점만이 수상했습니다. 참가자들은 9개의 트랙의 28개 부문별 그랑프리, 금, 은, 동 사자상을 수상하게 됩니다. 트랙은 Communication, Craft, Entertainment, Experience, Good, Health, Impact, Innovation, Reach로 나뉩니다.
 
-![lions_tracks](/img/posts/005/lions_tracks.png)
+<img src = "/img/posts/005/lions_tracks.png"/ alt = '칸라이언즈 금, 은, 동 사자상'>
 
 1. **Communication**부문은 창의적인 파트너십, 사람, 그리고 <u>스토리텔링</u>에 중점을 두고 평가합니다.
 
