@@ -1,6 +1,6 @@
 ---
 layout: post
-permalink: /canneslions_for_all/
+permalink: /canneslions-for-all/
 title: '500만원짜리 무료 축제'
 date: 2020-06-02 16:00:00 +09:00
 feature: '/img/posts/005/cannes_lions_logo_thumbnail.jpg'
@@ -11,23 +11,21 @@ tags:
   - psps
   - 칸광고제
   - 칸라이언즈
-  - 칸영화제
   - 무료
   - 광고제 비용
+  - 온라인 행사
   - 라이브쇼
-  - 라이브 행사
   - 라이브 방송
   - cannes lions
   - cannes
   - 광고
-  - 전염병
+  - 코로나
   - corona
   - virus
   - pandemic
   - branding
   - marketing
   - issue
-  - issues
   - 마케팅
   - 브랜딩
   - 해외 이슈
@@ -69,7 +67,7 @@ description: '칸 라이언즈, 세계에서 가장 큰 광고제. 500만원에�
 
 *티켓값은 2018년 [digiday.com](https://digiday.com/marketing/costs-go-cannes/)에서 발행한 블로그를 참고했습니다*
 
-결론부터 말씀드리면 광고인들의 꿈이자 온갖 창의적인 광고들의 집합소인 칸 라이언즈가 온라인 라이브 방송을 통해 **무료**로 모두에게 공개됩니다!
+결론부터 말씀드리면 광고인들의 꿈이자 온갖 창의적인 광고들의 집합소인 칸 라이언즈가 온라인 라이브 방송을 통해 **공짜**로 모두에게 공개됩니다!
 
 ![cannes_lions_logo_with_description](/img/posts/005/cannes_lions_logo_with_description.jpg)
 <hr class = 'hr_img'>
@@ -84,8 +82,8 @@ description: '칸 라이언즈, 세계에서 가장 큰 광고제. 500만원에�
 <hr class = 'hr_img'>
 
 
-자, 칸 라이언즈가 언제 열리는 지만 알고 싶어서 PSPS에 오신 분이라면 이제 다른 용무를 보셔도 됩니다.<br>
-만약 칸 라이언즈에 참가하는데 들어가는 <u>비용이 얼마</u>이고 행사장 안에서는 <u>어떤 일이 일어나는지</u> 궁금하신 분들은 계속 읽어보세요.
+자, 이 커다란 광고제가 언제 열리는 지만 알고 싶어서 PSPS에 오신 분이라면 이제 다른 용무를 보셔도 됩니다.<br>
+만약 축제에 참가하는데 들어가는 <u>비용이 얼마</u>이고 행사장 안에서는 <u>어떤 일이 일어나는지</u> 궁금하신 분들은 계속 읽어보세요.
 
 ## 칸 라이언즈? 칸 영화제랑 비슷한건가?
 
@@ -94,9 +92,9 @@ description: '칸 라이언즈, 세계에서 가장 큰 광고제. 500만원에�
 
 칸의 여왕 전도연 그리고 디렉터 봉, 봉준호 감독.
 
-<img class = 'img_inline img_big_to_small' src="/img/posts/005/jeon_doyeon.jpg" alt="전도연"/>
+<img class = 'img_inline img_big_to_small' src="/img/posts/005/jeon_doyeon.jpg" alt="칸영화제 수상한 전도연"/>
 
-<img class = 'img_big_to_small' src="/img/posts/005/dir_bong.jpg" alt="봉준호"/>
+<img class = 'img_big_to_small' src="/img/posts/005/dir_bong.jpg" alt="기생충으로 칸영화제 수상한 봉준호"/>
 
 우리나라 배우나 감독이 칸에서 수상했다라고 하면 "우와! 대단해! 자랑스럽다!"라며 우리가 되려 자랑스러움을 느끼죠. 왜냐면 글로벌에서 가장 크고 영향력이 으마무시한 영화제에서 우리나라 사람이 상을 받았기 때문입니다. 김연아 선수가 올림픽 금메달을 목에 달았을 때 만큼이나 우리나라를 단결시키는 힘을 가진 게 칸 영화제입니다.
 
@@ -111,7 +109,7 @@ description: '칸 라이언즈, 세계에서 가장 큰 광고제. 500만원에�
 
 출품하는 부문에 따라 비용이 달라지는데 올해는 9개 트랙(Track)에서 28가지 부문으로 나뉘는데 [출품비용](https://www.canneslions.com/support/awards-support/dates-and-fees)은 **최소 575파운드(80만원)에서 최대 1,995파운드(270만원)**까지입니다.
 
-작년 칸 라이언즈에 출품된 작품의 수는 30,953개입니다. 최소 비용인 80만원으로만 잡고 계산해봐도 출품작 비용으로만 약 250억원입니다. 기타 다른 비용까지 고려한다면 칸 라이언즈에 돈이 얼마나 모이는 지 가늠이 가시죠?
+작년 칸 라이언즈에 출품된 작품의 수는 30,953개입니다. 최소 비용인 80만원으로만 잡고 계산해봐도 출품작 비용으로만 약 250억원입니다. 기타 다른 비용까지 고려한다면 돈이 얼마나 모이는 지 가늠이 가시죠?
 
 ## 칸 광고제엔 왜 가는 거지?
 
@@ -141,7 +139,7 @@ description: '칸 라이언즈, 세계에서 가장 큰 광고제. 500만원에�
 
 ## 수상 부문
 
-<img src = "/img/posts/005/lion_trophies.jpg"/ alt = '칸라이언즈 금, 은, 동 사자상'>
+<img src = "/img/posts/005/lion_trophies.jpg"/ alt = '칸 라이언즈 금, 은, 동 사자상'>
 작년 30,953점의 작품 중 932점만이 수상했습니다. 참가자들은 9개의 트랙의 28개 부문별 그랑프리, 금, 은, 동 사자상을 수상하게 됩니다. 트랙은 Communication, Craft, Entertainment, Experience, Good, Health, Impact, Innovation, Reach로 나뉩니다.
 
 
@@ -159,7 +157,7 @@ description: '칸 라이언즈, 세계에서 가장 큰 광고제. 500만원에�
 8. **Innovation**은 제품 개발, 사업 변화, 새로운 데이터 중심의 전략 등을 <u>창의적인 컨셉과 활용</u>을 통해 브랜드와 소비자간의 소통을 얼마나 창의적으로 변화시켰는지에 중점을 둡니다.
 9. **Reach**는 소비자들의 관심이 필요한 현재 진행 중인 문제에 대해 브랜드가 창의적인 통찰, 전략, 그리고 기획으로 <u>얼마나 효율적으로 소비자들의 참여를 이끌어 냈는지</u>에 초점을 둡니다.
 
-트랙 별로 세부적인 부문들이 있는데 궁금하신 분들은 [여기](https://www.canneslions.com/enter/awards/MEDIAONLINE/CANNESLIONS/2020/CL2020-Lions-tracks.PNG) 들어가셔서 확인하실 수 있습니다.
+트랙 별로 세부적인 부문들이 있는데 궁금하신 분들은 [칸 라이언즈 공식 홈페이지](https://www.canneslions.com/enter/awards/MEDIAONLINE/CANNESLIONS/2020/CL2020-Lions-tracks.PNG)에 들어가셔서 확인하실 수 있습니다.
 
 ## 마무리
 

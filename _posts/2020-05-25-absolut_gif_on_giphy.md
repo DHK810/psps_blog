@@ -1,6 +1,6 @@
 ---
 layout: post
-permalink: /absolut_using_gif_with_giphy/
+permalink: /absolut-gif/
 title: '움짤로 조회수 24억 뽑은 브랜드가 있다?'
 date: 2020-05-25 17:30:00 +09:00
 feature: '/img/posts/002/002_thumbnail.png'
@@ -105,4 +105,4 @@ description: '하루 7억명이 들어오는 움짤 플랫폼에서 앱솔루트
 </div>
 </details>
 
-다음 포스팅: [돈으로 살 수 없는 경험, 온라인에서 느끼다. 마스터카드](/mastercard_priceless)
+다음 포스팅: [돈으로 살 수 없는 경험, 온라인에서 느끼다. 마스터카드](/priceless-exp)

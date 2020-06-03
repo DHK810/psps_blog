@@ -1,6 +1,6 @@
 ---
 layout: post
-permalink: /mastercard_priceless/
+permalink: /priceless-exp/
 title: '돈으로 살 수 없는 경험, 온라인에서 느끼다. 마스터카드.'
 date: 2020-05-26 16:00:00 +09:00
 feature: '/img/posts/003/003_tb.png'
@@ -160,4 +160,4 @@ Priceless 캠페인은 레스토랑, 프라이빗 콘서트, 유명인과의 만
 </div>
 </details>
 
-[다음 포스트: 전염병 이전으로 돌아가지 말자](/durex_letsnotgobacktonormal)
+[다음 포스트: 전염병 이전으로 돌아가지 말자](/challenge-the-norms)
