@@ -8,9 +8,16 @@ background: '/img/posts/005/cannes_lions_logo.jpg'
 categories:
   - foreign_issue
 tags:
+  - psps
   - 칸광고제
   - 칸라이언즈
-  - cannes_lions
+  - 칸영화제
+  - 무료
+  - 광고제 비용
+  - 라이브쇼
+  - 라이브 행사
+  - 라이브 방송
+  - cannes lions
   - cannes
   - 광고
   - 전염병
@@ -23,10 +30,10 @@ tags:
   - issues
   - 마케팅
   - 브랜딩
-  - 해외이슈
-  - 해외소식
-  - 마케팅이슈
-  - 마케팅소식
+  - 해외 이슈
+  - 해외 소식
+  - 마케팅 이슈
+  - 마케팅 소식
 description: '칸 라이언즈, 세계에서 가장 큰 광고제. 500만원에서 무료로, 관객수 제한에서 전세계 누구나로!'
 ---
 # 500만원짜리 무료 축제, 칸 라이언즈.

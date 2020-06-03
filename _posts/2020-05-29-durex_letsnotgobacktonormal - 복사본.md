@@ -8,11 +8,28 @@ background: '/img/posts/004/durex_letsnotgobacktonormal_poster.jpg'
 categories:
   - marketing
 tags:
+  - psps
   - 듀렉스
   - durex
   - condom
   - 콘돔
   - 전염병
+  - 코로나
+  - 정상
+  - 비정상
+  - 섹스
+  - sex
+  - 통념
+  - 캠페인
+  - 안전한 섹스
+  - 즐거운 섹스
+  - 즐거운
+  - 안전한
+  - 안전한 성관계
+  - 즐거운 성관계
+  - 섹스
+  - 성관계
+  - campaign
   - corona
   - virus
   - pandemic
@@ -27,7 +44,7 @@ tags:
   - 해외이슈
   - 해외소식
   - 마케팅이슈
-description: '지금이 sex에 대한 일반적인 통념을 바꿀 수 있는 유일한 기회다. by 콘돔회사'
+description: '지금이 sex에 대한 일반적인 통념을 바꿀 수 있는 유일한 기회다. by 콘돔회사 | 정상으로 봤던 비정상적인 성에 대한 통념을 바꾸다.'
 ---
 
 # 전염병 이전으로 돌아가지 말자

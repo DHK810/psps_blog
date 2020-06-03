@@ -8,12 +8,15 @@ background: '/img/posts/002/002_bg.jpg'
 categories:
   - marketing
 tags:
+  - psps
+  - 광고
   - absolut
   - 앱솔루트
   - 지피
   - giphy
   - 움짤
   - gif
+  - 관짝 움짤
   - marketing
   - branding
   - issue

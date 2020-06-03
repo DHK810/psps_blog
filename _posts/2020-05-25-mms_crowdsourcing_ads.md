@@ -8,6 +8,7 @@ background: '/img/posts/001/001_bg.png'
 categories:
   - marketing
 tags:
+  - psps
   - m&m
   - 크라우드소싱
   - crowdsourcing

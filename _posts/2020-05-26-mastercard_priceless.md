@@ -9,6 +9,7 @@ categories:
   - marketing
   - branding
 tags:
+  - psps
   - mastercard
   - 마스터카드
   - 에어비엔비
@@ -25,7 +26,7 @@ tags:
   - 해외이슈
   - 해외소식
   - 마케팅이슈
-description: '마스터카드는 격리된 사람들에게 어떤 경험을 제공할까?'
+description: '마스터카드는 전염병에 격리된 사람들에게 어떤 priceless 경험을 제공하고 있을까?'
 ---
 
 # 돈으로 살 수 없는 경험, 온라인에서 느끼다. 마스터카드
