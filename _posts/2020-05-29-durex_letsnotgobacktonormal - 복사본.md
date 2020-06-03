@@ -177,5 +177,7 @@ Durex는 캠페인 시작 전 일관된 브랜드 톤(tone)을 갖추기 위해 
 <span class = "reference">
 *국내 성병발생수와 혼전임신 출생아 비율 통계는 질병관리본부에서 분석한 [2014년~2018년 국내 성매개감염병 신고 발생 동향](https://www.cdc.go.kr/board/board.es?mid=a20602010000&bid=0034&list_no=366792&act=view)에서 확인 가능함.
 </span>
+</div>
+</details>
 
 [다음 포스트: 500만원짜리 무료 축제](/canneslions_for_all)

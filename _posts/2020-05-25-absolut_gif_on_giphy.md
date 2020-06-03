@@ -102,5 +102,4 @@ description: '하루 7억명이 들어오는 움짤 플랫폼에서 앱솔루트
 </div>
 </details>
 
-
 다음 포스팅: [돈으로 살 수 없는 경험, 온라인에서 느끼다. 마스터카드](/mastercard_priceless)
