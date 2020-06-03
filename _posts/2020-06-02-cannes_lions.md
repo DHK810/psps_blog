@@ -36,21 +36,28 @@ description: '칸 라이언즈, 세계에서 가장 큰 광고제. 500만원에�
 우리 독자분들이 간편하게 한 입에 먹기 좋게 뿌셔놨습니다.<br>
 혹시 '아! 나는 통으로 먹는거 좋아해요 psps님. 저 배려 좀 해주세요!'라고 느끼신 분들이 있을까봐 아래에 통째로 먹을 수 있도록 자리를 마련해 놓았습니다.<br>
 입 맛에 맞게 즐겨주세요.
+<hr class = 'hr_img'>
 
-### 간편하게 먹고 싶다면:
+### 간편하게 먹고 싶다면-
 
-##### 뿌셔먹기
-
-1. 칸 라이언즈 **무료 라이브** 진행 확정
-2. 언제? **2020년 6월 22~26일**
-3. 왜? **전염병 때문에**
+<details open>
+<summary><strong><u>뿌셔먹기</u></strong></summary>
+<div markdown = "1">
+1. 칸 라이언즈 **무료 라이브** 진행 확정.<br>
+2. 언제? **2020년 6월 22~26일.**<br>
+3. 왜? **전염병 때문에.**<br>
 4. 칸 라이언즈에 참여하는 이유와 그에 따르는 비용에 대해 알고 싶으면 **통째로 드세요.**
+</div>
+</details>
+<hr class = 'hr_img'>
 
-### 통째로 먹고 싶다면:
+### 통째로 먹고 싶다면-
 
 <details>
-<summary>통째로 먹기 (눌러주세요!)</summary>
+<summary><strong><u>통째로 먹기</u> (눌러주세요!)</strong></summary>
 <div markdown = "1">
+
+<br>
 ## 광고계의 칸 영화제, 칸 라이언즈.
 
 *티켓값은 2018년 [digiday.com](https://digiday.com/marketing/costs-go-cannes/)에서 발행한 블로그를 참고했습니다*
@@ -58,6 +65,7 @@ description: '칸 라이언즈, 세계에서 가장 큰 광고제. 500만원에�
 결론부터 말씀드리면 광고인들의 꿈이자 온갖 창의적인 광고들의 집합소인 칸 라이언즈가 온라인 라이브 방송을 통해 **무료**로 모두에게 공개됩니다!
 
 ![cannes_lions_logo_with_description](/img/posts/005/cannes_lions_logo_with_description.jpg)
+<hr class = 'hr_img'>
 
 ### 언제?!
 
@@ -66,7 +74,7 @@ description: '칸 라이언즈, 세계에서 가장 큰 광고제. 500만원에�
 ### 왜?!
 
 **전염병 때문에!**
-
+<hr class = 'hr_img'>
 
 
 자, 칸 라이언즈가 언제 열리는 지만 알고 싶어서 PSPS에 오신 분이라면 이제 다른 용무를 보셔도 됩니다.<br>
@@ -126,11 +134,10 @@ description: '칸 라이언즈, 세계에서 가장 큰 광고제. 500만원에�
 
 ## 수상 부문
 
-![lion_trophy_gold_silver_bronze](/img/posts/005/lion_trophies.jpg)
-
+<img src = "/img/posts/005/lion_trophies.jpg"/ alt = '칸라이언즈 금, 은, 동 사자상'>
 작년 30,953점의 작품 중 932점만이 수상했습니다. 참가자들은 9개의 트랙의 28개 부문별 그랑프리, 금, 은, 동 사자상을 수상하게 됩니다. 트랙은 Communication, Craft, Entertainment, Experience, Good, Health, Impact, Innovation, Reach로 나뉩니다.
 
-<img src = "/img/posts/005/lions_tracks.png"/ alt = '칸라이언즈 금, 은, 동 사자상'>
+
 
 1. **Communication**부문은 창의적인 파트너십, 사람, 그리고 <u>스토리텔링</u>에 중점을 두고 평가합니다.
 
@@ -155,6 +162,5 @@ description: '칸 라이언즈, 세계에서 가장 큰 광고제. 500만원에�
 
 칸 라이언즈가 무료 라이브를 진행하기로 하면서 평소라면 꿈도 못 꿔봤을 광고제를 직접 관람할 수 있는 기회가 생겨 기분이 너무 좋습니다. 항상 누군가가 수상작들을 소개해 놓은 정보를 접했던 이전과는 다르게 6월 22일에는 제가 직접 보고 들은 것을 전달하는 날이 될 것이라는 생각에 벌써부터 설레는 군요!
 
-이 글을 읽은 당신에게 전합니다.
 
-기분 좋은 하루 되세요~
+지금까지, 세상 마케팅 이슈를 뿌시고 다니는 PSPS였습니다.
