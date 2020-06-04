@@ -1,7 +1,7 @@
 ---
 layout: post
 permalink: /canneslions-for-all/
-title: '500만원짜리 무료 축제, 칸라이언즈'
+title: '500만원짜리 무료 축제, 칸 라이언즈'
 date: 2020-06-02 16:00:00 +09:00
 feature: '/img/posts/005/cannes_lions_logo_thumbnail.jpg'
 background: '/img/posts/005/cannes_lions_logo.jpg'
@@ -32,7 +32,7 @@ tags:
   - 해외 소식
   - 마케팅 이슈
   - 마케팅 소식
-description: '칸라이언즈, 세계에서 가장 큰 광고제. 500만원에서 무료로, 관객수 제한에서 전세계 누구나로!'
+description: '칸 라이언즈, 세계에서 가장 큰 광고제. 500만원에서 무료로, 관객수 제한에서 전세계 누구나로!'
 ---
 # 500만원짜리 무료 축제, 칸 라이언즈.
 
