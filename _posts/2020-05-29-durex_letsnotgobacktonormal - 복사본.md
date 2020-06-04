@@ -1,7 +1,7 @@
 ---
 layout: post
 permalink: /challege-the-norms/
-title: '전염병 이전으로 돌아가지 말자'
+title: '전염병 이전으로 돌아가지 말자 by 듀렉스'
 date: 2020-05-29 16:00:00 +09:00
 feature: '/img/posts/004/letsnotgobacktonormal_1.png'
 background: '/img/posts/004/durex_letsnotgobacktonormal_poster.jpg'
@@ -44,7 +44,7 @@ tags:
   - 해외이슈
   - 해외소식
   - 마케팅이슈
-description: '지금이 sex에 대한 일반적인 통념을 바꿀 수 있는 유일한 기회다. by 콘돔회사 | 정상으로 봤던 비정상적인 성에 대한 통념을 바꾸다.'
+description: '지금이 sex에 대한 일반적인 통념을 바꿀 수 있는 유일한 기회다. by 듀렉스(콘돔회사) | 정상으로 봤던 비정상적인 성에 대한 통념을 바꾸다.'
 ---
 
 # 전염병 이전으로 돌아가지 말자
