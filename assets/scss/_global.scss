@@ -2,7 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;900&display=swap');
 
 // Global styling for this template
-
+.about_strong_font{
+  font-size : 24px !important;
+  @media only screen and (min-width: 768px) {
+    font-size : 28px !important;
+}
+}
+.about_font{
+  font-size: 16px !important;
+    @media only screen and (min-width: 768px) {
+      font-size : 22px !important;
+}
+}
 hr.hr_img{
   border: 0;
   height: 1px;
