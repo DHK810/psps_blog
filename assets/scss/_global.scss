@@ -59,7 +59,7 @@ p {
     text-decoration: underline;
   }
   @media only screen and (min-width: 768px) {
-    text-align : justify !important;
+    word-break : break-all !important;
     }
 }
 

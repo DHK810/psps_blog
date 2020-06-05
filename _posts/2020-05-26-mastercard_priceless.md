@@ -160,4 +160,4 @@ Priceless 캠페인은 레스토랑, 프라이빗 콘서트, 유명인과의 만
 </div>
 </details>
 
-[다음 포스트: 전염병 이전으로 돌아가지 말자](/challenge-the-norms)
+[다음 포스트: 전염병 이전으로 돌아가지 말자](/challenge-the-norms/)

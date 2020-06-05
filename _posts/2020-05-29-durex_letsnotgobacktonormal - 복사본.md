@@ -1,6 +1,6 @@
 ---
 layout: post
-permalink: /challege-the-norms/
+permalink: /challenge-the-norms/
 title: '전염병 이전으로 돌아가지 말자 by 듀렉스'
 date: 2020-05-29 16:00:00 +09:00
 feature: '/img/posts/004/letsnotgobacktonormal_1.png'

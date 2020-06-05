@@ -139,7 +139,7 @@ description: '칸 라이언즈, 세계에서 가장 큰 광고제. 500만원에�
 
 ## 수상 부문
 
-<img src = "/img/posts/005/lion_trophies.jpg"/ alt = '칸 라이언즈 금, 은, 동 사자상'>
+<img src = "/img/posts/005/lion_trophies.jpg" alt = '칸 라이언즈 금, 은, 동 사자상'/>
 작년 30,953점의 작품 중 932점만이 수상했습니다. 참가자들은 9개의 트랙의 28개 부문별 그랑프리, 금, 은, 동 사자상을 수상하게 됩니다. 트랙은 Communication, Craft, Entertainment, Experience, Good, Health, Impact, Innovation, Reach로 나뉩니다.
 
 
