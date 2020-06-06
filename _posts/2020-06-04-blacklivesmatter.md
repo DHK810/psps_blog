@@ -1,7 +1,7 @@
 ---
 layout: post
-permalink: /blacklivesmatter/
-title: '블랙라이브즈매터. 전세계가 지지하다. '
+permalink: /blm-worldwide/
+title: '블랙라이브즈매터. 전세계가 지지하다.'
 date: 2020-06-05 16:00:00 +09:00
 feature: '/img/posts/006/blm_tb.png'
 background: '/img/posts/006/blm_bg.jpg'
