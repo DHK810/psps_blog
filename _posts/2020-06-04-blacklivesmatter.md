@@ -1,7 +1,7 @@
 ---
 layout: post
 permalink: /blacklivesmatter/
-title: '전세계로 확장된 BLM 운동. 흑인의 목숨도 소중하다.'
+title: '블랙라이브즈매터. 전세계가 지지하다. '
 date: 2020-06-05 16:00:00 +09:00
 feature: '/img/posts/006/blm_tb.png'
 background: '/img/posts/006/blm_bg.jpg'
@@ -18,6 +18,11 @@ tags:
   - issue
   - 해외 이슈
   - 해외 소식
+  - 마케팅
+  - 브랜딩
+  - marketing
+  - branding
+  - foreign issue
 description: '흑인이라는 이유로 목숨을 빼았는 경찰. 목숨을 건 2020년 흑인 인권 운동 #블랙라이브즈매터.'
 ---
 
