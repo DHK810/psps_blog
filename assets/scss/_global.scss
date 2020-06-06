@@ -59,7 +59,9 @@ body {
   color: $gray-900;
   word-break : keep-all;
   font-family: 'Noto Sans KR', sans-serif;
-
+  @media only screen and (min-width: 768px) {
+    word-break : break-all !important;
+    }
 }
 
 
@@ -69,9 +71,6 @@ p {
   a {
     text-decoration: underline;
   }
-  @media only screen and (min-width: 768px) {
-    word-break : break-all !important;
-    }
 }
 
 h1,
