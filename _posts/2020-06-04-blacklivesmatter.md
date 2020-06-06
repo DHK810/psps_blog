@@ -13,13 +13,12 @@ tags:
   - 블랙라이브즈매터
   - 흑인의 목숨도 소중하다
   - BLM
-  - #blacklivesmatter
-  - #blackouttuesday
-  - #theshowmustbepaused
+  - blackouttuesday
+  - theshowmustbepaused
   - issue
   - 해외 이슈
   - 해외 소식
-description: '칸 라이언즈, 세계에서 가장 큰 광고제. 500만원에서 무료로, 관객수 제한에서 전세계 누구나로!'
+description: '흑인이라는 이유로 목숨을 빼았는 경찰. 목숨을 건 2020년 흑인 인권 운동 #블랙라이브즈매터.'
 ---
 
 # #BlackLivesMatter, #흑인의목숨도소중하다.
