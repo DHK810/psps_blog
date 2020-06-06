@@ -57,7 +57,7 @@ p.gif_text_center{
 body {
   font-size: 16px;
   color: $gray-900;
-  word-break : keep-all;
+  word-break : keep-all !important;
   font-family: 'Noto Sans KR', sans-serif;
   @media only screen and (min-width: 768px) {
     word-break : break-all !important;
