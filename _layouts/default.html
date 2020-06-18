@@ -5,14 +5,6 @@
 {% include head.html %}
 
 <body>
-
-  {% include navbar.html %}
-
-  {{ content }}
-
-  {% include footer.html %}
-
-  {% include scripts.html %}
   <!-- Load Facebook SDK for JavaScript -->
         <div id="fb-root"></div>
         <script>
@@ -70,6 +62,14 @@
     }(document, 'script', 'facebook-jssdk'));
   }, 0);
 </script>
+  {% include navbar.html %}
+
+  {{ content }}
+
+  {% include footer.html %}
+
+  {% include scripts.html %}
+
 </body>
 
 </html>
