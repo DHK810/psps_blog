@@ -1,10 +1,10 @@
 ---
 layout: post
 permalink: /new-way-for-advertising-in-game/
-title: ''
+title: '잘 나가는 래퍼는 게임 안에서 앨범홍보한다?'
 date: 2020-06-20 18:00:00 +09:00
-feature: '/img/posts/009/post8_tn.jpg'
-background: '/img/posts/009/post8_bg.jpg'
+feature: '/img/posts/009/post9_tn.jpg'
+background: '/img/posts/009/post9_bg.png'
 categories:
   - marketing
 tags:
@@ -20,7 +20,7 @@ tags:
   - 해외 소식
   - 마케팅 이슈
   - 마케팅 소식
-description: '한번에 1200만명한테 새 앨범 홍보한 래퍼가 있다? Who보다 How가 포인트인 이 래퍼의 홍보 방법.'
+description: '하루에 1200만명한테 새 앨범 홍보한 래퍼가 있다? 누가 래퍼인지보다 "어떻게"가 포인트인 이 래퍼의 홍보 방법.'
 ---
 # 잘 나가는 래퍼는 게임 안에서 앨범홍보 한다?
 
@@ -68,7 +68,7 @@ BTS가 런던 웸블리에서 공연했을 당시 공연장엔 6만 명의 아�
 
 웬디스의 마스코트 빨간 머리의 소녀를 포트나이트 캐릭터 스킨으로 만들어내고 진행한 "냉동고 부시기" 
 
-![wendys_fortnite](C:\Users\15Z970-GA5BK\psps_blog\img\posts\009\wendys_fortnite.jpg)
+![wendys_fortnite](/img/posts/009/wendys_fortnite.jpg)
 
 웬디스는 트위치 계정을 만들고 웬디스 캐릭터로 배틀로얄 게임에 참여했습니다. 최후의 1인이 되는 것이 목표인 배틀로얄 게임에서 웬디스는 다른 전략을 선택했습니다. 게임 내에 만들어진 모든 버거집에 들어가서 '냉동고'만 부수는 플레이 영상을 트위치 계정을 통해 방송했죠. 변태스러울 정도로 망치를 들고 오로지 냉동고만 부수고 다녔습니다. 
 
@@ -93,9 +93,3 @@ BTS가 런던 웸블리에서 공연했을 당시 공연장엔 6만 명의 아�
 게임을 자주 하는 사람들은 알겁니다. 게임 속 광고가 얼마나 짜증나는지. 특히 게임 플레이 하기 전 봐야만 하는 강제성 있는 광고라던가  게임 화면 일부를 차지하는 배너 광고라던가. 승질머리나는 광고들이 많은데 위 사례들처럼 게임 개발사 측에서 게임에 녹아들 수 있는 광고 형식을 만들어내어 광고주와 사용자 모두에게 만족감을 주는 광고를 만들어 내면 좋겠습니다.
 
 지금까지, 세상 마케팅 이슈를 뿌시고 다니는 PSPS였습니다. 
-
-</div>
-</details>
-<span>
-<br><br>
-</span>
