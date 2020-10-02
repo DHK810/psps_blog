@@ -6,7 +6,8 @@
 
 <body>
   <!-- Load Facebook SDK for JavaScript -->
-        <div id="fb-root" onclick = datalayer.push({'event' : 'msg_click', 'value':25});></div>
+    window.dataLayer = window.dataLayer || [];
+        <div id="fb-root" onclick = dataLayer.push({'event' : 'msg_click', 'value':25});></div>
         <script>
           window.fbAsyncInit = function() {
             FB.init({
