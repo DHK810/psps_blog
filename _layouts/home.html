@@ -61,3 +61,18 @@ layout: default
       </div>
     </div>
   </div>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    let goodsName = {{ post.title }};
+    let goodsDescription = {{ post.description }};
+    let goodsInfo = [];
+      goodsInfo.push({
+        'name': goodsName,
+        'description': goodsDescription
+      });
+
+    window.dataLayer.push({
+    'event': 'detail',
+    'goodsInfo': goodsInfo
+  });
+  </script>

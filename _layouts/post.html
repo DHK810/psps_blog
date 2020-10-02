@@ -4,6 +4,9 @@ layout: default
 
 <!-- Page Header -->
 {% if page.background %}
+<script>
+
+  </script>
   <header class="masthead" style="background-image: url('{{ page.background | prepend: site.baseurl | replace: '//', '/' }}')">
 {% else %}
   <header class="masthead" style="background-image: url('{{ page.feature | prepend: site.baseurl | replace: '//', '/' }}')">
@@ -50,4 +53,19 @@ layout: default
       </div>
     </div>
   </article>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    let goodsName = '{{ page.title }}';
+    let goodsDescription = '{{ page.description }}';
+    let goodsInfo = [];
+
+    goodsInfo.push({
+      'name': goodsName,
+      'description': goodsDescription
+    });
+    window.dataLayer.push({
+    'event': 'detail',
+    'goodsInfo': goodsInfo
+  });
+  </script>
   {% include disqus.html %}
