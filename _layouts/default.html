@@ -5,64 +5,49 @@
 {% include head.html %}
 
 <body>
-  <!-- Load Facebook SDK for JavaScript -->
-    
-        <div id="fb-root" onclick = "dataLayer.push({'event' : 'msg_click', 'value':25});"></div>
-        <script>
-          window.fbAsyncInit = function() {
-            FB.init({
-              xfbml            : true,
-              version          : 'v7.0'
-            });
-          };
-
-          (function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = 'https://connect.facebook.net/ko_KR/sdk/xfbml.customerchat.js';
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
-
-        <!-- Your Chat Plugin code -->
-        <div class="fb-customerchat"
-          attribution=setup_tool
-          page_id="100975231654088"
-    theme_color="#ffcc00"
-    logged_in_greeting="안녕하세요 PSPS입니다. 무엇을 도와드릴까요?"
-    logged_out_greeting="안녕하세요 PSPS입니다. 무엇을 도와드릴까요?">
-        </div>
-        <script>
-          var div = document.createElement('div');
-          div.className = 'fb-customerchat';
-          div.setAttribute('page_id', '100975231654088');
-          div.setAttribute('ref', '');
-          document.body.appendChild(div);
-          window.fbMessengerPlugins = window.fbMessengerPlugins || {
-            init: function () {
-              FB.init({
-                appId            : '1678638095724206',
-                autoLogAppEvents : true,
-                xfbml            : true,
-                version          : 'v3.3'
-              });
-            }, callable: []
-          };
-          window.fbAsyncInit = window.fbAsyncInit || function () {
-            window.fbMessengerPlugins.callable.forEach(function (item) { item(); });
-            window.fbMessengerPlugins.init();
-          };
-          setTimeout(function () {
-            (function (d, s, id) {
-              var js, fjs = d.getElementsByTagName(s)[0];
-              if (d.getElementById(id)) { return; }
-              js = d.createElement(s);
-              js.id = id;
-              js.src = "//connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
-              fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-          }, 0);
-        </script>  {% include navbar.html %}
+  <!-- Channel Plugin Scripts -->
+<script>
+  (function() {
+    var w = window;
+    if (w.ChannelIO) {
+      return (window.console.error || window.console.log || function(){})('ChannelIO script included twice.');
+    }
+    var ch = function() {
+      ch.c(arguments);
+    };
+    ch.q = [];
+    ch.c = function(args) {
+      ch.q.push(args);
+    };
+    w.ChannelIO = ch;
+    function l() {
+      if (w.ChannelIOInitialized) {
+        return;
+      }
+      w.ChannelIOInitialized = true;
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
+      s.charset = 'UTF-8';
+      var x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+    }
+    if (document.readyState === 'complete') {
+      l();
+    } else if (window.attachEvent) {
+      window.attachEvent('onload', l);
+    } else {
+      window.addEventListener('DOMContentLoaded', l, false);
+      window.addEventListener('load', l, false);
+    }
+  })();
+  ChannelIO('boot', {
+    "pluginKey": "53505c0b-4264-4df0-8089-2a2b7912b902"
+  });
+</script>
+<!-- End Channel Plugin -->
+{% include navbar.html %}
 
   {{ content }}
 
