@@ -3,8 +3,8 @@ layout: post
 permalink: /burgerking-lockdown-whopper/
 title: '집에서 뒹굴면 공짜로 햄버거 주는 브랜드'
 date: 2020-06-13 18:00:00 +09:00
-feature: '/img/posts/008/post8_tn.jpg'
-background: '/img/posts/008/post8_bg.jpg'
+feature: '/img/posts/008/burgerking_th.jpeg'
+background: '/img/posts/008/burgerking_bg.jpeg'
 categories:
   - marketing
 tags:

@@ -3,8 +3,8 @@ layout: post
 permalink: /crossfit-ceo-s-twitter-backfire/
 title: '말 한마디 잘못해서 스폰서 날려먹은 크로스핏'
 date: 2020-06-10 18:00:00 +09:00
-feature: '/img/posts/007/post7_tn.png'
-background: '/img/posts/007/post7_bg.jpg'
+feature: '/img/posts/007/crossfit_th.jpeg'
+background: '/img/posts/007/crossfit_bg.jpeg'
 categories:
   - marketing
 tags:
