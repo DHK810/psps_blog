@@ -2,7 +2,7 @@
 layout: post
 permalink: /wisely-marketing
 title: '와이즐리는 마케팅을 어떻게 하고 있을까?'
-date: 2020-06-24 20:00:00 +09:00
+date: 2021-05-02 20:00:00 +09:00
 feature: '/img/posts/010/wisely_th.jpeg'
 background: '/img/posts/010/wisely_bg.jpeg'
 categories:
