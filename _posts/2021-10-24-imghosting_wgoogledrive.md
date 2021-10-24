@@ -2,7 +2,7 @@
 layout: post
 permalink: /img_hosting
 title: '구글 드라이브로 이미지호스팅 하기'
-date: 2021-10-25 12:00:00 +09:00
+date: 2021-10-24 23:00:00 +09:00
 feature: '/img/posts/011/imghosting_th.jpg'
 background: '/img/posts/011/imghosting_bg.jpg'
 categories:
