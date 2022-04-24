@@ -3,8 +3,8 @@ layout: post
 permalink: /img_hosting
 title: '새로운 직장에서 GTM, GA4 세팅하기(feat. 교차 도메인 설정까지)'
 date: 2022-04-24 23:00:00 +09:00
-feature: '/img/posts/013/crossdomain_th.jpg'
-background: '/img/posts/013/crossdomain_bg.jpg'
+feature: '/img/posts/013/crossdomain_th.jpeg'
+background: '/img/posts/013/crossdomain_bg.jpeg'
 categories:
   - knowledge
 tags:
