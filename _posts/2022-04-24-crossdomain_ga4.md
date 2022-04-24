@@ -14,7 +14,7 @@ tags:
   - GTM
   - 구글태그매니저
   - crossdomain
-description: '새로운 직장에 갔는데 갑자기 새로운 도메인들을 관리해야한다?'
+description: '새로운 직장에 갔는데 도메인 여러개다?! 당황하지 말고 따라해보자 GA4'
 ---
 
 안녕하세요 PSPS입니다.
@@ -38,7 +38,7 @@ delicious.banana.com에서 User_A의 유입경로 = banana.com이다.
 이렇게 되면 delicious.banana.com 유저들의 유입경로를 제대로 확인할 수가 없게 된다.
 
 그래서 여러 글을 찾아보니 GA4에 교차도메인이라는 세팅이 있다는 걸 알게 되었고 [GA4 설치 후 바로 세팅해야 하는 5가지](https://osoma.kr/blog/ga4-start-settings/)를 참고해 GTM과 GA4 설정을 다음과 같이 변경했다.
-1. banana.com, delicious.banana.com, train.banana.com에 동일한 구글태그매니저 코드 삽입
+1. banana.com, delicious.banana.com, train.banana.c om에 동일한 구글태그매니저 코드 삽입
 2. GA4 교차 도메인 설정
 
 1번은 스킵하고 GA4 교차 도메인 설정하는 방법을 보여드리겠습니다.
