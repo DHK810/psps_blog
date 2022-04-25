@@ -1,6 +1,6 @@
 ---
 layout: post
-permalink: /img_hosting
+permalink: /ga4_crossdomain_setting
 title: '새로운 직장에서 GTM, GA4 세팅하기(feat. 교차 도메인 설정까지)'
 date: 2022-04-24 23:00:00 +09:00
 feature: '/img/posts/013/crossdomain_th.jpeg'
