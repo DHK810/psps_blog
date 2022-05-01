@@ -73,11 +73,14 @@ https://drive.google.com/uc?export=view&id=[id값]
 모든 ID값이 들어간 링크 주소를 얻어내는게 목적이기 때문에 함수를 복사해서 아래로 쭉 붙여넣으시면 됩니다.
 ![엑셀함수 복사붙여넣기](/img/posts/011/idvalue_result.jpg)
 
-이렇게 되면 저 링크만 복사해서 붙여넣으면 서버 없이 이미지 주소로 불러와 웹화면에 보여줄 수 있게 됩니다!
+이렇게 하면 저 링크만 복사해서 붙여넣으면 서버 없이 이미지 주소로 불러와 웹화면에 보여줄 수 있게 됩니다!
 
 # 다음 시간엔 이미지 맵핑
 다음 시간에는 이미지맵핑(Image Mapping)으로 명함 이미지 속 `네모 영역` 을 누르면 오징어게임에 참여할 수 있는 페이지로 이동하도록 만드는 방법을 보여드리겠습니다(넷플릭스 가입자만 참여 가능)
-<img src= 'https://drive.google.com/uc?export=view&id=1m0GrUdfm1fEIBVR04LR2-JdfUMC1pb1p'>
+<img src= 'https://drive.google.com/uc?export=view&id=1m0GrUdfm1fEIBVR04LR2-JdfUMC1pb1p' usemap="#squid" >
+<map name="squid" id="squid">
+<area shape="rect" coords="760, 180, 1050, 480" href="https://www.netflix.com/title/81040344">
+</map>
 
 
 by 세상 마케팅 이슈를 뿌시고 다니는 PSPS
