@@ -47,18 +47,18 @@ description: '인천 유나이티드 FC 출정식을 NFT 입장권으로 다녀�
 
 ### 오프라인에서 NFT 인증하기
 
-![현장 NFT 검수 담당자](/img/posts/015/5_IUFC_entrance.jpg)
+![현장 NFT 검수 담당자](/img/posts/015/IUFC_5_entrance.jpg)
 
 생에 첫 혜택이 담긴 NFT 당첨이 처음이기도 하고 오프라인에서 NFT는 어떻게 인증되는지 궁금했던 터라 1시간 30분을 운전해서 도착한 인천 글로벌 캠퍼스. NFT 입장 전용 부스가 따로 있어서 담당자님께 바로 찾아갔더니 출정식 NFT 인증을 위해 QR코드를 보여달라 하시더라구요.
 
-![NFT 홀더 인증 QR 코드](/img/posts/015/6_IUFC_holder_verification.jpg)
+![NFT 홀더 인증 QR 코드](/img/posts/015/IUFC_6_holder_verification.jpg)
 
 NFT를 인증해야하는 이유는 영화관에 가서 내가 구매한 영화 티켓 보여주는 거랑 똑같습니다. ‘내가 이 NFT 주인이요’를 현장에서 증명해야하는데요. 제 지갑에 들어있는 다양한 NFT 중 IUFC 출정식 NFT의 [Holder verification]을 누르면 QR코드가 등장하고 이걸 현장 담당자님께서 확인하시고 티켓을 주셨습니다.
 
 ![보유 중인 NFT와 홀더 인증 QR코드](/img/posts/015/7_IUFC_ownedNFT_n_qrcode.png)
 
 ### NFT 오프라인 혜택
-![인천유나이티드 FC 출정식 NFT 오프라인 혜택](/img/posts/015/9_IUFC_offline_benefits.jpg)
+![인천유나이티드 FC 출정식 NFT 오프라인 혜택](/img/posts/015/IUFC_9_offline_benefits.jpg)
 
 솔직히 저는 축구팬이 아니고 NFT 경험차원에서 출정식에 참여해봤는데 인천 유나이티드 팬분들이 엄청 많더라구요. 근데 해리포터 스카프랑 비슷하게 생겨서 이쁜 구단 스카프도 받고 저도 모르게 파란 물결에 휩쓸려 인천 응원가도 부르고 왔습니다.
 ![인천 유나이티드 응원가 샤우팅](/img/posts/015/14_IUFC_chanting.jpg)
