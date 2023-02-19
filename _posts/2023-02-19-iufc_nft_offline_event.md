@@ -3,7 +3,7 @@ layout: post
 permalink: /iufc_nft_offline_event
 title: 'NFT 당첨 및 사용 후기(Feat. 인천 유나이티드 FC)'
 date: 2023-02-19 22:00:00 +09:00
-feature: '/img/posts/015/IUFC_NFT_th.png'
+feature: '/img/posts/015/IUFC_NFT_tb.png'
 background: '/img/posts/015/IUFC_NFT_bg.png'
 categories:
   - knowledge
