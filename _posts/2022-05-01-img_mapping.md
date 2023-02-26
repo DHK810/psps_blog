@@ -3,8 +3,8 @@ layout: post
 permalink: /img_mapping
 title: '이미지 안에 URL 숨기기'
 date: 2022-05-01 16:00:00 +09:00
-feature: '/img/posts/014/img_mapping_th.jpeg'
-background: '/img/posts/014/img_mapping_bg.jpeg'
+feature: '/img/posts/013/img_mapping_th.jpeg'
+background: '/img/posts/013/img_mapping_bg.jpeg'
 categories:
   - knowledge
 tags:
@@ -22,7 +22,7 @@ description: '이미지맵핑으로 사용자 경험 개선하기'
 지난 [구글 드라이브로 이미지호스팅 하기](/img_hosting)에서 언급한 이미지 맵핑을 이번 포스트에서 다뤄보겠습니다.
 # 이미지 맵핑 왜 쓰나요?
 이미지 안에 링크를 숨겨(?)두어 자연스러운 사용자 경험을 제공할 수 있는 방법 중에 하나입니다. 이미지 맵핑은 콘텐츠를 만들 때 사용할 일이 많겠지만 저는 직장에서 채용공고를 올릴 때(html 수정이 가능한 사람인, 잡플래닛 등) 이 기능을 유용하게 사용했습니다. 예시로 [우아한 형제들의 사람인 채용공고](https://www.saramin.co.kr/zf_user/jobs/relay/view?isMypage=no&rec_idx=38563977&recommend_ids=eJxNj8ERAyEMA6vJHxlLst8pJP13EebIQH7eWUuGRNuT8anol98ZFjjyU8BGghjHlpQRx3aAXhbbag1ZC8e2aCSPrdmWT1ZOsE%2BzNBB%2Fd9vxNP%2BWq1u3OWn1PFg0dbNKZfEgBcN3uUzyoLo4dbPher6wsTKm1iOhL2Z1QFw%3D&view_type=list&gz=1&t_ref_content=ing_recruit&t_ref=company_info_view#seq=0)를 보시면
-![wooah_recruit_saramin](/img/posts/014/wooah_recruit_saramin.jpg) 빨간 영역을 눌렀을 때 [자사 웹페이지의 채용공고](https://www.saramin.co.kr/zf_user/jobs/relay/view?isMypage=no&rec_idx=38563977&recommend_ids=eJxNj8ERAyEMA6vJHxlLst8pJP13EebIQH7eWUuGRNuT8anol98ZFjjyU8BGghjHlpQRx3aAXhbbag1ZC8e2aCSPrdmWT1ZOsE%2BzNBB%2Fd9vxNP%2BWq1u3OWn1PFg0dbNKZfEgBcN3uUzyoLo4dbPher6wsTKm1iOhL2Z1QFw%3D&view_type=list&gz=1&t_ref_content=ing_recruit&t_ref=company_info_view#seq=0)로 이동시키고 있습니다. 채용공고 본문에 직무별 채용공고 링크를 삽입할 필요 없이 이미지 안에 클릭을 자연스럽게 유도하는 "버튼" 모형과 링크를 이미지맵핑으로 연결해 가독성과 긍정적인 사용자 경험을 살릴 수 있죠.
+![wooah_recruit_saramin](/img/posts/013/wooah_recruit_saramin.jpg) 빨간 영역을 눌렀을 때 [자사 웹페이지의 채용공고](https://www.saramin.co.kr/zf_user/jobs/relay/view?isMypage=no&rec_idx=38563977&recommend_ids=eJxNj8ERAyEMA6vJHxlLst8pJP13EebIQH7eWUuGRNuT8anol98ZFjjyU8BGghjHlpQRx3aAXhbbag1ZC8e2aCSPrdmWT1ZOsE%2BzNBB%2Fd9vxNP%2BWq1u3OWn1PFg0dbNKZfEgBcN3uUzyoLo4dbPher6wsTKm1iOhL2Z1QFw%3D&view_type=list&gz=1&t_ref_content=ing_recruit&t_ref=company_info_view#seq=0)로 이동시키고 있습니다. 채용공고 본문에 직무별 채용공고 링크를 삽입할 필요 없이 이미지 안에 클릭을 자연스럽게 유도하는 "버튼" 모형과 링크를 이미지맵핑으로 연결해 가독성과 긍정적인 사용자 경험을 살릴 수 있죠.
 
 # 이미지 맵핑 사용 방법
 html 수정이 가능한 플랫폼이라면 어디서든지 사용 가능하니 실제로 적용해보며 연습해보세요!
@@ -66,7 +66,7 @@ href="https://www.netflix.com/title/81040344" target="_blank">
 
 ### 맥에서 이미지 좌표 확인하기
 맥에서는 이미지 미리보기에서 [인스턴트 알파]를 누르고 왼쪽 상단에서부터 원하는 영역까지 드래그를 하면 마우스 위치에 x, y 좌표가 보입니다.
-![이미지 영역 확인](/img/posts/014/img_coord.jpg)
+![이미지 영역 확인](/img/posts/013/img_coord.jpg)
 ### 윈도우에서 이미지 좌표 확인하기
 제가 윈도우가 없어서 스크린샷이 없지만 그림판을 켜시고 이미지를 불러오시면 좌측 하단에 마우스를 따라 좌표가 변경되는 것을 확인하실 수 있습니다.
 

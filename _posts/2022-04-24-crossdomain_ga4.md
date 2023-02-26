@@ -3,8 +3,8 @@ layout: post
 permalink: /ga4_crossdomain_setting
 title: '새로운 직장에서 GTM, GA4 세팅하기(feat. 교차 도메인 설정까지)'
 date: 2022-04-24 23:00:00 +09:00
-feature: '/img/posts/013/crossdomain_th.jpeg'
-background: '/img/posts/013/crossdomain_bg.jpeg'
+feature: '/img/posts/012/crossdomain_th.jpeg'
+background: '/img/posts/012/crossdomain_bg.jpeg'
 categories:
   - knowledge
 tags:
@@ -44,16 +44,16 @@ delicious.banana.com에서 User_A의 유입경로 = banana.com이다.
 1번은 스킵하고 GA4 교차 도메인 설정하는 방법을 보여드리겠습니다.
 
 - 먼저 GA4 속성에 들어가셔서 [데이터 스트림] -> 세팅하려는 도메인 선택
-![GA4_datastream](/img/posts/013/datastream.jpg)
+![GA4_datastream](/img/posts/012/datastream.jpg)
 
 - [태그 설정 더보기] 클릭
-![GA4_tag_setting](/img/posts/013/crossdomain.jpg)
+![GA4_tag_setting](/img/posts/012/crossdomain.jpg)
 
 - [도메인 구성] 클릭
-![domain_setting](/img/posts/013/domain_set.jpg)
+![domain_setting](/img/posts/012/domain_set.jpg)
 
 - 도메인 및 서브 도메인 입력
-![crossdomain_setting](/img/posts/013/crossdomain_set.jpg)
+![crossdomain_setting](/img/posts/012/crossdomain_set.jpg)
 
 이렇게 세팅을 해두시면 각 도메인을 타고 다니는 User_A의 세션이 분리되지 않고 각각의 도메인에서 User_A를 하나의 세션으로 바라보게 됩니다.
 
