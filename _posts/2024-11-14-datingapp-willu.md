@@ -1,7 +1,7 @@
 ---
 layout: post
 permalink: /dating_app_willu
-title: '디스코드 서버 세팅하는 방법 - 02'
+title: '소개팅 어플 윌유 후기: 인연을 만나는 새로운 방법'
 date: 2024-11-14 22:00:00 +09:00
 feature: '/img/posts/017/dating_app_willu_tb.png'
 background: '/img/posts/017/dating_app_willu_bg.png'
