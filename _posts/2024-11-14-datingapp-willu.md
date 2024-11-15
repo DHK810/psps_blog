@@ -2,7 +2,7 @@
 layout: post
 permalink: /dating_app_willu
 title: '23개 어플 써보고 가장 기억에 남은 소개팅 어플'
-date: 2024-11-14 22:00:00 +09:00
+date: 2024-11-15 11:00:00 +09:00
 feature: '/img/posts/017/dating_app_willu_th.png'
 background: '/img/posts/017/dating_app_willu_bg.png'
 categories:
@@ -37,6 +37,7 @@ description: '소개팅 어플 윌유 후기: 인연을 만나는 새로운 연�
 
 윌유에 처음 가입했을 때 가장 인상 깊었던 점은 간편한 회원가입 과정과 직관적인 인터페이스였습니다.  
 가입은 PASS 인증으로 간단하게 진행되며 프로필 설정 시 질문지가 잘 설계되어 있어서, 나를 잘 표현할 수 있는 답변을 작성하기 쉽게 되어 있었습니다. 프로필 답변을 정성껏 쓸수록 이성에게 호감이 오는 확률이 높아요.
+*저의 정성이 담긴 프로필 살짝ㅎㅎ 화면 캡처가 불가능해서 아이패드로 촬영*
 ![저의 정성이 담긴 프로필 살짝ㅎㅎ 화면 캡처가 불가능해서 아이패드로 촬영](/img/posts/017/willu_profile_screenshop_block.gif)
 
 ### 윌유만의 특별한 기능
