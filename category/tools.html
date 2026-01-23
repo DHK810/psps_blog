@@ -1,9 +1,14 @@
+---
+layout: null
+permalink: /category/tools/
+---
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>기타 코드 연습</title>
+    <title>기타 코드 연습 - PSPS Tools</title>
+    <link rel="icon" type="image/png" href="{{ '/img/favicon.ico' | prepend: site.baseurl }}">
     <style>
         * {
             box-sizing: border-box;
@@ -15,6 +20,36 @@
             color: #eee;
             min-height: 100vh;
             margin: 0;
+            padding: 0;
+        }
+
+        .tool-nav {
+            background: rgba(0,0,0,0.5);
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #f4d03f;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .tool-nav a {
+            color: #f4d03f;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+        .tool-nav a:hover {
+            color: #fff;
+        }
+        .tool-nav .nav-title {
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .main-content {
             padding: 20px;
         }
 
@@ -1063,6 +1098,12 @@
     </style>
 </head>
 <body>
+    <nav class="tool-nav">
+        <a href="{{ '/' | prepend: site.baseurl }}">← PSPS 블로그</a>
+        <span class="nav-title">PSPS Tools</span>
+        <a href="{{ '/' | prepend: site.baseurl }}">홈</a>
+    </nav>
+    <div class="main-content">
     <div class="container">
         <h1>🎸 기타 코드 연습</h1>
 
@@ -4066,5 +4107,6 @@
         // 초기화: E 코드 변환 표시
         showTransformChord('E');
     </script>
+    </div>
 </body>
 </html>

@@ -1,0 +1,52 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} - PSPS</title>
+    <link rel="icon" type="image/png" href="{{ '/img/favicon.ico' | prepend: site.baseurl }}">
+    <style>
+        /* 네비게이션 스타일 */
+        .tool-nav {
+            background: #1a1a2e;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #f4d03f;
+        }
+        .tool-nav a {
+            color: #f4d03f;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .tool-nav a:hover {
+            color: #fff;
+        }
+        .tool-nav .nav-title {
+            color: #fff;
+            font-size: 18px;
+        }
+        .tool-nav .back-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="tool-nav">
+        <a href="{{ '/' | prepend: site.baseurl }}" class="back-link">
+            ← PSPS 블로그로 돌아가기
+        </a>
+        <span class="nav-title">{{ page.title }}</span>
+        <span></span>
+    </nav>
+
+    {{ content }}
+</body>
+</html>
