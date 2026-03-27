@@ -10,132 +10,149 @@ permalink: /category/tools/
     <title>기타 코드 연습 - PSPS Tools</title>
     <link rel="icon" type="image/png" href="{{ '/img/favicon.ico' | prepend: site.baseurl }}">
     <style>
-        * {
-            box-sizing: border-box;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
-            font-family: 'Courier New', monospace;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: #eee;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: #0d0d14;
+            color: #e0e0ec;
             min-height: 100vh;
-            margin: 0;
-            padding: 0;
         }
 
+        /* ===== NAV ===== */
         .tool-nav {
-            background: rgba(0,0,0,0.5);
-            padding: 12px 20px;
+            background: rgba(13,13,20,0.9);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            padding: 14px 28px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid #f4d03f;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
         .tool-nav a {
-            color: #f4d03f;
+            color: #a5b4fc;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
+            font-weight: 500;
+            font-size: 13px;
+            letter-spacing: 0.3px;
             transition: color 0.2s;
         }
-        .tool-nav a:hover {
-            color: #fff;
-        }
+        .tool-nav a:hover { color: #fff; }
         .tool-nav .nav-title {
-            color: #fff;
-            font-size: 14px;
+            color: #e0e0ec;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
 
-        .main-content {
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+        /* ===== LAYOUT ===== */
+        .main-content { padding: 36px 20px; }
+        .container { max-width: 860px; margin: 0 auto; }
 
         h1 {
             text-align: center;
-            color: #f4d03f;
-            margin-bottom: 30px;
+            font-size: 26px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 36px;
+            letter-spacing: -0.5px;
         }
 
+        /* ===== CHORD SELECTOR ===== */
         .chord-selector {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 14px;
             justify-content: center;
-            margin-bottom: 30px;
+            margin-bottom: 28px;
         }
 
         .chord-group {
-            background: rgba(255,255,255,0.1);
-            padding: 15px;
-            border-radius: 10px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 16px 18px;
+            border-radius: 16px;
             text-align: center;
         }
 
         .chord-group h3 {
-            margin: 0 0 10px 0;
-            color: #f4d03f;
-            font-size: 14px;
+            margin: 0 0 12px 0;
+            color: #a5b4fc;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
         }
 
         .chord-buttons {
             display: flex;
             flex-wrap: wrap;
-            gap: 5px;
+            gap: 6px;
             justify-content: center;
         }
 
         .chord-btn {
-            background: #2c3e50;
-            border: 2px solid #3498db;
-            color: #fff;
-            padding: 10px 15px;
-            border-radius: 5px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #c0c0d4;
+            padding: 8px 13px;
+            border-radius: 8px;
             cursor: pointer;
             font-family: inherit;
-            font-size: 14px;
-            transition: all 0.2s;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.18s ease;
         }
 
         .chord-btn:hover {
-            background: #3498db;
-            transform: scale(1.05);
+            background: rgba(165,180,252,0.12);
+            border-color: rgba(165,180,252,0.35);
+            color: #fff;
+            transform: translateY(-1px);
         }
 
         .chord-btn.active {
-            background: #f4d03f;
-            color: #1a1a2e;
-            border-color: #f4d03f;
+            background: #5b5ff0;
+            border-color: #5b5ff0;
+            color: #fff;
+            box-shadow: 0 0 16px rgba(91,95,240,0.4);
         }
 
+        /* ===== CHORD DISPLAY ===== */
         .chord-display {
-            background: rgba(0,0,0,0.3);
-            border-radius: 15px;
-            padding: 30px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 32px 24px;
             text-align: center;
         }
 
         .chord-name {
-            font-size: 32px;
-            color: #f4d03f;
-            margin-bottom: 20px;
+            font-size: 34px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 22px;
+            letter-spacing: -1px;
         }
 
-        /* 새로운 프렛보드 스타일 */
+        /* ===== FRETBOARD ===== */
         .fretboard-container {
             display: inline-block;
-            background: linear-gradient(180deg, #3d2817 0%, #2a1a0f 100%);
-            padding: 25px 30px;
-            border-radius: 12px;
-            border: 4px solid #8b4513;
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+            background: linear-gradient(160deg, #271606 0%, #1a0f04 50%, #271606 100%);
+            padding: 22px 30px;
+            border-radius: 16px;
+            border: 3px solid #6b3e1a;
+            box-shadow:
+                inset 0 1px 0 rgba(255,200,100,0.08),
+                inset 0 -1px 0 rgba(0,0,0,0.6),
+                0 12px 40px rgba(0,0,0,0.7),
+                0 0 0 1px rgba(255,255,255,0.04);
         }
 
         .string-names {
@@ -146,15 +163,16 @@ permalink: /category/tools/
 
         .string-names span {
             text-align: center;
-            font-weight: bold;
-            color: #f4d03f;
-            font-size: 14px;
+            font-weight: 600;
+            color: #c8a050;
+            font-size: 12px;
+            letter-spacing: 0.5px;
         }
 
         .open-mute-row {
             display: grid;
             grid-template-columns: 40px repeat(6, 44px);
-            margin-bottom: 5px;
+            margin-bottom: 4px;
             height: 28px;
         }
 
@@ -162,17 +180,12 @@ permalink: /category/tools/
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
         }
 
-        .open-mute-row .open {
-            color: #2ecc71;
-        }
-
-        .open-mute-row .mute {
-            color: #e74c3c;
-        }
+        .open-mute-row .open { color: #34d399; }
+        .open-mute-row .mute { color: #f87171; opacity: 0.85; }
 
         .nut {
             display: grid;
@@ -183,15 +196,15 @@ permalink: /category/tools/
 
         .nut .nut-bar {
             grid-column: 2 / 8;
-            background: linear-gradient(180deg, #f5f5dc 0%, #d4c896 50%, #f5f5dc 100%);
-            border-radius: 2px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(180deg, #fffaf0 0%, #e8dfc0 40%, #c8b880 60%, #e8dfc0 100%);
+            border-radius: 3px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.6);
         }
 
         .fret-row {
             display: grid;
             grid-template-columns: 40px repeat(6, 44px);
-            height: 50px;
+            height: 52px;
             position: relative;
         }
 
@@ -199,9 +212,9 @@ permalink: /category/tools/
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #888;
-            font-size: 14px;
-            font-weight: bold;
+            color: #4a4a60;
+            font-size: 12px;
+            font-weight: 600;
         }
 
         .string-cell {
@@ -209,7 +222,7 @@ permalink: /category/tools/
             display: flex;
             align-items: center;
             justify-content: center;
-            border-bottom: 2px solid #5a5a5a;
+            border-bottom: 1px solid rgba(120,80,40,0.4);
         }
 
         .string-cell::before {
@@ -220,252 +233,214 @@ permalink: /category/tools/
             left: 50%;
             width: 2px;
             transform: translateX(-50%);
-            background: linear-gradient(180deg,
-                #c0c0c0 0%,
-                #e8e8e8 50%,
-                #c0c0c0 100%);
-            box-shadow: 0 0 3px rgba(255,255,255,0.3);
+            background: linear-gradient(180deg, #9090a8 0%, #d8d8e8 40%, #d8d8e8 60%, #9090a8 100%);
+            box-shadow: 0 0 3px rgba(200,200,220,0.15);
         }
 
-        /* 줄 굵기 차이 */
-        .string-cell.s6::before { width: 4px; background: linear-gradient(180deg, #b8860b 0%, #daa520 50%, #b8860b 100%); }
-        .string-cell.s5::before { width: 3.5px; background: linear-gradient(180deg, #b8860b 0%, #daa520 50%, #b8860b 100%); }
-        .string-cell.s4::before { width: 3px; background: linear-gradient(180deg, #b8860b 0%, #daa520 50%, #b8860b 100%); }
+        .string-cell.s6::before { width: 4.5px; background: linear-gradient(180deg, #b07018 0%, #e0a030 50%, #b07018 100%); box-shadow: 0 0 5px rgba(200,150,30,0.25); }
+        .string-cell.s5::before { width: 3.5px; background: linear-gradient(180deg, #b07018 0%, #e0a030 50%, #b07018 100%); }
+        .string-cell.s4::before { width: 3px;   background: linear-gradient(180deg, #c08828 0%, #d8a040 50%, #c08828 100%); }
         .string-cell.s3::before { width: 2px; }
         .string-cell.s2::before { width: 1.5px; }
         .string-cell.s1::before { width: 1px; }
 
+        @keyframes dotPop {
+            0%   { transform: scale(0) rotate(-45deg); opacity: 0; }
+            70%  { transform: scale(1.12) rotate(3deg); opacity: 1; }
+            100% { transform: scale(1) rotate(0deg); opacity: 1; }
+        }
+
         .finger-dot {
-            width: 32px;
-            height: 32px;
+            width: 34px;
+            height: 34px;
             border-radius: 50%;
-            background: linear-gradient(145deg, #e74c3c 0%, #c0392b 100%);
+            background: linear-gradient(145deg, #6366f1 0%, #4338ca 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             color: #fff;
-            font-weight: bold;
-            font-size: 14px;
+            font-weight: 700;
+            font-size: 13px;
             z-index: 10;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.4), inset 0 1px 2px rgba(255,255,255,0.3);
-            border: 2px solid #fff;
+            box-shadow:
+                0 4px 14px rgba(99,102,241,0.55),
+                inset 0 1px 2px rgba(255,255,255,0.25);
+            border: 2px solid rgba(255,255,255,0.35);
+            animation: dotPop 0.28s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
 
         .finger-dot.barre {
             width: 100%;
-            border-radius: 16px;
+            border-radius: 17px;
             position: absolute;
             left: 0;
             right: 0;
         }
 
-        .fret-marker {
-            position: absolute;
-            right: -25px;
-            color: #666;
-            font-size: 12px;
-        }
+        .fret-marker { position: absolute; right: -25px; color: #3a3a50; font-size: 12px; }
 
-        /* 프렛 인레이 마커 */
         .fret-row.has-marker::after {
             content: '●';
             position: absolute;
-            right: -30px;
-            color: #4a4a4a;
-            font-size: 10px;
+            right: -28px;
+            color: #2a2a3a;
+            font-size: 9px;
         }
 
         .chord-info {
-            margin-top: 20px;
-            padding: 15px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
+            margin-top: 18px;
+            padding: 16px 20px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 12px;
             text-align: left;
         }
 
         .chord-info h4 {
-            color: #f4d03f;
+            color: #a5b4fc;
             margin: 0 0 10px 0;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .finger-guide {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 10px;
-        }
+        .finger-guide { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 10px; }
+        .finger-item { display: flex; align-items: center; gap: 6px; font-size: 13px; color: #a0a0b8; }
 
-        .finger-item {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
+        /* ===== LEGEND ===== */
         .legend {
-            margin-top: 30px;
-            padding: 15px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 10px;
-            font-size: 14px;
+            margin-top: 20px;
+            padding: 14px 18px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            font-size: 13px;
+            color: #70708a;
         }
 
         .legend-title {
-            color: #f4d03f;
+            color: #a5b4fc;
             margin-bottom: 10px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .legend-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+        .legend-items { display: flex; flex-wrap: wrap; gap: 14px; }
 
-        @media (max-width: 600px) {
-            .fretboard-container {
-                padding: 15px 20px;
-            }
-
-            .string-names {
-                grid-template-columns: 30px repeat(6, 36px);
-            }
-
-            .string-names span {
-                font-size: 12px;
-            }
-
-            .open-mute-row {
-                grid-template-columns: 30px repeat(6, 36px);
-                height: 24px;
-            }
-
-            .open-mute-row span {
-                font-size: 16px;
-            }
-
-            .nut {
-                grid-template-columns: 30px repeat(6, 36px);
-            }
-
-            .fret-row {
-                grid-template-columns: 30px repeat(6, 36px);
-                height: 42px;
-            }
-
-            .fret-number {
-                font-size: 12px;
-            }
-
-            .finger-dot {
-                width: 26px;
-                height: 26px;
-                font-size: 12px;
-            }
-
-            .chord-btn {
-                padding: 8px 12px;
-                font-size: 12px;
-            }
-        }
-
-        /* 패턴 섹션 스타일 */
+        /* ===== PATTERN SECTION ===== */
         .pattern-section {
-            margin-top: 40px;
-            background: rgba(0,0,0,0.3);
-            border-radius: 15px;
-            padding: 30px;
+            margin-top: 48px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 24px;
+            padding: 32px;
         }
 
         .pattern-section h2 {
             text-align: center;
-            color: #f4d03f;
-            margin: 0 0 25px 0;
+            font-size: 19px;
+            font-weight: 700;
+            color: #fff;
+            margin: 0 0 22px 0;
+            letter-spacing: -0.3px;
         }
 
         .pattern-tabs {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 4px;
             justify-content: center;
-            margin-bottom: 20px;
+            margin-bottom: 28px;
+            background: rgba(0,0,0,0.35);
+            padding: 5px;
+            border-radius: 14px;
+            border: 1px solid rgba(255,255,255,0.06);
         }
 
         .pattern-tab {
-            background: #2c3e50;
-            border: 2px solid #3498db;
-            color: #fff;
-            padding: 12px 20px;
-            border-radius: 8px;
+            background: transparent;
+            border: none;
+            color: #70708a;
+            padding: 8px 16px;
+            border-radius: 9px;
             cursor: pointer;
             font-family: inherit;
-            font-size: 14px;
+            font-size: 13px;
+            font-weight: 500;
             transition: all 0.2s;
+            white-space: nowrap;
         }
 
-        .pattern-tab:hover {
-            background: #3498db;
-        }
+        .pattern-tab:hover { color: #c0c0d8; background: rgba(255,255,255,0.06); }
 
         .pattern-tab.active {
-            background: #e74c3c;
-            border-color: #e74c3c;
+            background: #5b5ff0;
+            color: #fff;
+            box-shadow: 0 2px 10px rgba(91,95,240,0.4);
         }
 
-        .tab-content {
-            display: none;
+        @keyframes tabFadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to   { opacity: 1; transform: translateY(0); }
         }
 
-        .tab-content.active {
-            display: block;
-        }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: tabFadeIn 0.22s ease; }
 
         .tab-content h3 {
-            color: #f4d03f;
-            margin: 0 0 10px 0;
-            border-bottom: 2px solid #f4d03f;
-            padding-bottom: 10px;
+            color: #fff;
+            margin: 0 0 8px 0;
+            font-size: 16px;
+            font-weight: 600;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
         }
 
         .tab-content p {
-            color: #bbb;
-            margin: 0 0 20px 0;
+            color: #8888a0;
+            margin: 0 0 18px 0;
+            line-height: 1.65;
+            font-size: 14px;
         }
 
         .pattern-box {
-            background: linear-gradient(135deg, rgba(52,152,219,0.1) 0%, rgba(41,128,185,0.05) 100%);
-            border-radius: 12px;
-            padding: 20px 24px;
-            margin-bottom: 24px;
-            border-left: 5px solid #3498db;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            background: rgba(255,255,255,0.03);
+            border-radius: 14px;
+            padding: 20px 22px;
+            margin-bottom: 18px;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-left: 3px solid #5b5ff0;
         }
 
         .pattern-box h4 {
-            color: #3498db;
-            margin: 0 0 16px 0;
-            font-size: 18px;
+            color: #a5b4fc;
+            margin: 0 0 14px 0;
+            font-size: 15px;
+            font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
-        .pattern-box h4::before {
-            content: '▸';
-            color: #f4d03f;
-        }
+        .pattern-box h4::before { content: '▸'; color: #c8a050; }
 
         .pattern-diagram {
-            background: linear-gradient(180deg, #12121f 0%, #1a1a2e 100%);
-            padding: 20px;
+            background: rgba(0,0,0,0.45);
+            padding: 16px 18px;
             border-radius: 10px;
             overflow-x: auto;
-            font-size: 14px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
             line-height: 1.8;
-            color: #ddd;
+            color: #a8a8c0;
             margin: 0;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
-        /* 미니 프렛보드 시각화 */
+        /* ===== MINI FRETBOARD ===== */
         .mini-fretboard-container {
             display: inline-flex;
             flex-direction: column;
@@ -475,48 +450,48 @@ permalink: /category/tools/
         }
 
         .mini-fretboard-title {
-            font-size: 13px;
-            color: #f4d03f;
-            margin-bottom: 8px;
-            font-weight: bold;
+            font-size: 12px;
+            color: #c8a050;
+            margin-bottom: 6px;
+            font-weight: 600;
         }
 
         .mini-fretboard-subtitle {
             font-size: 11px;
-            color: #888;
-            margin-top: 5px;
+            color: #50506a;
+            margin-top: 4px;
         }
 
         .mini-fretboard {
             display: grid;
             grid-template-columns: 24px repeat(4, 36px);
-            background: linear-gradient(180deg, #3d2817 0%, #2a1a0f 100%);
+            background: linear-gradient(160deg, #271606 0%, #1a0f04 100%);
             padding: 10px;
             border-radius: 8px;
-            border: 3px solid #8b4513;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            border: 2px solid #6b3e1a;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.5);
         }
 
         .mini-fretboard .string-label {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 11px;
-            color: #f4d03f;
-            font-weight: bold;
+            font-size: 10px;
+            color: #c8a050;
+            font-weight: 600;
         }
 
         .mini-fretboard .mini-nut {
-            height: 6px;
-            background: linear-gradient(180deg, #f5f5dc 0%, #d4c896 100%);
+            height: 5px;
+            background: linear-gradient(180deg, #fffaf0 0%, #d4c896 100%);
             border-radius: 2px;
             grid-column: 2 / 6;
         }
 
         .mini-fretboard .mini-cell {
             width: 36px;
-            height: 32px;
-            border-bottom: 2px solid #555;
+            height: 30px;
+            border-bottom: 1px solid rgba(120,80,40,0.4);
             position: relative;
             display: flex;
             align-items: center;
@@ -531,55 +506,51 @@ permalink: /category/tools/
             bottom: 0;
             width: 2px;
             transform: translateX(-50%);
-            background: linear-gradient(180deg, #c0c0c0 0%, #e8e8e8 50%, #c0c0c0 100%);
+            background: linear-gradient(180deg, #9090a8 0%, #d8d8e8 50%, #9090a8 100%);
         }
 
         .mini-fretboard .mini-cell.thick::before {
             width: 3px;
-            background: linear-gradient(180deg, #b8860b 0%, #daa520 50%, #b8860b 100%);
+            background: linear-gradient(180deg, #b07018 0%, #e0a030 50%, #b07018 100%);
         }
 
         .mini-fretboard .mini-dot {
-            width: 24px;
-            height: 24px;
-            background: linear-gradient(145deg, #e74c3c 0%, #c0392b 100%);
+            width: 22px;
+            height: 22px;
+            background: linear-gradient(145deg, #6366f1 0%, #4338ca 100%);
             border-radius: 50%;
             z-index: 10;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #fff;
-            font-size: 11px;
-            font-weight: bold;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.4);
-            border: 2px solid #fff;
+            font-size: 10px;
+            font-weight: 700;
+            box-shadow: 0 2px 8px rgba(99,102,241,0.45);
+            border: 1.5px solid rgba(255,255,255,0.3);
         }
 
         .mini-fretboard .mini-dot.root {
-            background: linear-gradient(145deg, #f4d03f 0%, #f39c12 100%);
-            color: #1a1a2e;
+            background: linear-gradient(145deg, #c8a050 0%, #a07830 100%);
+            box-shadow: 0 2px 8px rgba(200,160,60,0.45);
         }
 
-        .mini-fretboard .mini-open {
-            color: #2ecc71;
-            font-size: 16px;
-            font-weight: bold;
-        }
+        .mini-fretboard .mini-open { color: #34d399; font-size: 14px; font-weight: bold; }
 
         .mini-fretboard .fret-num {
             grid-column: 2 / 6;
             display: flex;
             justify-content: space-around;
             font-size: 10px;
-            color: #666;
-            padding-top: 5px;
+            color: #38385a;
+            padding-top: 4px;
         }
 
         .triad-group {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
+            gap: 12px;
             margin: 20px 0;
         }
 
@@ -587,364 +558,304 @@ permalink: /category/tools/
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 20px;
+            gap: 18px;
             margin: 20px 0;
             flex-wrap: wrap;
         }
 
-        .triad-vs .vs-arrow {
-            color: #f4d03f;
-            font-size: 24px;
-        }
+        .triad-vs .vs-arrow { color: #c8a050; font-size: 22px; }
 
-        @media (max-width: 600px) {
-            .mini-fretboard {
-                grid-template-columns: 20px repeat(4, 30px);
-                padding: 8px;
-            }
-
-            .mini-fretboard .mini-cell {
-                width: 30px;
-                height: 28px;
-            }
-
-            .mini-fretboard .mini-dot {
-                width: 20px;
-                height: 20px;
-                font-size: 10px;
-            }
-
-            .triad-group {
-                gap: 10px;
-            }
-        }
-
-        /* 코드 흐름 화살표 */
+        /* ===== CHORD FLOW ===== */
         .chord-flow {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             gap: 8px;
-            margin: 15px 0;
+            margin: 16px 0;
         }
 
         .chord-flow .flow-chord {
-            background: linear-gradient(145deg, #3498db 0%, #2980b9 100%);
+            background: #5b5ff0;
             color: #fff;
-            padding: 10px 18px;
+            padding: 9px 16px;
             border-radius: 8px;
-            font-weight: bold;
-            font-size: 16px;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+            font-weight: 700;
+            font-size: 15px;
+            box-shadow: 0 3px 12px rgba(91,95,240,0.35);
+            letter-spacing: 0.3px;
         }
 
         .chord-flow .flow-chord.minor {
-            background: linear-gradient(145deg, #9b59b6 0%, #8e44ad 100%);
+            background: #7c3aed;
+            box-shadow: 0 3px 12px rgba(124,58,237,0.35);
         }
 
         .chord-flow .flow-chord.seventh {
-            background: linear-gradient(145deg, #e67e22 0%, #d35400 100%);
+            background: #b45309;
+            box-shadow: 0 3px 12px rgba(180,83,9,0.35);
         }
 
-        .chord-flow .flow-arrow {
-            color: #f4d03f;
-            font-size: 20px;
-            font-weight: bold;
-        }
+        .chord-flow .flow-arrow { color: #c8a050; font-size: 18px; font-weight: bold; }
 
-        /* 정보 테이블 */
+        /* ===== INFO TABLE ===== */
         .info-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 15px 0;
-            font-size: 14px;
+            margin: 14px 0;
+            font-size: 13px;
         }
 
         .info-table th {
-            background: rgba(52,152,219,0.3);
-            color: #f4d03f;
-            padding: 12px;
+            background: rgba(91,95,240,0.18);
+            color: #a5b4fc;
+            padding: 11px 14px;
             text-align: center;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.06);
+            font-weight: 600;
+            font-size: 12px;
+            letter-spacing: 0.5px;
         }
 
         .info-table td {
-            padding: 10px 12px;
+            padding: 9px 12px;
             text-align: center;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.05);
             background: rgba(0,0,0,0.2);
+            color: #b8b8cc;
         }
 
         .info-table tr:hover td {
-            background: rgba(52,152,219,0.15);
+            background: rgba(91,95,240,0.1);
+            color: #e0e0f0;
         }
 
-        /* 키 배지 */
+        /* ===== BADGES & HIGHLIGHTS ===== */
         .key-badge {
             display: inline-block;
-            background: #27ae60;
-            color: #fff;
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-size: 12px;
-            font-weight: bold;
-            margin-right: 10px;
+            background: rgba(22,101,52,0.5);
+            color: #86efac;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-right: 8px;
+            border: 1px solid rgba(134,239,172,0.25);
         }
 
-        /* 강조 텍스트 */
-        .highlight {
-            color: #f4d03f;
-            font-weight: bold;
-        }
+        .highlight       { color: #c8a050; font-weight: 600; }
+        .highlight-red   { color: #f87171; font-weight: 600; }
+        .highlight-green { color: #34d399; font-weight: 600; }
+        .highlight-blue  { color: #a5b4fc; font-weight: 600; }
 
-        .highlight-red {
-            color: #e74c3c;
-            font-weight: bold;
-        }
-
-        .highlight-green {
-            color: #2ecc71;
-            font-weight: bold;
-        }
-
-        .highlight-blue {
-            color: #3498db;
-            font-weight: bold;
-        }
-
-        /* 단계 표시 */
-        .step-list {
-            list-style: none;
-            padding: 0;
-            margin: 15px 0;
-        }
+        /* ===== STEP LIST ===== */
+        .step-list { list-style: none; padding: 0; margin: 14px 0; }
 
         .step-list li {
             display: flex;
             align-items: flex-start;
             gap: 12px;
-            margin-bottom: 12px;
-            padding: 12px;
-            background: rgba(0,0,0,0.2);
-            border-radius: 8px;
+            margin-bottom: 8px;
+            padding: 13px 16px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 10px;
+            line-height: 1.55;
+            font-size: 14px;
+            color: #b0b0c8;
         }
 
         .step-list .step-num {
-            background: linear-gradient(145deg, #f4d03f 0%, #f39c12 100%);
-            color: #1a1a2e;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
+            background: #5b5ff0;
+            color: #fff;
+            width: 24px;
+            height: 24px;
+            border-radius: 7px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
+            font-weight: 700;
+            font-size: 11px;
             flex-shrink: 0;
         }
 
-        .step-list .step-content {
-            flex: 1;
-        }
+        .step-list .step-content { flex: 1; }
 
+        /* ===== TIP BOX ===== */
         .tip-box {
-            background: linear-gradient(135deg, rgba(244,208,63,0.15) 0%, rgba(243,156,18,0.1) 100%);
-            border: 2px solid #f4d03f;
+            background: rgba(200,160,50,0.07);
+            border: 1px solid rgba(200,160,50,0.28);
             border-radius: 12px;
-            padding: 18px 20px;
-            margin-top: 24px;
-            color: #f4d03f;
+            padding: 16px 20px;
+            margin-top: 18px;
+            color: #c8a050;
             position: relative;
+            font-size: 14px;
+            line-height: 1.65;
         }
 
         .tip-box::before {
             content: '💡';
             position: absolute;
             top: -12px;
-            left: 20px;
-            background: #1a1a2e;
-            padding: 0 8px;
-            font-size: 18px;
+            left: 18px;
+            background: #0d0d14;
+            padding: 0 6px;
+            font-size: 16px;
         }
 
-        .tip-box b {
-            color: #fff;
-        }
+        .tip-box b { color: #e0e0ec; }
 
-        /* 비교 박스 */
+        /* ===== COMPARE BOX ===== */
         .compare-box {
             display: grid;
             grid-template-columns: 1fr auto 1fr;
             align-items: center;
-            gap: 15px;
-            margin: 15px 0;
-            padding: 15px;
+            gap: 12px;
+            margin: 14px 0;
+            padding: 16px;
             background: rgba(0,0,0,0.2);
-            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
         }
 
         .compare-box .compare-item {
             text-align: center;
-            padding: 15px;
-            background: rgba(255,255,255,0.05);
+            padding: 14px;
+            background: rgba(255,255,255,0.04);
             border-radius: 8px;
+            font-size: 14px;
         }
 
-        .compare-box .compare-arrow {
-            font-size: 24px;
-            color: #f4d03f;
-        }
+        .compare-box .compare-arrow { font-size: 22px; color: #c8a050; }
 
-        @media (max-width: 600px) {
-            .chord-flow {
-                justify-content: center;
-            }
-
-            .chord-flow .flow-chord {
-                padding: 8px 14px;
-                font-size: 14px;
-            }
-
-            .compare-box {
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
-
-            .compare-box .compare-arrow {
-                transform: rotate(90deg);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .pattern-tab {
-                padding: 10px 15px;
-                font-size: 12px;
-            }
-
-            .pattern-diagram {
-                font-size: 11px;
-            }
-        }
-
-        /* CAGED 시스템 스타일 */
+        /* ===== CAGED BUTTONS ===== */
         .caged-selector {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
             margin: 20px 0;
         }
 
         .caged-btn {
-            background: linear-gradient(145deg, #2c3e50 0%, #1a252f 100%);
-            border: 3px solid #3498db;
-            color: #fff;
-            padding: 15px 25px;
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(255,255,255,0.1);
+            color: #c0c0d8;
+            padding: 14px 22px;
             border-radius: 12px;
             cursor: pointer;
             font-family: inherit;
             font-size: 18px;
-            font-weight: bold;
-            transition: all 0.3s;
-            min-width: 80px;
+            font-weight: 700;
+            transition: all 0.22s cubic-bezier(0.4,0,0.2,1);
+            min-width: 76px;
             text-align: center;
+            letter-spacing: 0.5px;
         }
 
         .caged-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 20px rgba(52,152,219,0.4);
+            transform: translateY(-2px);
+            background: rgba(91,95,240,0.14);
+            border-color: rgba(91,95,240,0.4);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            color: #fff;
         }
 
         .caged-btn.active {
-            background: linear-gradient(145deg, #3498db 0%, #2980b9 100%);
-            border-color: #f4d03f;
-            box-shadow: 0 0 20px rgba(244,208,63,0.5);
+            background: linear-gradient(145deg, #5b5ff0 0%, #4338ca 100%);
+            border-color: #5b5ff0;
+            color: #fff;
+            box-shadow: 0 0 20px rgba(91,95,240,0.45);
+            transform: translateY(-1px);
         }
 
         .caged-btn .btn-label {
             display: block;
-            font-size: 12px;
-            color: #888;
-            margin-top: 5px;
-            font-weight: normal;
+            font-size: 11px;
+            color: #50506a;
+            margin-top: 4px;
+            font-weight: 400;
         }
 
-        .caged-btn.active .btn-label {
-            color: #f4d03f;
-        }
+        .caged-btn.active .btn-label { color: rgba(255,255,255,0.65); }
 
         .caged-display {
-            margin-top: 25px;
-            padding: 25px;
-            background: rgba(0,0,0,0.3);
-            border-radius: 15px;
+            margin-top: 22px;
+            padding: 24px;
+            background: rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 16px;
             text-align: center;
         }
 
         .caged-display-title {
-            font-size: 24px;
-            color: #f4d03f;
-            margin-bottom: 20px;
+            font-size: 19px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 16px;
+            letter-spacing: -0.3px;
         }
 
+        /* ===== CAGED FRETBOARD ===== */
         .caged-fretboard {
             display: inline-grid;
             grid-template-columns: 30px repeat(6, 50px);
-            background: linear-gradient(180deg, #3d2817 0%, #2a1a0f 100%);
-            padding: 15px 20px;
-            border-radius: 12px;
-            border: 4px solid #8b4513;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            background: linear-gradient(160deg, #271606 0%, #1a0f04 50%, #271606 100%);
+            padding: 14px 18px;
+            border-radius: 14px;
+            border: 3px solid #6b3e1a;
+            box-shadow:
+                inset 0 1px 0 rgba(255,200,100,0.06),
+                0 8px 30px rgba(0,0,0,0.6);
         }
 
         .caged-fretboard .cf-label {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 14px;
-            color: #f4d03f;
-            font-weight: bold;
+            font-size: 11px;
+            color: #c8a050;
+            font-weight: 600;
         }
 
-        .caged-fretboard .cf-open-row {
-            display: contents;
-        }
+        .caged-fretboard .cf-open-row { display: contents; }
 
         .caged-fretboard .cf-open {
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 30px;
-            font-size: 18px;
+            height: 28px;
+            font-size: 17px;
             font-weight: bold;
         }
 
-        .caged-fretboard .cf-open.open { color: #2ecc71; }
-        .caged-fretboard .cf-open.mute { color: #e74c3c; }
+        .caged-fretboard .cf-open.open { color: #34d399; }
+        .caged-fretboard .cf-open.mute { color: #f87171; opacity: 0.85; }
 
         .caged-fretboard .cf-nut {
             grid-column: 2 / 8;
-            height: 8px;
-            background: linear-gradient(180deg, #f5f5dc 0%, #d4c896 100%);
-            border-radius: 2px;
-            margin: 5px 0;
+            height: 7px;
+            background: linear-gradient(180deg, #fffaf0 0%, #e8dfc0 40%, #c8b880 60%, #e8dfc0 100%);
+            border-radius: 3px;
+            margin: 4px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
-        .caged-fretboard .cf-fret-row {
-            display: contents;
-        }
+        .caged-fretboard .cf-fret-row { display: contents; }
 
         .caged-fretboard .cf-fret-num {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 12px;
-            color: #666;
+            font-size: 11px;
+            color: #4a4a60;
+            font-weight: 600;
         }
 
         .caged-fretboard .cf-cell {
             width: 50px;
-            height: 45px;
-            border-bottom: 2px solid #555;
+            height: 44px;
+            border-bottom: 1px solid rgba(120,80,40,0.4);
             position: relative;
             display: flex;
             align-items: center;
@@ -959,141 +870,158 @@ permalink: /category/tools/
             bottom: 0;
             width: 2px;
             transform: translateX(-50%);
-            background: linear-gradient(180deg, #c0c0c0 0%, #e8e8e8 50%, #c0c0c0 100%);
+            background: linear-gradient(180deg, #9090a8 0%, #d8d8e8 50%, #9090a8 100%);
         }
 
         .caged-fretboard .cf-cell.s6::before,
         .caged-fretboard .cf-cell.s5::before {
-            width: 3px;
-            background: linear-gradient(180deg, #b8860b 0%, #daa520 50%, #b8860b 100%);
+            width: 3.5px;
+            background: linear-gradient(180deg, #b07018 0%, #e0a030 50%, #b07018 100%);
         }
 
         .caged-fretboard .cf-dot {
-            width: 34px;
-            height: 34px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
-            background: linear-gradient(145deg, #e74c3c 0%, #c0392b 100%);
+            background: linear-gradient(145deg, #6366f1 0%, #4338ca 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             color: #fff;
-            font-size: 13px;
-            font-weight: bold;
+            font-size: 12px;
+            font-weight: 700;
             z-index: 10;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.4);
-            border: 2px solid #fff;
+            box-shadow: 0 3px 12px rgba(99,102,241,0.45);
+            border: 2px solid rgba(255,255,255,0.3);
         }
 
         .caged-fretboard .cf-dot.root {
-            background: linear-gradient(145deg, #f4d03f 0%, #f39c12 100%);
-            color: #1a1a2e;
+            background: linear-gradient(145deg, #c8a050 0%, #a07830 100%);
+            box-shadow: 0 3px 12px rgba(200,160,60,0.45);
         }
 
         .caged-fretboard .cf-barre {
             position: absolute;
-            left: 5px;
-            right: 5px;
-            height: 30px;
-            background: linear-gradient(145deg, #e74c3c 0%, #c0392b 100%);
-            border-radius: 15px;
+            left: 4px;
+            right: 4px;
+            height: 28px;
+            background: linear-gradient(145deg, #6366f1 0%, #4338ca 100%);
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #fff;
             font-size: 11px;
-            font-weight: bold;
+            font-weight: 700;
             z-index: 5;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.4);
-            border: 2px solid #fff;
+            box-shadow: 0 3px 10px rgba(99,102,241,0.4);
+            border: 2px solid rgba(255,255,255,0.25);
         }
 
+        /* ===== CAGED INFO ===== */
         .caged-info {
-            margin-top: 20px;
+            margin-top: 16px;
             text-align: left;
-            background: rgba(255,255,255,0.05);
-            padding: 15px 20px;
+            background: rgba(255,255,255,0.03);
+            padding: 14px 18px;
             border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.07);
         }
 
-        .caged-info p {
-            margin: 8px 0;
-            color: #aaa;
-        }
+        .caged-info p { margin: 7px 0; color: #8888a0; font-size: 13px; line-height: 1.55; }
 
         .caged-info .info-label {
-            color: #f4d03f;
-            font-weight: bold;
-            margin-right: 10px;
+            color: #a5b4fc;
+            font-weight: 600;
+            margin-right: 8px;
         }
 
+        /* ===== CAGED POSITION ROW ===== */
         .caged-position-row {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
+            gap: 8px;
+            margin-top: 18px;
             flex-wrap: wrap;
         }
 
         .caged-position-item {
-            background: rgba(0,0,0,0.3);
-            padding: 10px 15px;
-            border-radius: 8px;
+            background: rgba(255,255,255,0.04);
+            padding: 10px 16px;
+            border-radius: 10px;
             text-align: center;
             cursor: pointer;
             transition: all 0.2s;
-            border: 2px solid transparent;
+            border: 2px solid rgba(255,255,255,0.08);
         }
 
         .caged-position-item:hover {
-            border-color: #3498db;
+            border-color: rgba(91,95,240,0.4);
+            background: rgba(91,95,240,0.1);
         }
 
         .caged-position-item.active {
-            border-color: #f4d03f;
-            background: rgba(244,208,63,0.1);
+            border-color: #5b5ff0;
+            background: rgba(91,95,240,0.15);
+            box-shadow: 0 0 12px rgba(91,95,240,0.25);
         }
 
         .caged-position-item .pos-form {
-            font-weight: bold;
-            color: #3498db;
+            font-weight: 700;
+            color: #a5b4fc;
+            font-size: 16px;
         }
 
         .caged-position-item .pos-fret {
-            font-size: 12px;
-            color: #888;
+            font-size: 11px;
+            color: #50506a;
             margin-top: 3px;
         }
 
+        /* ===== TRANSFORM CONTENT ===== */
+        .transform-content { display: none; }
+        .transform-content.active { display: block; }
+
+        /* ===== MOBILE ===== */
         @media (max-width: 600px) {
-            .caged-fretboard {
-                grid-template-columns: 25px repeat(6, 40px);
-            }
+            .main-content { padding: 20px 14px; }
+            h1 { font-size: 21px; margin-bottom: 24px; }
 
-            .caged-fretboard .cf-cell {
-                width: 40px;
-                height: 38px;
-            }
+            .fretboard-container { padding: 16px 18px; }
 
-            .caged-fretboard .cf-dot {
-                width: 28px;
-                height: 28px;
-                font-size: 11px;
-            }
+            .string-names { grid-template-columns: 30px repeat(6, 36px); }
+            .string-names span { font-size: 11px; }
 
-            .caged-btn {
-                padding: 12px 18px;
-                font-size: 16px;
-                min-width: 60px;
-            }
-        }
+            .open-mute-row { grid-template-columns: 30px repeat(6, 36px); height: 24px; }
+            .open-mute-row span { font-size: 15px; }
 
-        /* 코드 변환 콘텐츠 토글 */
-        .transform-content {
-            display: none;
-        }
+            .nut { grid-template-columns: 30px repeat(6, 36px); }
 
-        .transform-content.active {
-            display: block;
+            .fret-row { grid-template-columns: 30px repeat(6, 36px); height: 44px; }
+            .fret-number { font-size: 11px; }
+
+            .finger-dot { width: 28px; height: 28px; font-size: 12px; }
+
+            .chord-btn { padding: 7px 11px; font-size: 12px; }
+
+            .pattern-section { padding: 20px 14px; }
+            .pattern-tab { padding: 7px 11px; font-size: 12px; }
+            .pattern-diagram { font-size: 11px; }
+
+            .mini-fretboard { grid-template-columns: 20px repeat(4, 30px); padding: 8px; }
+            .mini-fretboard .mini-cell { width: 30px; height: 26px; }
+            .mini-fretboard .mini-dot { width: 20px; height: 20px; font-size: 10px; }
+            .triad-group { gap: 8px; }
+
+            .chord-flow .flow-chord { padding: 8px 12px; font-size: 13px; }
+
+            .compare-box { grid-template-columns: 1fr; gap: 8px; }
+            .compare-box .compare-arrow { transform: rotate(90deg); }
+
+            .caged-btn { padding: 12px 16px; font-size: 15px; min-width: 60px; }
+            .caged-fretboard { grid-template-columns: 25px repeat(6, 40px); }
+            .caged-fretboard .cf-cell { width: 40px; height: 36px; }
+            .caged-fretboard .cf-dot { width: 26px; height: 26px; font-size: 11px; }
         }
     </style>
 </head>
@@ -1179,6 +1107,7 @@ permalink: /category/tools/
                 <button class="pattern-tab" data-tab="transform">코드 변환</button>
                 <button class="pattern-tab" data-tab="barre">바레 코드</button>
                 <button class="pattern-tab" data-tab="progression">코드 진행</button>
+                <button class="pattern-tab" data-tab="root-harmony">근음 & 어울리는 음</button>
             </div>
 
             <div class="pattern-content" id="patternContent">
@@ -3597,6 +3526,109 @@ permalink: /category/tools/
                         카포 2프렛 = Key D / 카포 4프렛 = Key E / 카포 5프렛 = Key F
                     </div>
                 </div>
+
+                <!-- 근음 & 어울리는 음 -->
+                <div class="tab-content" id="root-harmony">
+                    <h3>근음 &amp; 어울리는 음 찾기</h3>
+                    <p>코드의 <span class="highlight">근음(Root Note)</span>을 기준으로 어울리는 음을 알면, 코드 구성 원리와 솔로 연주를 이해하는 토대가 됩니다.</p>
+
+                    <!-- 근음이란 -->
+                    <div class="pattern-box">
+                        <h4>근음(Root Note)이란?</h4>
+                        <p style="color:#8888a0; margin-bottom:14px;">코드 이름의 기준이 되는 음입니다. C코드의 근음은 <span class="highlight">C</span>, Am코드의 근음은 <span class="highlight">A</span>입니다. 근음 위에 다른 음들을 쌓아 코드를 만들죠.</p>
+                        <div class="compare-box">
+                            <div class="compare-item">
+                                <div style="color:#a5b4fc; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">메이저 코드</div>
+                                <div style="font-size:22px; font-weight:700; color:#fff; letter-spacing:2px;">1 + 3 + 5</div>
+                                <div style="color:#8888a0; font-size:12px; margin-top:8px;">근음 + 장3도(4반음) + 완전5도(7반음)</div>
+                                <div style="margin-top:8px; color:#34d399; font-size:12px;">밝고 안정적인 소리</div>
+                            </div>
+                            <div class="compare-arrow">vs</div>
+                            <div class="compare-item">
+                                <div style="color:#a5b4fc; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">마이너 코드</div>
+                                <div style="font-size:22px; font-weight:700; color:#fff; letter-spacing:2px;">1 + ♭3 + 5</div>
+                                <div style="color:#8888a0; font-size:12px; margin-top:8px;">근음 + 단3도(3반음) + 완전5도(7반음)</div>
+                                <div style="margin-top:8px; color:#a5b4fc; font-size:12px;">어둡고 감성적인 소리</div>
+                            </div>
+                        </div>
+                        <div class="tip-box" style="margin-top:16px;">
+                            <b>핵심:</b> 메이저↔마이너의 차이는 단 <span class="highlight">반음 하나</span>. 3도 음이 반음 내려가면(장3도 → 단3도) 마이너가 됩니다.
+                        </div>
+                    </div>
+
+                    <!-- 인터랙티브 근음 선택기 -->
+                    <div class="pattern-box">
+                        <h4>근음 선택 → 어울리는 음 확인</h4>
+
+                        <div style="margin-bottom:16px;">
+                            <div style="color:#a5b4fc; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">① 근음 선택</div>
+                            <div class="chord-buttons" id="rootNoteSelector"></div>
+                        </div>
+
+                        <div style="margin-bottom:20px;">
+                            <div style="color:#a5b4fc; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">② 스케일 / 코드 유형 선택</div>
+                            <div class="chord-buttons" id="scaleTypeSelector">
+                                <button class="chord-btn active" data-type="major-chord" onclick="selectScaleType('major-chord')">메이저 코드</button>
+                                <button class="chord-btn" data-type="minor-chord" onclick="selectScaleType('minor-chord')">마이너 코드</button>
+                                <button class="chord-btn" data-type="dom7" onclick="selectScaleType('dom7')">도미넌트 7th</button>
+                                <button class="chord-btn" data-type="major" onclick="selectScaleType('major')">메이저 스케일</button>
+                                <button class="chord-btn" data-type="minor" onclick="selectScaleType('minor')">마이너 스케일</button>
+                                <button class="chord-btn" data-type="major-penta" onclick="selectScaleType('major-penta')">메이저 펜타토닉</button>
+                                <button class="chord-btn" data-type="minor-penta" onclick="selectScaleType('minor-penta')">마이너 펜타토닉</button>
+                            </div>
+                        </div>
+
+                        <div id="harmonyResult">
+                            <div id="harmonyTitle" style="font-size:19px; font-weight:700; color:#fff; margin-bottom:14px;"></div>
+                            <div id="harmonyNotes" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px;"></div>
+                            <div style="overflow-x:auto; -webkit-overflow-scrolling:touch;">
+                                <div id="harmonyFretboard"></div>
+                            </div>
+                            <div id="harmonyExplanation" style="margin-top:14px; padding:14px 16px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-radius:10px; font-size:13px; color:#8888a0; line-height:1.65;"></div>
+                        </div>
+                    </div>
+
+                    <!-- 6번줄/5번줄 음 이름 -->
+                    <div class="pattern-box">
+                        <h4>6번줄(E) · 5번줄(A) 음 이름 — 바레 코드 근음 찾기</h4>
+                        <p style="color:#8888a0; margin-bottom:14px;">바레 코드는 근음 줄의 프렛 위치가 곧 코드 이름이 됩니다. 이 두 줄의 음 이름만 외우면 프렛보드 전체를 활용할 수 있습니다.</p>
+
+                        <div style="display:flex; flex-wrap:wrap; gap:16px;">
+                            <div style="flex:1; min-width:260px;">
+                                <div style="color:#34d399; font-size:12px; font-weight:600; margin-bottom:10px; letter-spacing:0.5px;">6번줄 (E string) — E형 바레 코드 근음</div>
+                                <div id="eTuningMap"></div>
+                            </div>
+                            <div style="flex:1; min-width:260px;">
+                                <div style="color:#a5b4fc; font-size:12px; font-weight:600; margin-bottom:10px; letter-spacing:0.5px;">5번줄 (A string) — A형 바레 코드 근음</div>
+                                <div id="aTuningMap"></div>
+                            </div>
+                        </div>
+
+                        <div class="tip-box" style="margin-top:16px;">
+                            <b>활용 예시:</b><br>
+                            E형 바레를 <span class="highlight">3프렛</span>에 → <span class="highlight-green">G코드</span> / <span class="highlight">5프렛</span>에 → <span class="highlight-green">A코드</span> / <span class="highlight">8프렛</span>에 → <span class="highlight-green">C코드</span><br>
+                            A형 바레를 <span class="highlight">2프렛</span>에 → <span class="highlight-blue">B코드</span> / <span class="highlight">5프렛</span>에 → <span class="highlight-blue">D코드</span> / <span class="highlight">7프렛</span>에 → <span class="highlight-blue">E코드</span>
+                        </div>
+                    </div>
+
+                    <!-- 반음 구조 설명 -->
+                    <div class="pattern-box">
+                        <h4>12음 반음 구조 이해하기</h4>
+                        <p style="color:#8888a0; margin-bottom:14px;">기타의 한 프렛 = 반음 1개. 이 구조를 알면 모든 음 위치를 스스로 계산할 수 있습니다.</p>
+                        <div class="pattern-diagram">C  → C# → D  → D# → E  → F  → F# → G  → G# → A  → A# → B  → C
+↕      ↕      ↕      ↕      ↕      ↕      ↕      ↕      ↕      ↕      ↕      ↕
+반음  반음  반음  반음  반음  반음  반음  반음  반음  반음  반음  반음
+
+※ E→F, B→C 사이만 반음 하나 (검정 건반 없음)
+※ 나머지는 온음(반음 2개) 간격</div>
+                        <ul class="step-list" style="margin-top:16px;">
+                            <li><div class="step-num">1</div><div class="step-content"><b style="color:#e0e0ec;">근음 찾기:</b> 6번줄 또는 5번줄에서 코드 이름에 해당하는 프렛 위치를 찾는다</div></li>
+                            <li><div class="step-num">2</div><div class="step-content"><b style="color:#e0e0ec;">코드 음 계산:</b> 근음에서 위 도표대로 4반음(메이저) 또는 3반음(마이너) 올리면 3도 음</div></li>
+                            <li><div class="step-num">3</div><div class="step-content"><b style="color:#e0e0ec;">5도 음 계산:</b> 근음에서 7반음 올리면 완전5도 음 — 어떤 코드든 동일</div></li>
+                            <li><div class="step-num">4</div><div class="step-content"><b style="color:#e0e0ec;">솔로에 적용:</b> 위 인터랙티브 도구로 근음을 선택하고, 해당 스케일 음들을 프렛보드에서 확인</div></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -4106,6 +4138,202 @@ permalink: /category/tools/
 
         // 초기화: E 코드 변환 표시
         showTransformChord('E');
+
+        // ===== 근음 & 어울리는 음 =====
+        const allNotes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+
+        const scaleData = {
+            'major-chord': {
+                name: '메이저 코드',
+                intervals: [0, 4, 7],
+                degrees: ['1 (근음)', '3 (장3도)', '5 (완전5도)'],
+                desc: '밝고 안정적인 소리. 근음에서 4반음 위 + 7반음 위 음으로 구성됩니다.',
+                color: '#5b5ff0'
+            },
+            'minor-chord': {
+                name: '마이너 코드',
+                intervals: [0, 3, 7],
+                degrees: ['1 (근음)', '♭3 (단3도)', '5 (완전5도)'],
+                desc: '어둡고 감성적인 소리. 3도 음이 메이저보다 반음 낮습니다.',
+                color: '#7c3aed'
+            },
+            'dom7': {
+                name: '도미넌트 7th 코드',
+                intervals: [0, 4, 7, 10],
+                degrees: ['1 (근음)', '3 (장3도)', '5 (완전5도)', '♭7 (단7도)'],
+                desc: '블루지하고 긴장감 있는 소리. 블루스, 재즈, 록에 자주 등장합니다.',
+                color: '#b45309'
+            },
+            'major': {
+                name: '메이저 스케일',
+                intervals: [0, 2, 4, 5, 7, 9, 11],
+                degrees: ['1', '2', '3', '4', '5', '6', '7'],
+                desc: '밝고 서양음악의 기본이 되는 7음 스케일. 도-레-미-파-솔-라-시.',
+                color: '#059669'
+            },
+            'minor': {
+                name: '내추럴 마이너 스케일',
+                intervals: [0, 2, 3, 5, 7, 8, 10],
+                degrees: ['1', '2', '♭3', '4', '5', '♭6', '♭7'],
+                desc: '어둡고 감성적인 7음 스케일. 록, 발라드, 클래식에 많이 사용됩니다.',
+                color: '#7c3aed'
+            },
+            'major-penta': {
+                name: '메이저 펜타토닉',
+                intervals: [0, 2, 4, 7, 9],
+                degrees: ['1', '2', '3', '5', '6'],
+                desc: '5음계. 밝고 경쾌한 느낌. 컨트리·팝 솔로에 잘 어울립니다.',
+                color: '#0891b2'
+            },
+            'minor-penta': {
+                name: '마이너 펜타토닉',
+                intervals: [0, 3, 5, 7, 10],
+                degrees: ['1', '♭3', '4', '5', '♭7'],
+                desc: '5음계. 록·블루스 솔로의 핵심 스케일. 기타 솔로 입문으로 가장 많이 배웁니다.',
+                color: '#dc2626'
+            }
+        };
+
+        // 각 줄의 개방현 음 (반음 기준, C=0)
+        const openStringNotes = [4, 9, 2, 7, 11, 4]; // E A D G B e
+        const stringLabels = ['6E', '5A', '4D', '3G', '2B', '1e'];
+
+        let selectedRoot = 0;
+        let selectedScaleType = 'major-chord';
+
+        function initRootNoteSelector() {
+            const container = document.getElementById('rootNoteSelector');
+            if (!container) return;
+            allNotes.forEach((note, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'chord-btn' + (idx === 0 ? ' active' : '');
+                btn.textContent = note;
+                btn.dataset.rootIdx = idx;
+                btn.onclick = () => selectRoot(idx);
+                container.appendChild(btn);
+            });
+            renderHarmony();
+            renderStringMaps();
+        }
+
+        function selectRoot(idx) {
+            selectedRoot = idx;
+            document.querySelectorAll('#rootNoteSelector .chord-btn').forEach((btn, i) => {
+                btn.classList.toggle('active', parseInt(btn.dataset.rootIdx) === idx);
+            });
+            renderHarmony();
+        }
+
+        function selectScaleType(type) {
+            selectedScaleType = type;
+            document.querySelectorAll('#scaleTypeSelector .chord-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.type === type);
+            });
+            renderHarmony();
+        }
+
+        function renderHarmony() {
+            const root = selectedRoot;
+            const type = selectedScaleType;
+            const data = scaleData[type];
+            const notes = data.intervals.map(i => allNotes[(root + i) % 12]);
+
+            const titleEl = document.getElementById('harmonyTitle');
+            if (titleEl) titleEl.innerHTML = `<span style="color:${data.color}">${allNotes[root]} ${data.name}</span>`;
+
+            const notesEl = document.getElementById('harmonyNotes');
+            if (notesEl) {
+                notesEl.innerHTML = '';
+                notes.forEach((note, i) => {
+                    const pill = document.createElement('div');
+                    const isRoot = i === 0;
+                    pill.style.cssText = `display:inline-flex;align-items:center;gap:6px;background:${isRoot ? data.color : 'rgba(255,255,255,0.06)'};border:1px solid ${isRoot ? data.color : 'rgba(255,255,255,0.1)'};border-radius:8px;padding:8px 14px;box-shadow:${isRoot ? '0 0 12px ' + data.color + '55' : 'none'};`;
+                    pill.innerHTML = `<span style="font-size:15px;font-weight:700;color:#fff;">${note}</span><span style="font-size:11px;font-weight:400;color:rgba(255,255,255,0.6);">${data.degrees[i]}</span>`;
+                    notesEl.appendChild(pill);
+                });
+            }
+
+            renderHarmonyFretboard(root, notes, data.color);
+
+            const expEl = document.getElementById('harmonyExplanation');
+            if (expEl) {
+                expEl.innerHTML = `<b style="color:#e0e0ec;">${allNotes[root]} ${data.name}</b> 구성음: ${notes.map((n, i) => `<span style="color:${i===0 ? data.color : '#a5b4fc'};font-weight:600;">${n}</span>`).join(' · ')}<br><br>${data.desc}`;
+            }
+        }
+
+        function renderHarmonyFretboard(rootIdx, scaleNotes, accentColor) {
+            const container = document.getElementById('harmonyFretboard');
+            if (!container) return;
+            const noteSet = new Set(scaleNotes);
+            const FRETS = 12;
+            const CELL_W = 38;
+            const CELL_H = 36;
+            const LABEL_W = 42;
+
+            let html = `<div style="display:inline-grid;grid-template-columns:${LABEL_W}px repeat(${FRETS+1},${CELL_W}px);background:linear-gradient(160deg,#271606,#1a0f04);padding:12px 14px;border-radius:12px;border:2px solid #6b3e1a;min-width:max-content;">`;
+
+            // 프렛 번호 헤더
+            html += `<div></div>`;
+            for (let f = 0; f <= FRETS; f++) {
+                const marker = [0,3,5,7,9,12].includes(f);
+                html += `<div style="text-align:center;font-size:10px;color:${marker ? '#c8a050' : '#3a3a50'};font-weight:${marker ? '700' : '400'};padding-bottom:4px;">${f===0 ? '개' : f}</div>`;
+            }
+
+            for (let s = 0; s < 6; s++) {
+                const openNote = openStringNotes[s];
+                const stringThick = [3.5, 3, 2.5, 2, 1.5, 1][s];
+                const stringColor = s < 3 ? 'linear-gradient(90deg,#b07018,#e0a030,#b07018)' : 'linear-gradient(90deg,#9090a8,#d8d8e8,#9090a8)';
+
+                html += `<div style="display:flex;align-items:center;justify-content:flex-end;padding-right:6px;color:#c8a050;font-size:10px;font-weight:600;">${stringLabels[s]}</div>`;
+
+                for (let f = 0; f <= FRETS; f++) {
+                    const noteIdx = (openNote + f) % 12;
+                    const noteName = allNotes[noteIdx];
+                    const isRoot = noteIdx === rootIdx;
+                    const isScale = noteSet.has(noteName);
+
+                    html += `<div style="position:relative;height:${CELL_H}px;display:flex;align-items:center;justify-content:center;border-right:${f<FRETS ? '1px solid rgba(120,80,40,0.3)' : 'none'};">`;
+
+                    // 너트
+                    if (f === 0) {
+                        html += `<div style="position:absolute;left:0;right:0;top:50%;height:${stringThick}px;transform:translateY(-50%);background:${stringColor};z-index:1;"></div>`;
+                        html += `<div style="position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(90deg,#fffaf0,#c8b880);z-index:2;border-radius:1px;"></div>`;
+                    } else {
+                        html += `<div style="position:absolute;left:0;right:0;top:50%;height:${stringThick}px;transform:translateY(-50%);background:${stringColor};z-index:1;"></div>`;
+                    }
+
+                    if (isScale) {
+                        html += `<div style="position:relative;z-index:10;width:${isRoot?28:24}px;height:${isRoot?28:24}px;border-radius:50%;background:${isRoot ? accentColor : 'rgba(20,20,40,0.92)'};border:${isRoot ? '2px solid rgba(255,255,255,0.45)' : '1.5px solid rgba(165,180,252,0.5)'};display:flex;align-items:center;justify-content:center;font-size:${isRoot?9:8}px;font-weight:700;color:${isRoot ? '#fff' : '#a5b4fc'};box-shadow:${isRoot ? '0 0 10px '+accentColor+'90' : 'none'};">${noteName}</div>`;
+                    }
+
+                    html += '</div>';
+                }
+            }
+
+            html += '</div>';
+            container.innerHTML = html;
+        }
+
+        function renderStringMaps() {
+            renderOneStringMap('eTuningMap', 4, '#34d399');
+            renderOneStringMap('aTuningMap', 9, '#a5b4fc');
+        }
+
+        function renderOneStringMap(containerId, openNote, color) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            let html = '<div style="display:flex;flex-wrap:wrap;gap:4px;">';
+            for (let fret = 0; fret <= 12; fret++) {
+                const noteIdx = (openNote + fret) % 12;
+                const noteName = allNotes[noteIdx];
+                const isNatural = !noteName.includes('#');
+                html += `<div style="display:flex;flex-direction:column;align-items:center;background:${isNatural ? 'rgba(255,255,255,0.06)' : 'rgba(255,255,255,0.02)'};border:1px solid ${isNatural ? 'rgba(255,255,255,0.12)' : 'rgba(255,255,255,0.05)'};border-radius:8px;padding:6px 7px;min-width:36px;text-align:center;"><div style="font-size:13px;font-weight:700;color:${color};">${noteName}</div><div style="font-size:9px;color:#40406a;margin-top:2px;">${fret===0 ? '개방' : fret+'프렛'}</div></div>`;
+            }
+            html += '</div>';
+            container.innerHTML = html;
+        }
+
+        initRootNoteSelector();
     </script>
     </div>
 </body>
