@@ -1,0 +1,2372 @@
+---
+layout: null
+permalink: /category/tools/patterns/
+---
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코드 암기 패턴 - PSPS Tools</title>
+    <link rel="icon" type="image/png" href="{{ '/img/favicon.ico' | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ '/assets/css/guitar-tools.css' | prepend: site.baseurl }}">
+</head>
+<body>
+    <nav class="tool-nav">
+        <a href="{{ '/' | prepend: site.baseurl }}">← PSPS 블로그</a>
+        <span class="nav-title">PSPS Tools</span>
+        <a href="{{ '/category/tools/' | prepend: site.baseurl }}">모든 툴</a>
+    </nav>
+    <div class="main-content">
+    <div class="container">
+        <h1>🎯 코드 암기 패턴</h1>
+        <div class="pattern-section">
+            <h2>코드 암기 패턴</h2>
+
+            <div class="pattern-tabs">
+                <button class="pattern-tab active" data-tab="caged">CAGED 시스템</button>
+                <button class="pattern-tab" data-tab="fretboard-notes">음 찾기</button>
+                <button class="pattern-tab" data-tab="triad">트라이어드</button>
+                <button class="pattern-tab" data-tab="transform">코드 변환</button>
+                <button class="pattern-tab" data-tab="barre">바레 코드</button>
+                <button class="pattern-tab" data-tab="progression">코드 진행</button>
+            </div>
+
+            <div class="pattern-content" id="patternContent">
+                <!-- CAGED 시스템 -->
+                <div class="tab-content active" id="caged">
+                    <h3>CAGED 시스템이란?</h3>
+                    <p>5가지 기본 오픈 코드(<span class="highlight">C, A, G, E, D</span>) 모양을 프렛보드 전체에서 활용하는 방법</p>
+
+                    <div style="background:rgba(244,208,63,0.1); border:1px solid #f4d03f; border-radius:8px; padding:10px 15px; margin-bottom:20px; font-size:13px;">
+                        <span style="color:#f4d03f;">📍 프렛보드 보는 방향:</span> <b>위쪽 = 너트(기타 머리)</b>, 아래쪽 = 높은 프렛 (기타를 정면에서 바라볼 때)
+                    </div>
+
+                    <div class="pattern-box">
+                        <h4>5가지 기본 폼 - 클릭해서 확인!</h4>
+                        <p style="color:#aaa; margin-bottom:15px;">각 버튼을 클릭하면 오픈 코드 모양을 볼 수 있습니다</p>
+
+                        <div class="caged-selector" id="cagedBasicSelector">
+                            <button class="caged-btn" data-form="C" onclick="showCagedForm('C')">
+                                C
+                                <span class="btn-label">C형</span>
+                            </button>
+                            <span class="flow-arrow" style="align-self:center;">→</span>
+                            <button class="caged-btn" data-form="A" onclick="showCagedForm('A')">
+                                A
+                                <span class="btn-label">A형</span>
+                            </button>
+                            <span class="flow-arrow" style="align-self:center;">→</span>
+                            <button class="caged-btn" data-form="G" onclick="showCagedForm('G')">
+                                G
+                                <span class="btn-label">G형</span>
+                            </button>
+                            <span class="flow-arrow" style="align-self:center;">→</span>
+                            <button class="caged-btn" data-form="E" onclick="showCagedForm('E')">
+                                E
+                                <span class="btn-label">E형</span>
+                            </button>
+                            <span class="flow-arrow" style="align-self:center;">→</span>
+                            <button class="caged-btn" data-form="D" onclick="showCagedForm('D')">
+                                D
+                                <span class="btn-label">D형</span>
+                            </button>
+                        </div>
+
+                        <div class="caged-display" id="cagedBasicDisplay" style="display:none;">
+                            <div class="caged-display-title" id="cagedBasicTitle"></div>
+                            <div class="caged-fretboard" id="cagedBasicFretboard"></div>
+                            <div class="caged-info" id="cagedBasicInfo"></div>
+                        </div>
+                    </div>
+
+                    <div class="pattern-box">
+                        <h4>C 코드를 CAGED 5가지 폼으로 연주</h4>
+                        <p style="color:#aaa; margin-bottom:15px;">같은 C코드를 넥 전체에서 연주! 클릭해서 확인하세요</p>
+
+                        <div class="caged-position-row" id="cagedPositionSelector">
+                            <div class="caged-position-item active" data-pos="C" onclick="showCagedPosition('C')">
+                                <div class="pos-form">C형</div>
+                                <div class="pos-fret">0프렛 (오픈)</div>
+                            </div>
+                            <div class="caged-position-item" data-pos="A" onclick="showCagedPosition('A')">
+                                <div class="pos-form">A형</div>
+                                <div class="pos-fret">3프렛</div>
+                            </div>
+                            <div class="caged-position-item" data-pos="G" onclick="showCagedPosition('G')">
+                                <div class="pos-form">G형</div>
+                                <div class="pos-fret">5프렛</div>
+                            </div>
+                            <div class="caged-position-item" data-pos="E" onclick="showCagedPosition('E')">
+                                <div class="pos-form">E형</div>
+                                <div class="pos-fret">8프렛</div>
+                            </div>
+                            <div class="caged-position-item" data-pos="D" onclick="showCagedPosition('D')">
+                                <div class="pos-form">D형</div>
+                                <div class="pos-fret">10프렛</div>
+                            </div>
+                        </div>
+
+                        <div class="caged-display" id="cagedPositionDisplay">
+                            <div class="caged-display-title" id="cagedPositionTitle">C 코드 - C형 (오픈)</div>
+                            <div class="caged-fretboard" id="cagedPositionFretboard"></div>
+                            <div class="caged-info" id="cagedPositionInfo"></div>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <b>암기 팁:</b> "<span class="highlight">CAGED</span>(갇힌)"라는 단어로 순서를 기억하세요!<br><br>
+                        <b>활용법:</b> 바레 코드가 어려우면 먼저 오픈 폼을 익히고, 점차 넥 위쪽으로 이동하며 연습하세요.
+                    </div>
+                </div>
+
+                <!-- 프렛보드 음 찾기 -->
+                <div class="tab-content" id="fretboard-notes">
+                    <h3>프렛보드 음 찾기 - 쉬운 방법</h3>
+                    <p>몇 가지 <span class="highlight">기준점</span>만 외우면 모든 음을 빠르게 찾을 수 있습니다!</p>
+
+                    <div style="background:rgba(244,208,63,0.1); border:1px solid #f4d03f; border-radius:8px; padding:10px 15px; margin-bottom:20px; font-size:13px;">
+                        <span style="color:#f4d03f;">📍 모든 다이어그램 보는 방향:</span> <b>왼쪽 = 기타 머리(헤드/너트)</b>, 오른쪽 = 바디 방향(높은 프렛)
+                    </div>
+
+                    <div class="pattern-box">
+                        <h4>1단계: 오픈 스트링 음 외우기</h4>
+                        <p style="color:#aaa; margin-bottom:15px;">기타 6줄의 오픈(0프렛) 음을 먼저 외우세요</p>
+
+                        <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin:20px 0;">
+                            <div style="background:linear-gradient(145deg,#b8860b,#daa520); width:50px; height:70px; border-radius:8px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                                <span style="font-size:24px; font-weight:bold; color:#1a1a2e;">E</span>
+                                <span style="font-size:11px; color:#1a1a2e;">6번줄</span>
+                            </div>
+                            <div style="background:linear-gradient(145deg,#b8860b,#daa520); width:50px; height:70px; border-radius:8px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                                <span style="font-size:24px; font-weight:bold; color:#1a1a2e;">A</span>
+                                <span style="font-size:11px; color:#1a1a2e;">5번줄</span>
+                            </div>
+                            <div style="background:linear-gradient(145deg,#b8860b,#daa520); width:50px; height:70px; border-radius:8px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                                <span style="font-size:24px; font-weight:bold; color:#1a1a2e;">D</span>
+                                <span style="font-size:11px; color:#1a1a2e;">4번줄</span>
+                            </div>
+                            <div style="background:linear-gradient(145deg,#c0c0c0,#e8e8e8); width:50px; height:70px; border-radius:8px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                                <span style="font-size:24px; font-weight:bold; color:#1a1a2e;">G</span>
+                                <span style="font-size:11px; color:#1a1a2e;">3번줄</span>
+                            </div>
+                            <div style="background:linear-gradient(145deg,#c0c0c0,#e8e8e8); width:50px; height:70px; border-radius:8px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                                <span style="font-size:24px; font-weight:bold; color:#1a1a2e;">B</span>
+                                <span style="font-size:11px; color:#1a1a2e;">2번줄</span>
+                            </div>
+                            <div style="background:linear-gradient(145deg,#c0c0c0,#e8e8e8); width:50px; height:70px; border-radius:8px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                                <span style="font-size:24px; font-weight:bold; color:#1a1a2e;">E</span>
+                                <span style="font-size:11px; color:#1a1a2e;">1번줄</span>
+                            </div>
+                        </div>
+
+                        <div style="background:rgba(244,208,63,0.1); padding:15px; border-radius:10px; text-align:center;">
+                            <p style="color:#f4d03f; margin:0; font-size:18px;"><b>"</b>E<b>ddy</b> A<b>te</b> D<b>ynamite</b> G<b>ood</b> B<b>ye</b> E<b>ddy</b><b>"</b></p>
+                            <p style="color:#888; margin:10px 0 0 0; font-size:13px;">또는 <b>"이(E) 아(A) 디(D) 지(G) 비(B) 이(E)"</b>로 외우기</p>
+                        </div>
+                    </div>
+
+                    <div class="pattern-box">
+                        <h4>2단계: 핵심 기준점 외우기</h4>
+                        <p style="color:#aaa; margin-bottom:15px;">이 프렛들만 외우면 나머지는 계산으로 찾을 수 있어요!</p>
+
+                        <table class="info-table">
+                            <tr>
+                                <th>프렛</th>
+                                <th>6번줄 (E)</th>
+                                <th>5번줄 (A)</th>
+                                <th>특징</th>
+                            </tr>
+                            <tr style="background:rgba(46,204,113,0.15);">
+                                <td><span class="highlight">0</span></td>
+                                <td><b>E</b></td>
+                                <td><b>A</b></td>
+                                <td>오픈 스트링</td>
+                            </tr>
+                            <tr style="background:rgba(52,152,219,0.15);">
+                                <td><span class="highlight">5</span></td>
+                                <td><b>A</b></td>
+                                <td><b>D</b></td>
+                                <td>⭐ 가장 중요! (인레이 마커)</td>
+                            </tr>
+                            <tr style="background:rgba(52,152,219,0.15);">
+                                <td><span class="highlight">7</span></td>
+                                <td><b>B</b></td>
+                                <td><b>E</b></td>
+                                <td>5프렛에서 2칸 위</td>
+                            </tr>
+                            <tr style="background:rgba(231,76,60,0.15);">
+                                <td><span class="highlight">12</span></td>
+                                <td><b>E</b></td>
+                                <td><b>A</b></td>
+                                <td>⭐ 옥타브 (0프렛과 같음)</td>
+                            </tr>
+                        </table>
+
+                        <p style="color:#2ecc71; margin-top:15px;">✓ <b>5프렛</b>과 <b>12프렛</b>만 외우면 절반 성공!</p>
+                    </div>
+
+                    <div class="pattern-box">
+                        <h4>3단계: 음 순서 규칙</h4>
+                        <p style="color:#aaa; margin-bottom:15px;">음은 항상 이 순서로 반복됩니다</p>
+
+                        <div style="background:rgba(0,0,0,0.3); padding:20px; border-radius:12px; text-align:center;">
+                            <div class="chord-flow" style="justify-content:center;">
+                                <span style="background:#3498db; color:#fff; padding:10px 15px; border-radius:8px; font-weight:bold;">C</span>
+                                <span class="flow-arrow">→</span>
+                                <span style="background:#555; color:#fff; padding:10px 12px; border-radius:8px; font-size:12px;">C#/Db</span>
+                                <span class="flow-arrow">→</span>
+                                <span style="background:#3498db; color:#fff; padding:10px 15px; border-radius:8px; font-weight:bold;">D</span>
+                                <span class="flow-arrow">→</span>
+                                <span style="background:#555; color:#fff; padding:10px 12px; border-radius:8px; font-size:12px;">D#/Eb</span>
+                                <span class="flow-arrow">→</span>
+                                <span style="background:#3498db; color:#fff; padding:10px 15px; border-radius:8px; font-weight:bold;">E</span>
+                                <span class="flow-arrow" style="color:#e74c3c;">→</span>
+                                <span style="background:#3498db; color:#fff; padding:10px 15px; border-radius:8px; font-weight:bold;">F</span>
+                            </div>
+                            <div class="chord-flow" style="justify-content:center; margin-top:15px;">
+                                <span style="background:#555; color:#fff; padding:10px 12px; border-radius:8px; font-size:12px;">F#/Gb</span>
+                                <span class="flow-arrow">→</span>
+                                <span style="background:#3498db; color:#fff; padding:10px 15px; border-radius:8px; font-weight:bold;">G</span>
+                                <span class="flow-arrow">→</span>
+                                <span style="background:#555; color:#fff; padding:10px 12px; border-radius:8px; font-size:12px;">G#/Ab</span>
+                                <span class="flow-arrow">→</span>
+                                <span style="background:#3498db; color:#fff; padding:10px 15px; border-radius:8px; font-weight:bold;">A</span>
+                                <span class="flow-arrow">→</span>
+                                <span style="background:#555; color:#fff; padding:10px 12px; border-radius:8px; font-size:12px;">A#/Bb</span>
+                                <span class="flow-arrow">→</span>
+                                <span style="background:#3498db; color:#fff; padding:10px 15px; border-radius:8px; font-weight:bold;">B</span>
+                                <span class="flow-arrow" style="color:#e74c3c;">→</span>
+                                <span style="background:#3498db; color:#fff; padding:10px 15px; border-radius:8px; font-weight:bold;">C</span>
+                            </div>
+                        </div>
+
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px; margin-top:20px;">
+                            <div style="background:rgba(231,76,60,0.1); border:2px solid #e74c3c; border-radius:10px; padding:15px; text-align:center;">
+                                <p style="color:#e74c3c; font-weight:bold; margin:0 0 10px 0;">반음만 있는 곳</p>
+                                <p style="color:#fff; margin:0; font-size:20px;"><b>E↔F</b>, <b>B↔C</b></p>
+                                <p style="color:#aaa; margin:10px 0 0 0; font-size:12px;"># 또는 b 없이 바로 연결!</p>
+                            </div>
+                            <div style="background:rgba(52,152,219,0.1); border:2px solid #3498db; border-radius:10px; padding:15px; text-align:center;">
+                                <p style="color:#3498db; font-weight:bold; margin:0 0 10px 0;">나머지는 온음</p>
+                                <p style="color:#fff; margin:0; font-size:20px;">사이에 <b>#/b</b> 있음</p>
+                                <p style="color:#aaa; margin:10px 0 0 0; font-size:12px;">C-C#-D, D-D#-E 등</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pattern-box">
+                        <h4>4단계: 옥타브 패턴 활용</h4>
+                        <p style="color:#aaa; margin-bottom:15px;">같은 음을 다른 위치에서 빠르게 찾는 방법!</p>
+
+                        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:20px;">
+                            <div style="background:rgba(0,0,0,0.3); padding:20px; border-radius:12px;">
+                                <p style="color:#f4d03f; font-weight:bold; margin:0 0 15px 0;">패턴 1: 6번줄 → 4번줄</p>
+                                <div style="text-align:center;">
+                                    <p style="color:#fff; font-size:16px; margin:0;"><b>2프렛 위 + 2줄 아래</b></p>
+                                    <p style="color:#888; font-size:13px; margin:10px 0 0 0;">예: 6번줄 3프렛(G) → 4번줄 5프렛(G)</p>
+                                </div>
+                                <div style="margin-top:15px; text-align:center;">
+                                    <svg width="120" height="80" style="background:rgba(0,0,0,0.3); border-radius:8px;">
+                                        <line x1="20" y1="20" x2="100" y2="20" stroke="#666" stroke-width="2"/>
+                                        <line x1="20" y1="40" x2="100" y2="40" stroke="#666" stroke-width="2"/>
+                                        <line x1="20" y1="60" x2="100" y2="60" stroke="#666" stroke-width="2"/>
+                                        <circle cx="35" cy="20" r="10" fill="#e74c3c"/>
+                                        <circle cx="75" cy="60" r="10" fill="#e74c3c"/>
+                                        <text x="35" y="24" fill="#fff" font-size="10" text-anchor="middle">6</text>
+                                        <text x="75" y="64" fill="#fff" font-size="10" text-anchor="middle">4</text>
+                                        <path d="M45 25 Q60 45 65 55" stroke="#f4d03f" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <div style="background:rgba(0,0,0,0.3); padding:20px; border-radius:12px;">
+                                <p style="color:#f4d03f; font-weight:bold; margin:0 0 15px 0;">패턴 2: 5번줄 → 3번줄</p>
+                                <div style="text-align:center;">
+                                    <p style="color:#fff; font-size:16px; margin:0;"><b>2프렛 위 + 2줄 아래</b></p>
+                                    <p style="color:#888; font-size:13px; margin:10px 0 0 0;">예: 5번줄 3프렛(C) → 3번줄 5프렛(C)</p>
+                                </div>
+                                <div style="margin-top:15px; text-align:center;">
+                                    <svg width="120" height="80" style="background:rgba(0,0,0,0.3); border-radius:8px;">
+                                        <line x1="20" y1="20" x2="100" y2="20" stroke="#666" stroke-width="2"/>
+                                        <line x1="20" y1="40" x2="100" y2="40" stroke="#666" stroke-width="2"/>
+                                        <line x1="20" y1="60" x2="100" y2="60" stroke="#666" stroke-width="2"/>
+                                        <circle cx="35" cy="20" r="10" fill="#3498db"/>
+                                        <circle cx="75" cy="60" r="10" fill="#3498db"/>
+                                        <text x="35" y="24" fill="#fff" font-size="10" text-anchor="middle">5</text>
+                                        <text x="75" y="64" fill="#fff" font-size="10" text-anchor="middle">3</text>
+                                        <path d="M45 25 Q60 45 65 55" stroke="#f4d03f" stroke-width="2" fill="none"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <div style="background:rgba(0,0,0,0.3); padding:20px; border-radius:12px;">
+                                <p style="color:#f4d03f; font-weight:bold; margin:0 0 15px 0;">패턴 3: 4번줄 → 2번줄</p>
+                                <div style="text-align:center;">
+                                    <p style="color:#fff; font-size:16px; margin:0;"><b>3프렛 위 + 2줄 아래</b></p>
+                                    <p style="color:#888; font-size:13px; margin:10px 0 0 0;">예: 4번줄 5프렛(G) → 2번줄 8프렛(G)</p>
+                                </div>
+                                <div style="margin-top:15px; text-align:center;">
+                                    <svg width="120" height="80" style="background:rgba(0,0,0,0.3); border-radius:8px;">
+                                        <line x1="20" y1="20" x2="100" y2="20" stroke="#666" stroke-width="2"/>
+                                        <line x1="20" y1="40" x2="100" y2="40" stroke="#666" stroke-width="2"/>
+                                        <line x1="20" y1="60" x2="100" y2="60" stroke="#666" stroke-width="2"/>
+                                        <circle cx="35" cy="20" r="10" fill="#2ecc71"/>
+                                        <circle cx="85" cy="60" r="10" fill="#2ecc71"/>
+                                        <text x="35" y="24" fill="#fff" font-size="10" text-anchor="middle">4</text>
+                                        <text x="85" y="64" fill="#fff" font-size="10" text-anchor="middle">2</text>
+                                        <path d="M45 25 Q65 45 75 55" stroke="#f4d03f" stroke-width="2" fill="none"/>
+                                    </svg>
+                                </div>
+                                <p style="color:#e74c3c; font-size:11px; margin:10px 0 0 0; text-align:center;">※ B줄(2번) 때문에 3프렛!</p>
+                            </div>
+
+                            <div style="background:rgba(0,0,0,0.3); padding:20px; border-radius:12px;">
+                                <p style="color:#f4d03f; font-weight:bold; margin:0 0 15px 0;">패턴 4: 같은 줄 12프렛</p>
+                                <div style="text-align:center;">
+                                    <p style="color:#fff; font-size:16px; margin:0;"><b>+12프렛 = 옥타브</b></p>
+                                    <p style="color:#888; font-size:13px; margin:10px 0 0 0;">예: 어떤 줄 3프렛 → 15프렛 = 같은 음</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pattern-box">
+                        <h4>5단계: 인접 줄 활용</h4>
+                        <p style="color:#aaa; margin-bottom:15px;">옆 줄에서 같은 음 찾기</p>
+
+                        <div style="background:rgba(0,0,0,0.3); padding:20px; border-radius:12px;">
+                            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:15px;">
+                                <div style="text-align:center; padding:15px; background:rgba(52,152,219,0.1); border-radius:10px;">
+                                    <p style="color:#3498db; font-weight:bold; margin:0 0 10px 0;">6→5, 5→4, 4→3, 3→2줄</p>
+                                    <p style="color:#fff; font-size:24px; margin:0;"><b>+5프렛</b></p>
+                                    <p style="color:#888; font-size:12px; margin:10px 0 0 0;">아래 줄 같은 음 = 5프렛 위</p>
+                                </div>
+                                <div style="text-align:center; padding:15px; background:rgba(231,76,60,0.1); border-radius:10px;">
+                                    <p style="color:#e74c3c; font-weight:bold; margin:0 0 10px 0;">3→2줄 (B줄로 갈 때)</p>
+                                    <p style="color:#fff; font-size:24px; margin:0;"><b>+4프렛</b></p>
+                                    <p style="color:#888; font-size:12px; margin:10px 0 0 0;">※ B줄은 예외!</p>
+                                </div>
+                            </div>
+
+                            <p style="color:#2ecc71; margin:20px 0 0 0; text-align:center;">
+                                예: 6번줄 5프렛(A) = 5번줄 0프렛(A) = 5번줄에서 5프렛 아래!
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="pattern-box">
+                        <h4>전체 프렛보드 맵 (참고용)</h4>
+                        <p style="color:#aaa; margin-bottom:15px;">자주 보면서 익숙해지세요!</p>
+
+                        <div style="overflow-x:auto;">
+                            <table class="info-table" style="font-size:12px; min-width:600px;">
+                                <tr>
+                                    <th>줄</th>
+                                    <th style="background:rgba(46,204,113,0.3);">0</th>
+                                    <th>1</th>
+                                    <th>2</th>
+                                    <th style="background:rgba(244,208,63,0.2);">3</th>
+                                    <th>4</th>
+                                    <th style="background:rgba(52,152,219,0.3);">5</th>
+                                    <th>6</th>
+                                    <th style="background:rgba(52,152,219,0.3);">7</th>
+                                    <th>8</th>
+                                    <th style="background:rgba(244,208,63,0.2);">9</th>
+                                    <th>10</th>
+                                    <th>11</th>
+                                    <th style="background:rgba(231,76,60,0.3);">12</th>
+                                </tr>
+                                <tr>
+                                    <td><b>1 (e)</b></td>
+                                    <td style="background:rgba(46,204,113,0.15);">E</td>
+                                    <td>F</td>
+                                    <td>F#</td>
+                                    <td>G</td>
+                                    <td>G#</td>
+                                    <td style="background:rgba(52,152,219,0.15);">A</td>
+                                    <td>A#</td>
+                                    <td style="background:rgba(52,152,219,0.15);">B</td>
+                                    <td>C</td>
+                                    <td>C#</td>
+                                    <td>D</td>
+                                    <td>D#</td>
+                                    <td style="background:rgba(231,76,60,0.15);">E</td>
+                                </tr>
+                                <tr>
+                                    <td><b>2 (B)</b></td>
+                                    <td style="background:rgba(46,204,113,0.15);">B</td>
+                                    <td>C</td>
+                                    <td>C#</td>
+                                    <td>D</td>
+                                    <td>D#</td>
+                                    <td style="background:rgba(52,152,219,0.15);">E</td>
+                                    <td>F</td>
+                                    <td style="background:rgba(52,152,219,0.15);">F#</td>
+                                    <td>G</td>
+                                    <td>G#</td>
+                                    <td>A</td>
+                                    <td>A#</td>
+                                    <td style="background:rgba(231,76,60,0.15);">B</td>
+                                </tr>
+                                <tr>
+                                    <td><b>3 (G)</b></td>
+                                    <td style="background:rgba(46,204,113,0.15);">G</td>
+                                    <td>G#</td>
+                                    <td>A</td>
+                                    <td>A#</td>
+                                    <td>B</td>
+                                    <td style="background:rgba(52,152,219,0.15);">C</td>
+                                    <td>C#</td>
+                                    <td style="background:rgba(52,152,219,0.15);">D</td>
+                                    <td>D#</td>
+                                    <td>E</td>
+                                    <td>F</td>
+                                    <td>F#</td>
+                                    <td style="background:rgba(231,76,60,0.15);">G</td>
+                                </tr>
+                                <tr>
+                                    <td><b>4 (D)</b></td>
+                                    <td style="background:rgba(46,204,113,0.15);">D</td>
+                                    <td>D#</td>
+                                    <td>E</td>
+                                    <td>F</td>
+                                    <td>F#</td>
+                                    <td style="background:rgba(52,152,219,0.15);">G</td>
+                                    <td>G#</td>
+                                    <td style="background:rgba(52,152,219,0.15);">A</td>
+                                    <td>A#</td>
+                                    <td>B</td>
+                                    <td>C</td>
+                                    <td>C#</td>
+                                    <td style="background:rgba(231,76,60,0.15);">D</td>
+                                </tr>
+                                <tr>
+                                    <td><b>5 (A)</b></td>
+                                    <td style="background:rgba(46,204,113,0.15);">A</td>
+                                    <td>A#</td>
+                                    <td>B</td>
+                                    <td>C</td>
+                                    <td>C#</td>
+                                    <td style="background:rgba(52,152,219,0.15);">D</td>
+                                    <td>D#</td>
+                                    <td style="background:rgba(52,152,219,0.15);">E</td>
+                                    <td>F</td>
+                                    <td>F#</td>
+                                    <td>G</td>
+                                    <td>G#</td>
+                                    <td style="background:rgba(231,76,60,0.15);">A</td>
+                                </tr>
+                                <tr>
+                                    <td><b>6 (E)</b></td>
+                                    <td style="background:rgba(46,204,113,0.15);">E</td>
+                                    <td>F</td>
+                                    <td>F#</td>
+                                    <td>G</td>
+                                    <td>G#</td>
+                                    <td style="background:rgba(52,152,219,0.15);">A</td>
+                                    <td>A#</td>
+                                    <td style="background:rgba(52,152,219,0.15);">B</td>
+                                    <td>C</td>
+                                    <td>C#</td>
+                                    <td>D</td>
+                                    <td>D#</td>
+                                    <td style="background:rgba(231,76,60,0.15);">E</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p style="color:#888; margin-top:10px; font-size:12px;">
+                            <span style="color:#2ecc71;">■</span> 0프렛(오픈) &nbsp;
+                            <span style="color:#3498db;">■</span> 5,7프렛(기준점) &nbsp;
+                            <span style="color:#f4d03f;">■</span> 3,9프렛(인레이) &nbsp;
+                            <span style="color:#e74c3c;">■</span> 12프렛(옥타브)
+                        </p>
+                    </div>
+
+                    <div class="pattern-box">
+                        <h4>빠른 암기법: 6번줄과 5번줄만 외우기</h4>
+                        <p style="color:#aaa; margin-bottom:15px;">바레 코드 루트가 되는 이 두 줄만 완벽히 외우면 됩니다!</p>
+
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px;">
+                            <div style="background:rgba(0,0,0,0.3); padding:15px; border-radius:10px;">
+                                <p style="color:#f4d03f; font-weight:bold; margin:0 0 10px 0;">6번줄 (E줄) 주요 음</p>
+                                <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                                    <span style="background:#333; padding:5px 10px; border-radius:5px;"><b>0</b>=E</span>
+                                    <span style="background:#333; padding:5px 10px; border-radius:5px;"><b>1</b>=F</span>
+                                    <span style="background:#333; padding:5px 10px; border-radius:5px;"><b>3</b>=G</span>
+                                    <span style="background:rgba(52,152,219,0.3); padding:5px 10px; border-radius:5px;"><b>5</b>=A</span>
+                                    <span style="background:rgba(52,152,219,0.3); padding:5px 10px; border-radius:5px;"><b>7</b>=B</span>
+                                    <span style="background:#333; padding:5px 10px; border-radius:5px;"><b>8</b>=C</span>
+                                    <span style="background:#333; padding:5px 10px; border-radius:5px;"><b>10</b>=D</span>
+                                </div>
+                            </div>
+                            <div style="background:rgba(0,0,0,0.3); padding:15px; border-radius:10px;">
+                                <p style="color:#f4d03f; font-weight:bold; margin:0 0 10px 0;">5번줄 (A줄) 주요 음</p>
+                                <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                                    <span style="background:#333; padding:5px 10px; border-radius:5px;"><b>0</b>=A</span>
+                                    <span style="background:#333; padding:5px 10px; border-radius:5px;"><b>2</b>=B</span>
+                                    <span style="background:#333; padding:5px 10px; border-radius:5px;"><b>3</b>=C</span>
+                                    <span style="background:rgba(52,152,219,0.3); padding:5px 10px; border-radius:5px;"><b>5</b>=D</span>
+                                    <span style="background:rgba(52,152,219,0.3); padding:5px 10px; border-radius:5px;"><b>7</b>=E</span>
+                                    <span style="background:#333; padding:5px 10px; border-radius:5px;"><b>8</b>=F</span>
+                                    <span style="background:#333; padding:5px 10px; border-radius:5px;"><b>10</b>=G</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <b>연습 순서:</b><br><br>
+                        1️⃣ 오픈 스트링 음 완벽히 외우기 (E-A-D-G-B-E)<br>
+                        2️⃣ 6번줄 자연음(F, G, A, B, C, D) 위치 외우기<br>
+                        3️⃣ 5번줄 자연음 위치 외우기<br>
+                        4️⃣ 옥타브 패턴으로 나머지 줄 찾기<br><br>
+                        <b>매일 5분씩 연습하면 2주 안에 완벽하게 익힐 수 있어요!</b>
+                    </div>
+                </div>
+
+                <!-- 트라이어드 코드 -->
+                <div class="tab-content" id="triad">
+                    <h3>트라이어드(Triad) 코드란?</h3>
+                    <p><span class="highlight">3개의 음</span>(루트-3도-5도)만 사용하는 간결한 코드. 3줄만 눌러서 연주!</p>
+
+                    <div style="background:rgba(244,208,63,0.1); border:1px solid #f4d03f; border-radius:8px; padding:10px 15px; margin-bottom:20px; font-size:13px;">
+                        <span style="color:#f4d03f;">📍 미니 프렛보드 보는 방향:</span> <b>왼쪽 = 기타 머리(헤드/너트)</b>, 오른쪽 = 바디 방향(높은 프렛)
+                    </div>
+
+                    <div class="pattern-box">
+                        <h4>트라이어드의 장점</h4>
+                        <ul class="step-list">
+                            <li><span class="step-num">1</span><span class="step-content"><b>손가락 3개만 사용</b> → 코드 체인지가 빠름</span></li>
+                            <li><span class="step-num">2</span><span class="step-content"><b>깔끔한 사운드</b> → 밴드 연주에서 다른 악기와 안 부딪힘</span></li>
+                            <li><span class="step-num">3</span><span class="step-content"><b>넥 전체 활용</b> → 같은 코드를 여러 위치에서 연주</span></li>
+                            <li><span class="step-num">4</span><span class="step-content"><b>멜로디 연주와 병행</b> 가능</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="pattern-box">
+                        <h4>트라이어드 구성음</h4>
+                        <table class="info-table">
+                            <tr>
+                                <th>종류</th>
+                                <th>구성음</th>
+                                <th>예시 (C)</th>
+                                <th>느낌</th>
+                            </tr>
+                            <tr>
+                                <td><span class="flow-chord" style="font-size:13px;padding:5px 10px;">메이저</span></td>
+                                <td><span class="highlight">1 - 3 - 5</span></td>
+                                <td>도 - 미 - 솔</td>
+                                <td>밝고 안정적</td>
+                            </tr>
+                            <tr>
+                                <td><span class="flow-chord minor" style="font-size:13px;padding:5px 10px;">마이너</span></td>
+                                <td><span class="highlight">1 - b3 - 5</span></td>
+                                <td>도 - 미b - 솔</td>
+                                <td>슬프고 어두운</td>
+                            </tr>
+                            <tr>
+                                <td><span style="background:#666;color:#fff;padding:5px 10px;border-radius:5px;font-size:13px;">디미니시드</span></td>
+                                <td>1 - b3 - b5</td>
+                                <td>도 - 미b - 솔b</td>
+                                <td>불안정, 긴장</td>
+                            </tr>
+                            <tr>
+                                <td><span style="background:#8e44ad;color:#fff;padding:5px 10px;border-radius:5px;font-size:13px;">어그먼티드</span></td>
+                                <td>1 - 3 - #5</td>
+                                <td>도 - 미 - 솔#</td>
+                                <td>몽환적, 이상한</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="pattern-box">
+                        <h4>고음 3줄 트라이어드 (G-B-e)</h4>
+                        <span class="key-badge" style="background:#e74c3c;">가장 많이 사용!</span>
+
+                        <p style="color:#f4d03f; margin:20px 0 10px 0;"><b>【C 메이저 트라이어드】</b> 3가지 자리바꿈</p>
+
+                        <div class="triad-group">
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title">루트 포지션</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot root">R</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">0-1-0 프렛</div>
+                            </div>
+
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title">1st 자리바꿈</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">5</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">3</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot root">R</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>4</span><span>5</span><span>6</span><span>7</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">5-5-5 프렛</div>
+                            </div>
+
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title">2nd 자리바꿈</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot root">R</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">5</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">3</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>7</span><span>8</span><span>9</span><span>10</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">8-8-9 프렛</div>
+                            </div>
+                        </div>
+
+                        <p style="color:#9b59b6; margin:25px 0 10px 0;"><b>【Cm 마이너 트라이어드】</b></p>
+
+                        <div class="triad-group">
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title">루트 포지션</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot root">R</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">0-1-0 프렛</div>
+                            </div>
+
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title">1st 자리바꿈</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">5</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">b3</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot root">R</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>3</span><span>4</span><span>5</span><span>6</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">4-5-5 프렛</div>
+                            </div>
+
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title">2nd 자리바꿈</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot root">R</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">5</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">b3</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>7</span><span>8</span><span>9</span><span>10</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">8-8-8 프렛</div>
+                            </div>
+                        </div>
+
+                        <p style="color:#2ecc71; margin-top:20px; padding:10px; background:rgba(46,204,113,0.1); border-radius:8px;">
+                            ✓ <b>메이저 → 마이너:</b> 3도 음(가운데)을 <span class="highlight-red">1프렛 내리기</span>
+                        </p>
+                    </div>
+
+                    <div class="pattern-box">
+                        <h4>중음 3줄 트라이어드 (D-G-B)</h4>
+
+                        <p style="color:#f4d03f; margin:15px 0 10px 0;"><b>【C 메이저】</b></p>
+
+                        <div class="triad-group">
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title">루트 포지션</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">5</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">D</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot root">R</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">1-0-2 프렛</div>
+                            </div>
+
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title">1st 자리바꿈</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot root">R</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">5</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">D</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">3</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>4</span><span>5</span><span>6</span><span>7</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">5-5-5 프렛</div>
+                            </div>
+
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title">2nd 자리바꿈</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">3</span></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot root">R</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">D</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">5</span></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>8</span><span>9</span><span>10</span><span>11</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">10-9-10 프렛</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pattern-box">
+                        <h4>저음 3줄 트라이어드 (E-A-D)</h4>
+                        <span class="key-badge" style="background:#e67e22;">파워코드 + 3도!</span>
+
+                        <p style="color:#f4d03f; margin:15px 0 10px 0;"><b>【C 메이저】</b></p>
+
+                        <div class="triad-group">
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title">루트 포지션</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">D</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">3</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">A</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot root">R</span></div>
+                                    <span class="string-label">E</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">5</span></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">2-3-3 프렛</div>
+                            </div>
+
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title">1st 자리바꿈</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">D</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">5</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">A</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">3</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">E</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>5</span><span>6</span><span>7</span><span>8</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">5-5-8 프렛</div>
+                            </div>
+
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title">2nd 자리바꿈</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">D</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot root">R</span></div>
+                                    <span class="string-label">A</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">5</span></div>
+                                    <span class="string-label">E</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">3</span></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>8</span><span>9</span><span>10</span><span>11</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">10-10-10 프렛</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pattern-box">
+                        <h4>트라이어드 연습 패턴</h4>
+
+                        <p style="color:#f4d03f; margin-bottom:10px;"><b>【연습 1: 한 코드로 넥 전체 이동】</b></p>
+                        <p style="color:#aaa; margin-bottom:15px;">C 트라이어드를 고음 3줄에서 연주 (프렛보드 따라 올라가기)</p>
+
+                        <div class="chord-flow">
+                            <div style="text-align:center;">
+                                <span class="flow-chord">C</span>
+                                <p style="font-size:12px;color:#888;margin:5px 0 0 0;">0프렛 (루트)</p>
+                            </div>
+                            <span class="flow-arrow">→</span>
+                            <div style="text-align:center;">
+                                <span class="flow-chord">C</span>
+                                <p style="font-size:12px;color:#888;margin:5px 0 0 0;">5프렛 (1st)</p>
+                            </div>
+                            <span class="flow-arrow">→</span>
+                            <div style="text-align:center;">
+                                <span class="flow-chord">C</span>
+                                <p style="font-size:12px;color:#888;margin:5px 0 0 0;">8프렛 (2nd)</p>
+                            </div>
+                            <span class="flow-arrow">→</span>
+                            <div style="text-align:center;">
+                                <span class="flow-chord">C</span>
+                                <p style="font-size:12px;color:#888;margin:5px 0 0 0;">12프렛 (루트)</p>
+                            </div>
+                        </div>
+
+                        <p style="color:#f4d03f; margin:25px 0 10px 0;"><b>【연습 2: 코드 진행 연습 (고음 3줄)】</b></p>
+                        <p style="color:#aaa; margin-bottom:15px;">같은 포지션 근처에서 코드 체인지 연습!</p>
+
+                        <div class="triad-group">
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title" style="color:#3498db;">C</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot root">R</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                </div>
+                            </div>
+                            <span class="flow-arrow" style="align-self:center;">→</span>
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title" style="color:#9b59b6;">Am</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">5</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot root">R</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                </div>
+                            </div>
+                            <span class="flow-arrow" style="align-self:center;">→</span>
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title" style="color:#3498db;">F</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">5</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot root">R</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">3</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                </div>
+                            </div>
+                            <span class="flow-arrow" style="align-self:center;">→</span>
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title" style="color:#3498db;">G</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p style="color:#f4d03f; margin:25px 0 10px 0;"><b>【연습 3: 메이저/마이너 전환】</b></p>
+
+                        <div class="triad-vs">
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title" style="color:#3498db;">C 메이저</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">5</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">3</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot root">R</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>4</span><span>5</span><span>6</span><span>7</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">5-5-5 프렛</div>
+                            </div>
+                            <span class="vs-arrow">→</span>
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title" style="color:#9b59b6;">Cm 마이너</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">5</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot" style="background:linear-gradient(145deg,#e74c3c,#c0392b);border:2px solid #f4d03f;">b3</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot root">R</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>4</span><span>5</span><span>6</span><span>7</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">5-<span style="color:#e74c3c;font-weight:bold;">4</span>-5 프렛</div>
+                            </div>
+                        </div>
+                        <p style="color:#2ecc71; text-align:center; margin-top:10px;">가운데 손가락만 1프렛 내리면 마이너!</p>
+                    </div>
+
+                    <div class="pattern-box">
+                        <h4>트라이어드 모양 암기 팁</h4>
+
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px; margin-bottom:20px;">
+                            <div style="background:rgba(52,152,219,0.2); padding:15px; border-radius:10px; text-align:center;">
+                                <p style="font-size:40px; margin:0;">△</p>
+                                <p style="color:#3498db; font-weight:bold; margin:10px 0 5px 0;">메이저</p>
+                                <p style="color:#888; font-size:13px; margin:0;">넓은 삼각형</p>
+                            </div>
+                            <div style="background:rgba(155,89,182,0.2); padding:15px; border-radius:10px; text-align:center;">
+                                <p style="font-size:40px; margin:0;">▲</p>
+                                <p style="color:#9b59b6; font-weight:bold; margin:10px 0 5px 0;">마이너</p>
+                                <p style="color:#888; font-size:13px; margin:0;">좁은 삼각형</p>
+                            </div>
+                        </div>
+
+                        <div style="background:rgba(0,0,0,0.3); padding:15px; border-radius:10px;">
+                            <p style="color:#f4d03f; margin:0 0 10px 0;"><b>자리바꿈 순서 기억법: "루트가 어디 있나?"</b></p>
+                            <ul class="step-list" style="margin:0;">
+                                <li><span class="step-num" style="background:#27ae60;">R</span><span class="step-content"><b>루트 포지션:</b> 루트가 맨 아래</span></li>
+                                <li><span class="step-num" style="background:#3498db;">1</span><span class="step-content"><b>1st 자리바꿈:</b> 루트가 맨 위</span></li>
+                                <li><span class="step-num" style="background:#e67e22;">2</span><span class="step-content"><b>2nd 자리바꿈:</b> 루트가 가운데</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <b>암기 팁:</b> 먼저 <span class="highlight">고음 3줄(G-B-e)</span>의 메이저 3가지 폼을 완벽히 외우세요!<br><br>
+                        <b>연습법:</b> 좋아하는 노래의 코드 진행을 트라이어드로만 연주해보기
+                    </div>
+                </div>
+
+                <!-- 코드 변환 패턴 -->
+                <div class="tab-content" id="transform">
+                    <h3>코드 변환 규칙 - 음 변화 패턴</h3>
+                    <p>코드 타입별 <span class="highlight">구성음 차이</span>를 이해하면 모든 코드를 쉽게 변환할 수 있습니다!</p>
+
+                    <div style="background:rgba(244,208,63,0.1); border:1px solid #f4d03f; border-radius:8px; padding:10px 15px; margin-bottom:20px; font-size:13px;">
+                        <span style="color:#f4d03f;">📍 미니 프렛보드 보는 방향:</span> <b>왼쪽 = 기타 머리(헤드/너트)</b>, 오른쪽 = 바디 방향(높은 프렛)
+                    </div>
+
+                    <div class="pattern-box">
+                        <h4>코드 타입별 구성음</h4>
+                        <table class="info-table">
+                            <tr>
+                                <th>코드 타입</th>
+                                <th>구성음</th>
+                                <th>C 예시</th>
+                                <th>느낌</th>
+                            </tr>
+                            <tr>
+                                <td><span class="flow-chord" style="font-size:13px;padding:5px 10px;">메이저 (M)</span></td>
+                                <td><span class="highlight">1 - 3 - 5</span></td>
+                                <td>C - E - G</td>
+                                <td>밝고 안정적</td>
+                            </tr>
+                            <tr>
+                                <td><span class="flow-chord minor" style="font-size:13px;padding:5px 10px;">마이너 (m)</span></td>
+                                <td><span class="highlight">1 - <span style="color:#e74c3c;">b3</span> - 5</span></td>
+                                <td>C - <span style="color:#e74c3c;">Eb</span> - G</td>
+                                <td>슬프고 어두운</td>
+                            </tr>
+                            <tr>
+                                <td><span class="flow-chord seventh" style="font-size:13px;padding:5px 10px;">세븐스 (7)</span></td>
+                                <td><span class="highlight">1 - 3 - 5 - <span style="color:#e67e22;">b7</span></span></td>
+                                <td>C - E - G - <span style="color:#e67e22;">Bb</span></td>
+                                <td>긴장감, 블루지</td>
+                            </tr>
+                            <tr>
+                                <td><span style="background:linear-gradient(145deg,#8e44ad,#7d3c98);color:#fff;padding:5px 10px;border-radius:5px;font-size:13px;">마이너7 (m7)</span></td>
+                                <td><span class="highlight">1 - <span style="color:#e74c3c;">b3</span> - 5 - <span style="color:#e67e22;">b7</span></span></td>
+                                <td>C - <span style="color:#e74c3c;">Eb</span> - G - <span style="color:#e67e22;">Bb</span></td>
+                                <td>재즈, 소울풀</td>
+                            </tr>
+                            <tr>
+                                <td><span style="background:linear-gradient(145deg,#16a085,#1abc9c);color:#fff;padding:5px 10px;border-radius:5px;font-size:13px;">메이저7 (M7)</span></td>
+                                <td><span class="highlight">1 - 3 - 5 - <span style="color:#2ecc71;">7</span></span></td>
+                                <td>C - E - G - <span style="color:#2ecc71;">B</span></td>
+                                <td>몽환적, 세련됨</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="pattern-box">
+                        <h4>변환 패턴 다이어그램</h4>
+                        <p style="color:#aaa; margin-bottom:20px;">화살표를 따라가며 어떤 음이 변하는지 확인하세요!</p>
+
+                        <div style="background:rgba(0,0,0,0.3); padding:25px; border-radius:15px; text-align:center;">
+                            <!-- 메이저 중심 다이어그램 -->
+                            <div style="display:flex; flex-direction:column; align-items:center; gap:20px;">
+                                <!-- 메이저 -->
+                                <div>
+                                    <span class="flow-chord" style="font-size:18px; padding:12px 24px;">메이저 (1-3-5)</span>
+                                </div>
+
+                                <!-- 화살표들 -->
+                                <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin:10px 0;">
+                                    <div style="text-align:center;">
+                                        <div style="color:#e74c3c; font-size:24px;">↓</div>
+                                        <div style="background:rgba(231,76,60,0.2); padding:8px 12px; border-radius:8px; margin:5px 0;">
+                                            <span style="color:#e74c3c; font-weight:bold;">3 → b3</span><br>
+                                            <span style="font-size:11px; color:#888;">3도를 반음 내림</span>
+                                        </div>
+                                        <div style="color:#e74c3c; font-size:24px;">↓</div>
+                                        <span class="flow-chord minor" style="font-size:16px; padding:10px 20px;">마이너 (1-b3-5)</span>
+                                    </div>
+
+                                    <div style="text-align:center;">
+                                        <div style="color:#e67e22; font-size:24px;">↓</div>
+                                        <div style="background:rgba(230,126,34,0.2); padding:8px 12px; border-radius:8px; margin:5px 0;">
+                                            <span style="color:#e67e22; font-weight:bold;">+ b7</span><br>
+                                            <span style="font-size:11px; color:#888;">단7도 추가</span>
+                                        </div>
+                                        <div style="color:#e67e22; font-size:24px;">↓</div>
+                                        <span class="flow-chord seventh" style="font-size:16px; padding:10px 20px;">세븐스 (1-3-5-b7)</span>
+                                    </div>
+
+                                    <div style="text-align:center;">
+                                        <div style="color:#2ecc71; font-size:24px;">↓</div>
+                                        <div style="background:rgba(46,204,113,0.2); padding:8px 12px; border-radius:8px; margin:5px 0;">
+                                            <span style="color:#2ecc71; font-weight:bold;">+ 7</span><br>
+                                            <span style="font-size:11px; color:#888;">장7도 추가</span>
+                                        </div>
+                                        <div style="color:#2ecc71; font-size:24px;">↓</div>
+                                        <span style="background:linear-gradient(145deg,#16a085,#1abc9c);color:#fff;padding:10px 20px;border-radius:8px;font-size:16px;display:inline-block;">메이저7 (1-3-5-7)</span>
+                                    </div>
+                                </div>
+
+                                <!-- 마이너 → 마이너7 -->
+                                <div style="margin-top:20px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.1); width:100%;">
+                                    <div style="display:flex; justify-content:center; align-items:center; gap:20px; flex-wrap:wrap;">
+                                        <span class="flow-chord minor" style="font-size:16px; padding:10px 20px;">마이너 (1-b3-5)</span>
+                                        <div style="text-align:center;">
+                                            <div style="background:rgba(230,126,34,0.2); padding:8px 12px; border-radius:8px;">
+                                                <span style="color:#e67e22; font-weight:bold;">+ b7</span>
+                                            </div>
+                                        </div>
+                                        <span style="color:#f4d03f; font-size:24px;">→</span>
+                                        <span style="background:linear-gradient(145deg,#8e44ad,#7d3c98);color:#fff;padding:10px 20px;border-radius:8px;font-size:16px;display:inline-block;">마이너7 (1-b3-5-b7)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pattern-box">
+                        <h4>변환 규칙 요약</h4>
+                        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:15px;">
+                            <div style="background:rgba(231,76,60,0.1); border:2px solid #e74c3c; border-radius:10px; padding:15px;">
+                                <p style="color:#e74c3c; font-weight:bold; margin:0 0 10px 0;">메이저 → 마이너</p>
+                                <p style="color:#fff; margin:0; font-size:20px;"><b>3도를 반음 내림</b></p>
+                                <p style="color:#aaa; margin:10px 0 0 0; font-size:13px;">E → Eb, 밝음 → 어두움</p>
+                            </div>
+                            <div style="background:rgba(230,126,34,0.1); border:2px solid #e67e22; border-radius:10px; padding:15px;">
+                                <p style="color:#e67e22; font-weight:bold; margin:0 0 10px 0;">메이저 → 세븐스(7)</p>
+                                <p style="color:#fff; margin:0; font-size:20px;"><b>단7도(b7) 추가</b></p>
+                                <p style="color:#aaa; margin:10px 0 0 0; font-size:13px;">긴장감 추가, 해결 원함</p>
+                            </div>
+                            <div style="background:rgba(142,68,173,0.1); border:2px solid #8e44ad; border-radius:10px; padding:15px;">
+                                <p style="color:#8e44ad; font-weight:bold; margin:0 0 10px 0;">마이너 → 마이너7</p>
+                                <p style="color:#fff; margin:0; font-size:20px;"><b>단7도(b7) 추가</b></p>
+                                <p style="color:#aaa; margin:10px 0 0 0; font-size:13px;">재즈, 소울 느낌</p>
+                            </div>
+                            <div style="background:rgba(46,204,113,0.1); border:2px solid #2ecc71; border-radius:10px; padding:15px;">
+                                <p style="color:#2ecc71; font-weight:bold; margin:0 0 10px 0;">메이저 → 메이저7</p>
+                                <p style="color:#fff; margin:0; font-size:20px;"><b>장7도(7) 추가</b></p>
+                                <p style="color:#aaa; margin:10px 0 0 0; font-size:13px;">몽환적, 세련된 느낌</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pattern-box">
+                        <h4>C 코드 패밀리 - 실제 음 변화</h4>
+                        <table class="info-table">
+                            <tr>
+                                <th>코드</th>
+                                <th>1 (루트)</th>
+                                <th>3도</th>
+                                <th>5도</th>
+                                <th>7도</th>
+                            </tr>
+                            <tr>
+                                <td><span class="flow-chord" style="font-size:13px;padding:5px 10px;">C</span></td>
+                                <td>C (도)</td>
+                                <td style="background:rgba(52,152,219,0.2);">E (미)</td>
+                                <td>G (솔)</td>
+                                <td style="color:#666;">-</td>
+                            </tr>
+                            <tr>
+                                <td><span class="flow-chord minor" style="font-size:13px;padding:5px 10px;">Cm</span></td>
+                                <td>C (도)</td>
+                                <td style="background:rgba(231,76,60,0.3);"><b>Eb (미b)</b></td>
+                                <td>G (솔)</td>
+                                <td style="color:#666;">-</td>
+                            </tr>
+                            <tr>
+                                <td><span class="flow-chord seventh" style="font-size:13px;padding:5px 10px;">C7</span></td>
+                                <td>C (도)</td>
+                                <td style="background:rgba(52,152,219,0.2);">E (미)</td>
+                                <td>G (솔)</td>
+                                <td style="background:rgba(230,126,34,0.3);"><b>Bb (시b)</b></td>
+                            </tr>
+                            <tr>
+                                <td><span style="background:linear-gradient(145deg,#8e44ad,#7d3c98);color:#fff;padding:5px 10px;border-radius:5px;font-size:13px;">Cm7</span></td>
+                                <td>C (도)</td>
+                                <td style="background:rgba(231,76,60,0.3);"><b>Eb (미b)</b></td>
+                                <td>G (솔)</td>
+                                <td style="background:rgba(230,126,34,0.3);"><b>Bb (시b)</b></td>
+                            </tr>
+                            <tr>
+                                <td><span style="background:linear-gradient(145deg,#16a085,#1abc9c);color:#fff;padding:5px 10px;border-radius:5px;font-size:13px;">CM7</span></td>
+                                <td>C (도)</td>
+                                <td style="background:rgba(52,152,219,0.2);">E (미)</td>
+                                <td>G (솔)</td>
+                                <td style="background:rgba(46,204,113,0.3);"><b>B (시)</b></td>
+                            </tr>
+                        </table>
+                        <p style="color:#aaa; margin-top:15px; font-size:13px;">
+                            <span style="color:#e74c3c;">■</span> b3 = 장3도를 반음 내림 &nbsp;
+                            <span style="color:#e67e22;">■</span> b7 = 단7도 (장7도보다 반음 낮음) &nbsp;
+                            <span style="color:#2ecc71;">■</span> 7 = 장7도
+                        </p>
+                    </div>
+
+                    <div class="pattern-box">
+                        <h4>기타에서 실제 변환 - 코드를 선택하세요!</h4>
+                        <p style="color:#aaa; margin-bottom:15px;">각 코드를 클릭하면 변환 패턴을 볼 수 있습니다.</p>
+
+                        <div class="caged-selector" id="transformChordSelector">
+                            <button class="caged-btn active" data-chord="E" onclick="showTransformChord('E')">
+                                E
+                                <span class="btn-label">기본</span>
+                            </button>
+                            <button class="caged-btn" data-chord="A" onclick="showTransformChord('A')">
+                                A
+                                <span class="btn-label">기본</span>
+                            </button>
+                            <button class="caged-btn" data-chord="D" onclick="showTransformChord('D')">
+                                D
+                                <span class="btn-label">기본</span>
+                            </button>
+                            <button class="caged-btn" data-chord="C" onclick="showTransformChord('C')">
+                                C
+                                <span class="btn-label">기본</span>
+                            </button>
+                            <button class="caged-btn" data-chord="G" onclick="showTransformChord('G')">
+                                G
+                                <span class="btn-label">기본</span>
+                            </button>
+                        </div>
+
+                        <!-- E 코드 변환 -->
+                        <div class="transform-content active" id="transform-E">
+                            <p style="color:#f4d03f; font-weight:bold; margin:20px 0 10px 0;">【E 코드】 같은 위치에서 손가락 하나만 바꾸면 코드 타입이 변함!</p>
+
+                            <div class="triad-group">
+                                <div class="mini-fretboard-container">
+                                    <div class="mini-fretboard-title" style="color:#3498db;">E 메이저</div>
+                                    <div class="mini-fretboard">
+                                        <span class="string-label">e</span>
+                                        <div class="mini-cell"><span class="mini-open">○</span></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <span class="string-label">B</span>
+                                        <div class="mini-cell"><span class="mini-open">○</span></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <span class="string-label">G</span>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"><span class="mini-dot" style="background:#3498db;">3</span></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">1 - 3 - 5</div>
+                            </div>
+
+                            <div style="align-self:center; text-align:center;">
+                                <div style="color:#e74c3c; font-weight:bold;">3→b3</div>
+                                <span class="flow-arrow">→</span>
+                            </div>
+
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title" style="color:#9b59b6;">Em 마이너</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"><span class="mini-open" style="color:#e74c3c;">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">1 - <span style="color:#e74c3c;">b3</span> - 5</div>
+                            </div>
+
+                            <div style="align-self:center; text-align:center;">
+                                <div style="color:#e67e22; font-weight:bold;">+b7</div>
+                                <span class="flow-arrow">→</span>
+                            </div>
+
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title" style="color:#8e44ad;">Em7</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot" style="background:#e67e22;">b7</span></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">1 - <span style="color:#e74c3c;">b3</span> - 5 - <span style="color:#e67e22;">b7</span></div>
+                            </div>
+                        </div>
+
+                        <div class="triad-group" style="margin-top:25px;">
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title" style="color:#3498db;">E 메이저</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot" style="background:#3498db;">3</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">1 - 3 - 5</div>
+                            </div>
+
+                            <div style="align-self:center; text-align:center;">
+                                <div style="color:#e67e22; font-weight:bold;">+b7</div>
+                                <span class="flow-arrow">→</span>
+                            </div>
+
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title" style="color:#e67e22;">E7 세븐스</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot" style="background:#e67e22;">b7</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">1 - 3 - 5 - <span style="color:#e67e22;">b7</span></div>
+                            </div>
+
+                            <div style="align-self:center; text-align:center;">
+                                <div style="color:#2ecc71; font-weight:bold;">b7→7</div>
+                                <span class="flow-arrow">→</span>
+                            </div>
+
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title" style="color:#1abc9c;">EM7 메이저7</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot" style="background:#1abc9c;">7</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">1 - 3 - 5 - <span style="color:#2ecc71;">7</span></div>
+                            </div>
+                        </div>
+
+                        <p style="color:#2ecc71; margin-top:20px; padding:10px; background:rgba(46,204,113,0.1); border-radius:8px;">
+                            ✓ <b>E → Em:</b> G줄 1프렛 떼기 (3도를 반음 내림) / <b>E → E7:</b> G줄 1프렛만 누르기 (b7 = D음)
+                        </p>
+                        </div>
+
+                        <!-- A 코드 변환 -->
+                        <div class="transform-content" id="transform-A">
+                            <p style="color:#f4d03f; font-weight:bold; margin:20px 0 10px 0;">【A 코드】 3도 위치만 기억하면 쉽게 변환!</p>
+
+                        <div class="triad-group">
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title" style="color:#3498db;">A 메이저</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot" style="background:#3498db;">3</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">5</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">1 - 3 - 5</div>
+                            </div>
+
+                            <div style="align-self:center; text-align:center;">
+                                <div style="color:#e74c3c; font-weight:bold;">3→b3</div>
+                                <span class="flow-arrow">→</span>
+                            </div>
+
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title" style="color:#9b59b6;">Am 마이너</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot" style="background:#e74c3c;">b3</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">5</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">1 - <span style="color:#e74c3c;">b3</span> - 5</div>
+                            </div>
+
+                            <div style="align-self:center; text-align:center;">
+                                <div style="color:#e67e22; font-weight:bold;">+b7</div>
+                                <span class="flow-arrow">→</span>
+                            </div>
+
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title" style="color:#8e44ad;">Am7</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot" style="background:#e74c3c;">b3</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"><span class="mini-open" style="color:#e67e22;">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">1 - <span style="color:#e74c3c;">b3</span> - 5 - <span style="color:#e67e22;">b7</span></div>
+                            </div>
+                        </div>
+
+                        <div class="triad-group" style="margin-top:25px;">
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title" style="color:#3498db;">A 메이저</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot" style="background:#3498db;">3</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">5</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">1 - 3 - 5</div>
+                            </div>
+
+                            <div style="align-self:center; text-align:center;">
+                                <div style="color:#e67e22; font-weight:bold;">+b7</div>
+                                <span class="flow-arrow">→</span>
+                            </div>
+
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title" style="color:#e67e22;">A7 세븐스</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">3</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"><span class="mini-open" style="color:#e67e22;">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">1 - 3 - 5 - <span style="color:#e67e22;">b7</span></div>
+                            </div>
+
+                            <div style="align-self:center; text-align:center;">
+                                <div style="color:#2ecc71; font-weight:bold;">b7→7</div>
+                                <span class="flow-arrow">→</span>
+                            </div>
+
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title" style="color:#1abc9c;">AM7 메이저7</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">3</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot" style="background:#1abc9c;">7</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">1 - 3 - 5 - <span style="color:#2ecc71;">7</span></div>
+                            </div>
+                        </div>
+
+                        <p style="color:#2ecc71; margin-top:20px; padding:10px; background:rgba(46,204,113,0.1); border-radius:8px;">
+                            ✓ <b>A → Am:</b> B줄 2프렛 → 1프렛 (3도를 반음 내림) / <b>A → A7:</b> G줄 2프렛 떼기 (b7 = G음)
+                        </p>
+                        </div>
+
+                        <!-- D 코드 변환 -->
+                        <div class="transform-content" id="transform-D">
+                            <p style="color:#f4d03f; font-weight:bold; margin:20px 0 10px 0;">【D 코드】 고음 줄에서 변환! 1번줄 변화에 주목하세요.</p>
+
+                        <div class="triad-group">
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title" style="color:#3498db;">D 메이저</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot" style="background:#3498db;">3</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">5</span></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot root">R</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">1 - 3 - 5</div>
+                            </div>
+
+                            <div style="align-self:center; text-align:center;">
+                                <div style="color:#e74c3c; font-weight:bold;">3→b3</div>
+                                <span class="flow-arrow">→</span>
+                            </div>
+
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title" style="color:#9b59b6;">Dm 마이너</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot" style="background:#e74c3c;">b3</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">5</span></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot root">R</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">1 - <span style="color:#e74c3c;">b3</span> - 5</div>
+                            </div>
+
+                            <div style="align-self:center; text-align:center;">
+                                <div style="color:#e67e22; font-weight:bold;">+b7</div>
+                                <span class="flow-arrow">→</span>
+                            </div>
+
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title" style="color:#8e44ad;">Dm7</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot" style="background:#e74c3c;">b3</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot" style="background:#e67e22;">b7</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot root">R</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">1 - <span style="color:#e74c3c;">b3</span> - 5 - <span style="color:#e67e22;">b7</span></div>
+                            </div>
+                        </div>
+
+                        <div class="triad-group" style="margin-top:25px;">
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title" style="color:#3498db;">D 메이저</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot" style="background:#3498db;">3</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">5</span></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot root">R</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">1 - 3 - 5</div>
+                            </div>
+
+                            <div style="align-self:center; text-align:center;">
+                                <div style="color:#e67e22; font-weight:bold;">+b7</div>
+                                <span class="flow-arrow">→</span>
+                            </div>
+
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title" style="color:#e67e22;">D7 세븐스</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">3</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot" style="background:#e67e22;">b7</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot root">R</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">1 - 3 - 5 - <span style="color:#e67e22;">b7</span></div>
+                            </div>
+
+                            <div style="align-self:center; text-align:center;">
+                                <div style="color:#2ecc71; font-weight:bold;">b7→7</div>
+                                <span class="flow-arrow">→</span>
+                            </div>
+
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title" style="color:#1abc9c;">DM7 메이저7</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">3</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot" style="background:#1abc9c;">7</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot root">R</span></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">1 - 3 - 5 - <span style="color:#2ecc71;">7</span></div>
+                            </div>
+                        </div>
+
+                        <p style="color:#2ecc71; margin-top:20px; padding:10px; background:rgba(46,204,113,0.1); border-radius:8px;">
+                            ✓ <b>D → Dm:</b> e줄 2프렛 → 1프렛 (3도를 반음 내림) / <b>D → D7:</b> B줄 3프렛 → 1프렛 (b7 = C음)
+                        </p>
+                        </div>
+
+                        <!-- C 코드 변환 -->
+                        <div class="transform-content" id="transform-C">
+                            <p style="color:#f4d03f; font-weight:bold; margin:20px 0 10px 0;">【C 코드】 B줄의 변화에 주목! 세븐스 변환 위주로 익히세요.</p>
+
+                        <div class="triad-group">
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title" style="color:#3498db;">C 메이저</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot root">R</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">1 - <span style="color:#3498db;">3(E)</span> - 5</div>
+                            </div>
+
+                            <div style="align-self:center; text-align:center;">
+                                <div style="color:#e67e22; font-weight:bold;">+b7</div>
+                                <span class="flow-arrow">→</span>
+                            </div>
+
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title" style="color:#e67e22;">C7 세븐스</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot">R</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"><span class="mini-dot" style="background:#e67e22;">b7</span></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">1 - 3 - 5 - <span style="color:#e67e22;">b7(Bb)</span></div>
+                            </div>
+
+                            <div style="align-self:center; text-align:center;">
+                                <div style="color:#2ecc71; font-weight:bold;">b7→7</div>
+                                <span class="flow-arrow">→</span>
+                            </div>
+
+                            <div class="mini-fretboard-container">
+                                <div class="mini-fretboard-title" style="color:#1abc9c;">CM7 메이저7</div>
+                                <div class="mini-fretboard">
+                                    <span class="string-label">e</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">B</span>
+                                    <div class="mini-cell"><span class="mini-open" style="color:#1abc9c;">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span class="string-label">G</span>
+                                    <div class="mini-cell"><span class="mini-open">○</span></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <div class="mini-cell"></div>
+                                    <span></span>
+                                    <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                </div>
+                                <div class="mini-fretboard-subtitle">1 - 3 - 5 - <span style="color:#2ecc71;">7(B)</span></div>
+                            </div>
+                        </div>
+
+                        <p style="color:#2ecc71; margin-top:20px; padding:10px; background:rgba(46,204,113,0.1); border-radius:8px;">
+                            ✓ <b>C → C7:</b> G줄에 b7(Bb) 추가 (3프렛) / <b>C → CM7:</b> B줄 1프렛 떼기 (7 = B음 = 오픈)
+                        </p>
+                        </div>
+
+                        <!-- G 코드 변환 -->
+                        <div class="transform-content" id="transform-G">
+                            <p style="color:#f4d03f; font-weight:bold; margin:20px 0 10px 0;">【G 코드】 넓은 폼이지만 변환 원리는 같습니다!</p>
+
+                            <div class="triad-group">
+                                <div class="mini-fretboard-container">
+                                    <div class="mini-fretboard-title" style="color:#3498db;">G 메이저</div>
+                                    <div class="mini-fretboard">
+                                        <span class="string-label">e</span>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"><span class="mini-dot">5</span></div>
+                                        <span class="string-label">B</span>
+                                        <div class="mini-cell"><span class="mini-open">○</span></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <span class="string-label">G</span>
+                                        <div class="mini-cell"><span class="mini-open">○</span></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <span></span>
+                                        <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                    </div>
+                                    <div class="mini-fretboard-subtitle">1 - <span style="color:#3498db;">3(B)</span> - 5</div>
+                                </div>
+
+                                <div style="align-self:center; text-align:center;">
+                                    <div style="color:#e74c3c; font-weight:bold;">3→b3</div>
+                                    <span class="flow-arrow">→</span>
+                                </div>
+
+                                <div class="mini-fretboard-container">
+                                    <div class="mini-fretboard-title" style="color:#9b59b6;">Gm 마이너</div>
+                                    <div class="mini-fretboard">
+                                        <span class="string-label">e</span>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"><span class="mini-dot">5</span></div>
+                                        <span class="string-label">B</span>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"><span class="mini-dot" style="background:#e74c3c;">b3</span></div>
+                                        <span class="string-label">G</span>
+                                        <div class="mini-cell"><span class="mini-open">○</span></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <span></span>
+                                        <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                    </div>
+                                    <div class="mini-fretboard-subtitle">1 - <span style="color:#e74c3c;">b3(Bb)</span> - 5</div>
+                                </div>
+
+                                <div style="align-self:center; text-align:center;">
+                                    <div style="color:#e67e22; font-weight:bold;">+b7</div>
+                                    <span class="flow-arrow">→</span>
+                                </div>
+
+                                <div class="mini-fretboard-container">
+                                    <div class="mini-fretboard-title" style="color:#8e44ad;">Gm7</div>
+                                    <div class="mini-fretboard">
+                                        <span class="string-label">e</span>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"><span class="mini-dot">5</span></div>
+                                        <span class="string-label">B</span>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"><span class="mini-dot" style="background:#e74c3c;">b3</span></div>
+                                        <span class="string-label">G</span>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"><span class="mini-dot" style="background:#e67e22;">b7</span></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <span></span>
+                                        <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                    </div>
+                                    <div class="mini-fretboard-subtitle">1 - <span style="color:#e74c3c;">b3</span> - 5 - <span style="color:#e67e22;">b7(F)</span></div>
+                                </div>
+                            </div>
+
+                            <div class="triad-group" style="margin-top:25px;">
+                                <div class="mini-fretboard-container">
+                                    <div class="mini-fretboard-title" style="color:#3498db;">G 메이저</div>
+                                    <div class="mini-fretboard">
+                                        <span class="string-label">e</span>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"><span class="mini-dot">5</span></div>
+                                        <span class="string-label">B</span>
+                                        <div class="mini-cell"><span class="mini-open">○</span></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <span class="string-label">G</span>
+                                        <div class="mini-cell"><span class="mini-open">○</span></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <span></span>
+                                        <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                    </div>
+                                    <div class="mini-fretboard-subtitle">1 - 3 - 5</div>
+                                </div>
+
+                                <div style="align-self:center; text-align:center;">
+                                    <div style="color:#e67e22; font-weight:bold;">+b7</div>
+                                    <span class="flow-arrow">→</span>
+                                </div>
+
+                                <div class="mini-fretboard-container">
+                                    <div class="mini-fretboard-title" style="color:#e67e22;">G7 세븐스</div>
+                                    <div class="mini-fretboard">
+                                        <span class="string-label">e</span>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"><span class="mini-dot">5</span></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <span class="string-label">B</span>
+                                        <div class="mini-cell"><span class="mini-open">○</span></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <span class="string-label">G</span>
+                                        <div class="mini-cell"><span class="mini-open">○</span></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <span></span>
+                                        <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                    </div>
+                                    <div class="mini-fretboard-subtitle">1 - 3 - 5 - <span style="color:#e67e22;">b7(F)</span></div>
+                                </div>
+
+                                <div style="align-self:center; text-align:center;">
+                                    <div style="color:#2ecc71; font-weight:bold;">b7→7</div>
+                                    <span class="flow-arrow">→</span>
+                                </div>
+
+                                <div class="mini-fretboard-container">
+                                    <div class="mini-fretboard-title" style="color:#1abc9c;">GM7 메이저7</div>
+                                    <div class="mini-fretboard">
+                                        <span class="string-label">e</span>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"><span class="mini-dot">5</span></div>
+                                        <div class="mini-cell"></div>
+                                        <span class="string-label">B</span>
+                                        <div class="mini-cell"><span class="mini-open">○</span></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <span class="string-label">G</span>
+                                        <div class="mini-cell"><span class="mini-open">○</span></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <div class="mini-cell"></div>
+                                        <span></span>
+                                        <div class="fret-num"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+                                    </div>
+                                    <div class="mini-fretboard-subtitle">1 - 3 - 5 - <span style="color:#2ecc71;">7(F#)</span></div>
+                                </div>
+                            </div>
+
+                            <p style="color:#2ecc71; margin-top:20px; padding:10px; background:rgba(46,204,113,0.1); border-radius:8px;">
+                                ✓ <b>G → G7:</b> e줄 3프렛 → 1프렛 (b7 = F음) / <b>G → GM7:</b> e줄 3프렛 → 2프렛 (7 = F#음)
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <b>핵심 정리:</b><br><br>
+                        • <span class="highlight-red">3 → b3</span> (반음 내림) = 메이저 → 마이너<br>
+                        • <span style="color:#e67e22; font-weight:bold;">+ b7</span> (단7도 추가) = 세븐스(7) 또는 마이너7(m7)<br>
+                        • <span class="highlight-green">+ 7</span> (장7도 추가) = 메이저7(M7)<br><br>
+                        <b>연습 순서:</b> E → A → D → C → G 순으로 연습하세요. 패턴을 익히면 모든 코드에 적용 가능!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="{{ '/assets/js/guitar-chords.js' | prepend: site.baseurl }}"></script>
+    <script>
+        // 패턴 탭 전환
+        document.querySelectorAll('.pattern-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.pattern-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const tabId = tab.dataset.tab;
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // CAGED 시스템 데이터
+        const cagedForms = {
+            'C': {
+                name: 'C형 (오픈 코드)',
+                frets: [-1, 3, 2, 0, 1, 0],
+                fingers: ['X', 3, 2, 'O', 1, 'O'],
+                startFret: 0,
+                description: '가장 기본적인 C 코드 모양. A형 바레의 기초가 됩니다.',
+                rootString: '5번줄 (A줄) 3프렛'
+            },
+            'A': {
+                name: 'A형 (오픈 코드)',
+                frets: [-1, 0, 2, 2, 2, 0],
+                fingers: ['X', 'O', 1, 2, 3, 'O'],
+                startFret: 0,
+                description: '검지, 중지, 약지를 나란히 놓는 형태. 바레 코드의 기본!',
+                rootString: '5번줄 (A줄) 오픈'
+            },
+            'G': {
+                name: 'G형 (오픈 코드)',
+                frets: [3, 2, 0, 0, 0, 3],
+                fingers: [2, 1, 'O', 'O', 'O', 3],
+                startFret: 0,
+                description: '넓게 펼쳐지는 코드. 소지를 많이 사용합니다.',
+                rootString: '6번줄 (E줄) 3프렛'
+            },
+            'E': {
+                name: 'E형 (오픈 코드)',
+                frets: [0, 2, 2, 1, 0, 0],
+                fingers: ['O', 2, 3, 1, 'O', 'O'],
+                startFret: 0,
+                description: '가장 많이 쓰이는 바레 코드의 기본 형태!',
+                rootString: '6번줄 (E줄) 오픈'
+            },
+            'D': {
+                name: 'D형 (오픈 코드)',
+                frets: [-1, -1, 0, 2, 3, 2],
+                fingers: ['X', 'X', 'O', 1, 3, 2],
+                startFret: 0,
+                description: '고음 4줄만 사용하는 밝은 소리의 코드.',
+                rootString: '4번줄 (D줄) 오픈'
+            }
+        };
+
+        // C 코드를 CAGED 5가지 폼으로 연주하는 데이터
+        const cagedPositions = {
+            'C': {
+                name: 'C형',
+                frets: [-1, 3, 2, 0, 1, 0],
+                fingers: ['X', 3, 2, 'O', 1, 'O'],
+                startFret: 0,
+                positionFret: '0프렛 (오픈)',
+                description: '기본 C 오픈 코드'
+            },
+            'A': {
+                name: 'A형',
+                frets: [-1, 3, 5, 5, 5, 3],
+                fingers: ['X', 1, 2, 3, 4, 1],
+                startFret: 3,
+                barre: 3,
+                positionFret: '3프렛',
+                description: 'A형 바레 - 검지로 3프렛 바레'
+            },
+            'G': {
+                name: 'G형',
+                frets: [8, 7, 5, 5, 5, 8],
+                fingers: [3, 2, 'O', 'O', 'O', 4],
+                startFret: 5,
+                positionFret: '5프렛',
+                description: 'G형 - 넓게 펼쳐지는 형태'
+            },
+            'E': {
+                name: 'E형',
+                frets: [8, 10, 10, 9, 8, 8],
+                fingers: [1, 3, 4, 2, 1, 1],
+                startFret: 8,
+                barre: 8,
+                positionFret: '8프렛',
+                description: 'E형 바레 - 검지로 8프렛 바레'
+            },
+            'D': {
+                name: 'D형',
+                frets: [-1, -1, 10, 12, 13, 12],
+                fingers: ['X', 'X', 1, 2, 4, 3],
+                startFret: 10,
+                positionFret: '10프렛',
+                description: 'D형 - 고음 4줄만 사용'
+            }
+        };
+
+        // CAGED 프렛보드 렌더링 함수
+        function renderCagedFretboard(containerId, data) {
+            const container = document.getElementById(containerId);
+            const { frets, fingers, startFret, barre } = data;
+
+            const endFret = startFret + 4;
+            const stringLabels = ['E', 'A', 'D', 'G', 'B', 'e'];
+
+            let html = '';
+
+            // 줄 이름과 열린줄/뮤트 표시
+            html += '<span class="cf-label"></span>';
+            for (let s = 0; s < 6; s++) {
+                const f = fingers[s];
+                let openClass = '';
+                let symbol = '';
+                if (f === 'O') {
+                    openClass = 'open';
+                    symbol = '○';
+                } else if (f === 'X') {
+                    openClass = 'mute';
+                    symbol = '✕';
+                }
+                html += `<span class="cf-open ${openClass}">${symbol}</span>`;
+            }
+
+            // 너트 (startFret이 0일 때만)
+            if (startFret === 0) {
+                html += '<span></span><div class="cf-nut"></div>';
+            }
+
+            // 프렛 행
+            for (let f = (startFret === 0 ? 1 : startFret); f <= endFret; f++) {
+                html += `<span class="cf-fret-num">${f}</span>`;
+
+                for (let s = 0; s < 6; s++) {
+                    const stringClass = s < 2 ? `s${6-s}` : '';
+                    html += `<div class="cf-cell ${stringClass}">`;
+
+                    if (frets[s] === f) {
+                        const isRoot = (s === 0 && ['E', 'G'].includes(data.name?.charAt(0))) ||
+                                       (s === 1 && ['A', 'C'].includes(data.name?.charAt(0))) ||
+                                       (s === 2 && data.name?.charAt(0) === 'D');
+                        const fingerNum = fingers[s];
+                        const rootClass = (fingerNum === 'R' || isRoot) ? 'root' : '';
+                        html += `<span class="cf-dot ${rootClass}">${typeof fingerNum === 'number' ? fingerNum : ''}</span>`;
+                    }
+
+                    html += '</div>';
+                }
+            }
+
+            container.innerHTML = html;
+        }
+
+        // 기본 CAGED 폼 보기
+        function showCagedForm(form) {
+            const data = cagedForms[form];
+            if (!data) return;
+
+            document.querySelectorAll('#cagedBasicSelector .caged-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.form === form);
+            });
+
+            document.getElementById('cagedBasicDisplay').style.display = 'block';
+            document.getElementById('cagedBasicTitle').textContent = data.name;
+
+            renderCagedFretboard('cagedBasicFretboard', data);
+
+            document.getElementById('cagedBasicInfo').innerHTML = `
+                <p><span class="info-label">설명:</span>${data.description}</p>
+                <p><span class="info-label">루트 위치:</span>${data.rootString}</p>
+            `;
+        }
+
+        // C 코드를 CAGED 포지션으로 보기
+        function showCagedPosition(pos) {
+            const data = cagedPositions[pos];
+            if (!data) return;
+
+            document.querySelectorAll('#cagedPositionSelector .caged-position-item').forEach(item => {
+                item.classList.toggle('active', item.dataset.pos === pos);
+            });
+
+            document.getElementById('cagedPositionTitle').textContent = `C 코드 - ${data.name} (${data.positionFret})`;
+
+            renderCagedFretboard('cagedPositionFretboard', data);
+
+            let barreInfo = data.barre ? `<p><span class="info-label">바레:</span>${data.barre}프렛 전체를 검지로 누름</p>` : '';
+            document.getElementById('cagedPositionInfo').innerHTML = `
+                <p><span class="info-label">설명:</span>${data.description}</p>
+                ${barreInfo}
+                <p style="color:#2ecc71; margin-top:10px;">✓ 모두 같은 <b>C 코드</b> 사운드!</p>
+            `;
+        }
+
+        // 초기화: C형 포지션 표시
+        showCagedPosition('C');
+
+        // 코드 변환 탭 전환 함수
+        function showTransformChord(chord) {
+            document.querySelectorAll('#transformChordSelector .caged-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.chord === chord);
+            });
+
+            document.querySelectorAll('.transform-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            const targetContent = document.getElementById('transform-' + chord);
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
+        }
+
+        // 초기화: E 코드 변환 표시
+        showTransformChord('E');
+    </script>
+</body>
+</html>

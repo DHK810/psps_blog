@@ -1,0 +1,324 @@
+---
+layout: null
+permalink: /category/tools/harmony/
+---
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>근음 & 어울리는 음 - PSPS Tools</title>
+    <link rel="icon" type="image/png" href="{{ '/img/favicon.ico' | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ '/assets/css/guitar-tools.css' | prepend: site.baseurl }}">
+</head>
+<body>
+    <nav class="tool-nav">
+        <a href="{{ '/' | prepend: site.baseurl }}">← PSPS 블로그</a>
+        <span class="nav-title">PSPS Tools</span>
+        <a href="{{ '/category/tools/' | prepend: site.baseurl }}">모든 툴</a>
+    </nav>
+    <div class="main-content">
+    <div class="container">
+        <h1>🎵 근음 &amp; 어울리는 음</h1>
+
+        <h3>근음 &amp; 어울리는 음 찾기</h3>
+        <p>코드의 <span class="highlight">근음(Root Note)</span>을 기준으로 어울리는 음을 알면, 코드 구성 원리와 솔로 연주를 이해하는 토대가 됩니다.</p>
+
+        <!-- 근음이란 -->
+        <div class="pattern-box">
+            <h4>근음(Root Note)이란?</h4>
+            <p style="color:#8888a0; margin-bottom:14px;">코드 이름의 기준이 되는 음입니다. C코드의 근음은 <span class="highlight">C</span>, Am코드의 근음은 <span class="highlight">A</span>입니다. 근음 위에 다른 음들을 쌓아 코드를 만들죠.</p>
+            <div class="compare-box">
+                <div class="compare-item">
+                    <div style="color:#a5b4fc; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">메이저 코드</div>
+                    <div style="font-size:22px; font-weight:700; color:#fff; letter-spacing:2px;">1 + 3 + 5</div>
+                    <div style="color:#8888a0; font-size:12px; margin-top:8px;">근음 + 장3도(4반음) + 완전5도(7반음)</div>
+                    <div style="margin-top:8px; color:#34d399; font-size:12px;">밝고 안정적인 소리</div>
+                </div>
+                <div class="compare-arrow">vs</div>
+                <div class="compare-item">
+                    <div style="color:#a5b4fc; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">마이너 코드</div>
+                    <div style="font-size:22px; font-weight:700; color:#fff; letter-spacing:2px;">1 + ♭3 + 5</div>
+                    <div style="color:#8888a0; font-size:12px; margin-top:8px;">근음 + 단3도(3반음) + 완전5도(7반음)</div>
+                    <div style="margin-top:8px; color:#a5b4fc; font-size:12px;">어둡고 감성적인 소리</div>
+                </div>
+            </div>
+            <div class="tip-box" style="margin-top:16px;">
+                <b>핵심:</b> 메이저↔마이너의 차이는 단 <span class="highlight">반음 하나</span>. 3도 음이 반음 내려가면(장3도 → 단3도) 마이너가 됩니다.
+            </div>
+        </div>
+
+        <!-- 인터랙티브 근음 선택기 -->
+        <div class="pattern-box">
+            <h4>근음 선택 → 어울리는 음 확인</h4>
+
+            <div style="margin-bottom:16px;">
+                <div style="color:#a5b4fc; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">① 근음 선택</div>
+                <div class="chord-buttons" id="rootNoteSelector"></div>
+            </div>
+
+            <div style="margin-bottom:20px;">
+                <div style="color:#a5b4fc; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">② 스케일 / 코드 유형 선택</div>
+                <div class="chord-buttons" id="scaleTypeSelector">
+                    <button class="chord-btn active" data-type="major-chord" onclick="selectScaleType('major-chord')">메이저 코드</button>
+                    <button class="chord-btn" data-type="minor-chord" onclick="selectScaleType('minor-chord')">마이너 코드</button>
+                    <button class="chord-btn" data-type="dom7" onclick="selectScaleType('dom7')">도미넌트 7th</button>
+                    <button class="chord-btn" data-type="major" onclick="selectScaleType('major')">메이저 스케일</button>
+                    <button class="chord-btn" data-type="minor" onclick="selectScaleType('minor')">마이너 스케일</button>
+                    <button class="chord-btn" data-type="major-penta" onclick="selectScaleType('major-penta')">메이저 펜타토닉</button>
+                    <button class="chord-btn" data-type="minor-penta" onclick="selectScaleType('minor-penta')">마이너 펜타토닉</button>
+                </div>
+            </div>
+
+            <div id="harmonyResult">
+                <div id="harmonyTitle" style="font-size:19px; font-weight:700; color:#fff; margin-bottom:14px;"></div>
+                <div id="harmonyNotes" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px;"></div>
+                <div style="overflow-x:auto; -webkit-overflow-scrolling:touch;">
+                    <div id="harmonyFretboard"></div>
+                </div>
+                <div id="harmonyExplanation" style="margin-top:14px; padding:14px 16px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-radius:10px; font-size:13px; color:#8888a0; line-height:1.65;"></div>
+            </div>
+        </div>
+
+        <!-- 6번줄/5번줄 음 이름 -->
+        <div class="pattern-box">
+            <h4>6번줄(E) · 5번줄(A) 음 이름 — 바레 코드 근음 찾기</h4>
+            <p style="color:#8888a0; margin-bottom:14px;">바레 코드는 근음 줄의 프렛 위치가 곧 코드 이름이 됩니다. 이 두 줄의 음 이름만 외우면 프렛보드 전체를 활용할 수 있습니다.</p>
+
+            <div style="display:flex; flex-wrap:wrap; gap:16px;">
+                <div style="flex:1; min-width:260px;">
+                    <div style="color:#34d399; font-size:12px; font-weight:600; margin-bottom:10px; letter-spacing:0.5px;">6번줄 (E string) — E형 바레 코드 근음</div>
+                    <div id="eTuningMap"></div>
+                </div>
+                <div style="flex:1; min-width:260px;">
+                    <div style="color:#a5b4fc; font-size:12px; font-weight:600; margin-bottom:10px; letter-spacing:0.5px;">5번줄 (A string) — A형 바레 코드 근음</div>
+                    <div id="aTuningMap"></div>
+                </div>
+            </div>
+
+            <div class="tip-box" style="margin-top:16px;">
+                <b>활용 예시:</b><br>
+                E형 바레를 <span class="highlight">3프렛</span>에 → <span class="highlight-green">G코드</span> / <span class="highlight">5프렛</span>에 → <span class="highlight-green">A코드</span> / <span class="highlight">8프렛</span>에 → <span class="highlight-green">C코드</span><br>
+                A형 바레를 <span class="highlight">2프렛</span>에 → <span class="highlight-blue">B코드</span> / <span class="highlight">5프렛</span>에 → <span class="highlight-blue">D코드</span> / <span class="highlight">7프렛</span>에 → <span class="highlight-blue">E코드</span>
+            </div>
+        </div>
+
+        <!-- 반음 구조 설명 -->
+        <div class="pattern-box">
+            <h4>12음 반음 구조 이해하기</h4>
+            <p style="color:#8888a0; margin-bottom:14px;">기타의 한 프렛 = 반음 1개. 이 구조를 알면 모든 음 위치를 스스로 계산할 수 있습니다.</p>
+            <div class="pattern-diagram">C  → C# → D  → D# → E  → F  → F# → G  → G# → A  → A# → B  → C
+↕      ↕      ↕      ↕      ↕      ↕      ↕      ↕      ↕      ↕      ↕      ↕
+반음  반음  반음  반음  반음  반음  반음  반음  반음  반음  반음  반음
+
+※ E→F, B→C 사이만 반음 하나 (검정 건반 없음)
+※ 나머지는 온음(반음 2개) 간격</div>
+            <ul class="step-list" style="margin-top:16px;">
+                <li><div class="step-num">1</div><div class="step-content"><b style="color:#e0e0ec;">근음 찾기:</b> 6번줄 또는 5번줄에서 코드 이름에 해당하는 프렛 위치를 찾는다</div></li>
+                <li><div class="step-num">2</div><div class="step-content"><b style="color:#e0e0ec;">코드 음 계산:</b> 근음에서 위 도표대로 4반음(메이저) 또는 3반음(마이너) 올리면 3도 음</div></li>
+                <li><div class="step-num">3</div><div class="step-content"><b style="color:#e0e0ec;">5도 음 계산:</b> 근음에서 7반음 올리면 완전5도 음 — 어떤 코드든 동일</div></li>
+                <li><div class="step-num">4</div><div class="step-content"><b style="color:#e0e0ec;">솔로에 적용:</b> 위 인터랙티브 도구로 근음을 선택하고, 해당 스케일 음들을 프렛보드에서 확인</div></li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    <script src="{{ '/assets/js/guitar-chords.js' | prepend: site.baseurl }}"></script>
+    <script>
+        // ===== 근음 & 어울리는 음 =====
+        const allNotes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+
+        const scaleData = {
+            'major-chord': {
+                name: '메이저 코드',
+                intervals: [0, 4, 7],
+                degrees: ['1 (근음)', '3 (장3도)', '5 (완전5도)'],
+                desc: '밝고 안정적인 소리. 근음에서 4반음 위 + 7반음 위 음으로 구성됩니다.',
+                color: '#5b5ff0'
+            },
+            'minor-chord': {
+                name: '마이너 코드',
+                intervals: [0, 3, 7],
+                degrees: ['1 (근음)', '♭3 (단3도)', '5 (완전5도)'],
+                desc: '어둡고 감성적인 소리. 3도 음이 메이저보다 반음 낮습니다.',
+                color: '#7c3aed'
+            },
+            'dom7': {
+                name: '도미넌트 7th 코드',
+                intervals: [0, 4, 7, 10],
+                degrees: ['1 (근음)', '3 (장3도)', '5 (완전5도)', '♭7 (단7도)'],
+                desc: '블루지하고 긴장감 있는 소리. 블루스, 재즈, 록에 자주 등장합니다.',
+                color: '#b45309'
+            },
+            'major': {
+                name: '메이저 스케일',
+                intervals: [0, 2, 4, 5, 7, 9, 11],
+                degrees: ['1', '2', '3', '4', '5', '6', '7'],
+                desc: '밝고 서양음악의 기본이 되는 7음 스케일. 도-레-미-파-솔-라-시.',
+                color: '#059669'
+            },
+            'minor': {
+                name: '내추럴 마이너 스케일',
+                intervals: [0, 2, 3, 5, 7, 8, 10],
+                degrees: ['1', '2', '♭3', '4', '5', '♭6', '♭7'],
+                desc: '어둡고 감성적인 7음 스케일. 록, 발라드, 클래식에 많이 사용됩니다.',
+                color: '#7c3aed'
+            },
+            'major-penta': {
+                name: '메이저 펜타토닉',
+                intervals: [0, 2, 4, 7, 9],
+                degrees: ['1', '2', '3', '5', '6'],
+                desc: '5음계. 밝고 경쾌한 느낌. 컨트리·팝 솔로에 잘 어울립니다.',
+                color: '#0891b2'
+            },
+            'minor-penta': {
+                name: '마이너 펜타토닉',
+                intervals: [0, 3, 5, 7, 10],
+                degrees: ['1', '♭3', '4', '5', '♭7'],
+                desc: '5음계. 록·블루스 솔로의 핵심 스케일. 기타 솔로 입문으로 가장 많이 배웁니다.',
+                color: '#dc2626'
+            }
+        };
+
+        // 각 줄의 개방현 음 (반음 기준, C=0)
+        const openStringNotes = [4, 9, 2, 7, 11, 4]; // E A D G B e
+        const stringLabels = ['6E', '5A', '4D', '3G', '2B', '1e'];
+
+        let selectedRoot = 0;
+        let selectedScaleType = 'major-chord';
+
+        function initRootNoteSelector() {
+            const container = document.getElementById('rootNoteSelector');
+            if (!container) return;
+            allNotes.forEach((note, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'chord-btn' + (idx === 0 ? ' active' : '');
+                btn.textContent = note;
+                btn.dataset.rootIdx = idx;
+                btn.onclick = () => selectRoot(idx);
+                container.appendChild(btn);
+            });
+            renderHarmony();
+            renderStringMaps();
+        }
+
+        function selectRoot(idx) {
+            selectedRoot = idx;
+            document.querySelectorAll('#rootNoteSelector .chord-btn').forEach((btn, i) => {
+                btn.classList.toggle('active', parseInt(btn.dataset.rootIdx) === idx);
+            });
+            renderHarmony();
+        }
+
+        function selectScaleType(type) {
+            selectedScaleType = type;
+            document.querySelectorAll('#scaleTypeSelector .chord-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.type === type);
+            });
+            renderHarmony();
+        }
+
+        function renderHarmony() {
+            const root = selectedRoot;
+            const type = selectedScaleType;
+            const data = scaleData[type];
+            const notes = data.intervals.map(i => allNotes[(root + i) % 12]);
+
+            const titleEl = document.getElementById('harmonyTitle');
+            if (titleEl) titleEl.innerHTML = `<span style="color:${data.color}">${allNotes[root]} ${data.name}</span>`;
+
+            const notesEl = document.getElementById('harmonyNotes');
+            if (notesEl) {
+                notesEl.innerHTML = '';
+                notes.forEach((note, i) => {
+                    const pill = document.createElement('div');
+                    const isRoot = i === 0;
+                    pill.style.cssText = `display:inline-flex;align-items:center;gap:6px;background:${isRoot ? data.color : 'rgba(255,255,255,0.06)'};border:1px solid ${isRoot ? data.color : 'rgba(255,255,255,0.1)'};border-radius:8px;padding:8px 14px;box-shadow:${isRoot ? '0 0 12px ' + data.color + '55' : 'none'};`;
+                    pill.innerHTML = `<span style="font-size:15px;font-weight:700;color:#fff;">${note}</span><span style="font-size:11px;font-weight:400;color:rgba(255,255,255,0.6);">${data.degrees[i]}</span>`;
+                    notesEl.appendChild(pill);
+                });
+            }
+
+            renderHarmonyFretboard(root, notes, data.color);
+
+            const expEl = document.getElementById('harmonyExplanation');
+            if (expEl) {
+                expEl.innerHTML = `<b style="color:#e0e0ec;">${allNotes[root]} ${data.name}</b> 구성음: ${notes.map((n, i) => `<span style="color:${i===0 ? data.color : '#a5b4fc'};font-weight:600;">${n}</span>`).join(' · ')}<br><br>${data.desc}`;
+            }
+        }
+
+        function renderHarmonyFretboard(rootIdx, scaleNotes, accentColor) {
+            const container = document.getElementById('harmonyFretboard');
+            if (!container) return;
+            const noteSet = new Set(scaleNotes);
+            const FRETS = 12;
+            const CELL_W = 38;
+            const CELL_H = 36;
+            const LABEL_W = 42;
+
+            let html = `<div style="display:inline-grid;grid-template-columns:${LABEL_W}px repeat(${FRETS+1},${CELL_W}px);background:linear-gradient(160deg,#271606,#1a0f04);padding:12px 14px;border-radius:12px;border:2px solid #6b3e1a;min-width:max-content;">`;
+
+            // 프렛 번호 헤더
+            html += `<div></div>`;
+            for (let f = 0; f <= FRETS; f++) {
+                const marker = [0,3,5,7,9,12].includes(f);
+                html += `<div style="text-align:center;font-size:10px;color:${marker ? '#c8a050' : '#3a3a50'};font-weight:${marker ? '700' : '400'};padding-bottom:4px;">${f===0 ? '개' : f}</div>`;
+            }
+
+            for (let s = 0; s < 6; s++) {
+                const openNote = openStringNotes[s];
+                const stringThick = [3.5, 3, 2.5, 2, 1.5, 1][s];
+                const stringColor = s < 3 ? 'linear-gradient(90deg,#b07018,#e0a030,#b07018)' : 'linear-gradient(90deg,#9090a8,#d8d8e8,#9090a8)';
+
+                html += `<div style="display:flex;align-items:center;justify-content:flex-end;padding-right:6px;color:#c8a050;font-size:10px;font-weight:600;">${stringLabels[s]}</div>`;
+
+                for (let f = 0; f <= FRETS; f++) {
+                    const noteIdx = (openNote + f) % 12;
+                    const noteName = allNotes[noteIdx];
+                    const isRoot = noteIdx === rootIdx;
+                    const isScale = noteSet.has(noteName);
+
+                    html += `<div style="position:relative;height:${CELL_H}px;display:flex;align-items:center;justify-content:center;border-right:${f<FRETS ? '1px solid rgba(120,80,40,0.3)' : 'none'};">`;
+
+                    // 너트
+                    if (f === 0) {
+                        html += `<div style="position:absolute;left:0;right:0;top:50%;height:${stringThick}px;transform:translateY(-50%);background:${stringColor};z-index:1;"></div>`;
+                        html += `<div style="position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(90deg,#fffaf0,#c8b880);z-index:2;border-radius:1px;"></div>`;
+                    } else {
+                        html += `<div style="position:absolute;left:0;right:0;top:50%;height:${stringThick}px;transform:translateY(-50%);background:${stringColor};z-index:1;"></div>`;
+                    }
+
+                    if (isScale) {
+                        html += `<div style="position:relative;z-index:10;width:${isRoot?28:24}px;height:${isRoot?28:24}px;border-radius:50%;background:${isRoot ? accentColor : 'rgba(20,20,40,0.92)'};border:${isRoot ? '2px solid rgba(255,255,255,0.45)' : '1.5px solid rgba(165,180,252,0.5)'};display:flex;align-items:center;justify-content:center;font-size:${isRoot?9:8}px;font-weight:700;color:${isRoot ? '#fff' : '#a5b4fc'};box-shadow:${isRoot ? '0 0 10px '+accentColor+'90' : 'none'};">${noteName}</div>`;
+                    }
+
+                    html += '</div>';
+                }
+            }
+
+            html += '</div>';
+            container.innerHTML = html;
+        }
+
+        function renderStringMaps() {
+            renderOneStringMap('eTuningMap', 4, '#34d399');
+            renderOneStringMap('aTuningMap', 9, '#a5b4fc');
+        }
+
+        function renderOneStringMap(containerId, openNote, color) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            let html = '<div style="display:flex;flex-wrap:wrap;gap:4px;">';
+            for (let fret = 0; fret <= 12; fret++) {
+                const noteIdx = (openNote + fret) % 12;
+                const noteName = allNotes[noteIdx];
+                const isNatural = !noteName.includes('#');
+                html += `<div style="display:flex;flex-direction:column;align-items:center;background:${isNatural ? 'rgba(255,255,255,0.06)' : 'rgba(255,255,255,0.02)'};border:1px solid ${isNatural ? 'rgba(255,255,255,0.12)' : 'rgba(255,255,255,0.05)'};border-radius:8px;padding:6px 7px;min-width:36px;text-align:center;"><div style="font-size:13px;font-weight:700;color:${color};">${noteName}</div><div style="font-size:9px;color:#40406a;margin-top:2px;">${fret===0 ? '개방' : fret+'프렛'}</div></div>`;
+            }
+            html += '</div>';
+            container.innerHTML = html;
+        }
+
+        initRootNoteSelector();
+    </script>
+</body>
+</html>
