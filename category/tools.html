@@ -1024,6 +1024,171 @@ permalink: /category/tools/
             .caged-fretboard .cf-dot { width: 26px; height: 26px; font-size: 11px; }
         }
 
+        /* ===== SONG SEARCH ===== */
+        .song-search-bar {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .song-search-bar::before {
+            content: '🎵';
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 15px;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .song-search-bar input {
+            width: 100%;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 12px;
+            padding: 13px 18px 13px 44px;
+            color: #e0e0ec;
+            font-family: inherit;
+            font-size: 15px;
+            outline: none;
+            transition: all 0.2s;
+        }
+        .song-search-bar input::placeholder { color: #50506a; }
+        .song-search-bar input:focus {
+            border-color: #5b5ff0;
+            background: rgba(255,255,255,0.08);
+            box-shadow: 0 0 0 3px rgba(91,95,240,0.18);
+        }
+        .song-filter-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 20px;
+        }
+        .filter-tag {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #70708a;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.18s;
+        }
+        .filter-tag:hover { color: #c0c0d8; background: rgba(255,255,255,0.08); }
+        .filter-tag.active {
+            background: #5b5ff0;
+            border-color: #5b5ff0;
+            color: #fff;
+        }
+        .song-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 14px;
+        }
+        .song-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 16px;
+            padding: 18px 20px;
+            transition: border-color 0.2s, background 0.2s;
+            cursor: default;
+        }
+        .song-card:hover {
+            border-color: rgba(91,95,240,0.35);
+            background: rgba(91,95,240,0.05);
+        }
+        .song-card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .song-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.3;
+        }
+        .song-artist {
+            font-size: 12px;
+            color: #60607a;
+            margin-top: 3px;
+        }
+        .song-difficulty {
+            flex-shrink: 0;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 9px;
+            border-radius: 20px;
+        }
+        .diff-초급   { background: rgba(52,211,153,0.15); color: #34d399; border: 1px solid rgba(52,211,153,0.25); }
+        .diff-초중급 { background: rgba(251,191,36,0.12); color: #fbbf24; border: 1px solid rgba(251,191,36,0.25); }
+        .diff-중급   { background: rgba(248,113,113,0.12); color: #f87171; border: 1px solid rgba(248,113,113,0.25); }
+        .diff-고급   { background: rgba(167,139,250,0.12); color: #a78bfa; border: 1px solid rgba(167,139,250,0.25); }
+        .song-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px;
+            font-size: 12px;
+        }
+        .song-meta-item {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 6px;
+            padding: 3px 9px;
+            color: #9090a8;
+        }
+        .song-meta-item b { color: #c8a050; }
+        .song-chords {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 12px;
+        }
+        .song-chord-btn {
+            background: rgba(91,95,240,0.12);
+            border: 1px solid rgba(91,95,240,0.3);
+            color: #a5b4fc;
+            padding: 5px 11px;
+            border-radius: 7px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.18s;
+        }
+        .song-chord-btn:hover {
+            background: #5b5ff0;
+            border-color: #5b5ff0;
+            color: #fff;
+            transform: translateY(-1px);
+        }
+        .song-chord-arrow {
+            color: #40405a;
+            font-size: 12px;
+        }
+        .song-tip {
+            font-size: 12px;
+            color: #60607a;
+            line-height: 1.55;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .song-tip b { color: #c8a050; }
+        .song-no-result {
+            text-align: center;
+            padding: 40px 20px;
+            color: #40405a;
+            font-size: 14px;
+            grid-column: 1 / -1;
+        }
+        @media (max-width: 600px) {
+            .song-grid { grid-template-columns: 1fr; }
+        }
+
         /* ===== CHORD SEARCH ===== */
         .chord-search {
             position: relative;
@@ -1215,6 +1380,7 @@ permalink: /category/tools/
                 <button class="pattern-tab" data-tab="barre">바레 코드</button>
                 <button class="pattern-tab" data-tab="progression">코드 진행</button>
                 <button class="pattern-tab" data-tab="root-harmony">근음 & 어울리는 음</button>
+                <button class="pattern-tab" data-tab="song-search">노래 찾기</button>
             </div>
 
             <div class="pattern-content" id="patternContent">
@@ -3736,6 +3902,27 @@ permalink: /category/tools/
                         </ul>
                     </div>
                 </div>
+
+                <!-- 노래 찾기 -->
+                <div class="tab-content" id="song-search">
+                    <h3>노래 찾기</h3>
+                    <p>곡 이름이나 아티스트로 검색하면 코드 진행, 키, 카포 위치를 바로 확인할 수 있습니다. 코드 버튼을 누르면 운지법도 볼 수 있어요.</p>
+
+                    <div class="song-search-bar">
+                        <input type="text" id="songSearchInput" placeholder="곡 이름 또는 아티스트 검색 (예: 벚꽃, Ed Sheeran...)" autocomplete="off" />
+                    </div>
+
+                    <div class="song-filter-tags" id="songFilterTags">
+                        <button class="filter-tag active" data-filter="all">전체</button>
+                        <button class="filter-tag" data-filter="ko">한국어</button>
+                        <button class="filter-tag" data-filter="en">영어</button>
+                        <button class="filter-tag" data-filter="초급">초급</button>
+                        <button class="filter-tag" data-filter="초중급">초중급</button>
+                        <button class="filter-tag" data-filter="중급">중급</button>
+                    </div>
+
+                    <div class="song-grid" id="songGrid"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -4603,6 +4790,248 @@ permalink: /category/tools/
             html += '</div>';
             container.innerHTML = html;
         }
+
+        initRootNoteSelector();
+
+        // ===== 노래 찾기 =====
+        const songDB = [
+            // ── 영어 팝 ──
+            {
+                title: 'Until I Found You', artist: 'Stephen Sanchez', year: 2022,
+                lang: 'en', genre: '인디팝',
+                key: 'E장조', capo: 4, progression: ['C','G','Am','F'],
+                bpm: 112, difficulty: '초급', range: 'B3 ~ C#5',
+                tip: '곡 전체가 이 4코드 반복. 카포 위치만 바꾸면 음역대 조절 가능.'
+            },
+            {
+                title: 'Perfect', artist: 'Ed Sheeran', year: 2017,
+                lang: 'en', genre: '팝',
+                key: 'G장조', capo: 0, progression: ['G','Em','C','D'],
+                bpm: 96, difficulty: '초급', range: 'B3 ~ D5',
+                tip: '느린 3/4박자. G-Em-C-D 전환이 매끄러워지면 완성.'
+            },
+            {
+                title: 'Thinking Out Loud', artist: 'Ed Sheeran', year: 2014,
+                lang: 'en', genre: '소울팝',
+                key: 'D장조', capo: 0, progression: ['D','G','A','Bm'],
+                bpm: 79, difficulty: '초중급', range: 'A3 ~ C#5',
+                tip: 'Bm 바레 코드가 포인트. 느린 BPM으로 코드 전환 연습하기 좋음.'
+            },
+            {
+                title: 'Let Her Go', artist: 'Passenger', year: 2012,
+                lang: 'en', genre: '포크팝',
+                key: 'G장조', capo: 0, progression: ['G','D','Em','C'],
+                bpm: 104, difficulty: '초급', range: 'A3 ~ E5',
+                tip: '인트로 핑거피킹이 유명하지만 스트로킹으로도 충분히 연주 가능.'
+            },
+            {
+                title: 'Country Roads', artist: 'John Denver', year: 1971,
+                lang: 'en', genre: '컨트리',
+                key: 'G장조', capo: 0, progression: ['G','Em','C','D'],
+                bpm: 100, difficulty: '초급', range: 'D4 ~ D5',
+                tip: '오픈 코드 4개로 완성. 기타 입문곡으로 최적.'
+            },
+            {
+                title: 'Stand By Me', artist: 'Ben E. King', year: 1961,
+                lang: 'en', genre: 'R&B',
+                key: 'A장조', capo: 0, progression: ['A','F#m','D','E'],
+                bpm: 120, difficulty: '초중급', range: 'E3 ~ D5',
+                tip: 'F#m 바레 코드(2프렛)가 핵심. 반복 진행이라 외우기 쉬움.'
+            },
+            {
+                title: 'Wish You Were Here', artist: 'Pink Floyd', year: 1975,
+                lang: 'en', genre: '록',
+                key: 'G장조', capo: 0, progression: ['C','D','Am','G'],
+                bpm: 66, difficulty: '초중급', range: 'B3 ~ B4',
+                tip: '인트로 핑거피킹 패턴이 상징적. 코드 자체는 쉬운 편.'
+            },
+            {
+                title: 'Hallelujah', artist: 'Leonard Cohen', year: 1984,
+                lang: 'en', genre: '포크',
+                key: 'C장조', capo: 0, progression: ['C','Am','F','G'],
+                bpm: 68, difficulty: '초급', range: 'C4 ~ E5',
+                tip: '3/4박자(왈츠). 다운-다운-업 스트로킹 패턴으로 시작.'
+            },
+            {
+                title: 'Wonderwall', artist: 'Oasis', year: 1995,
+                lang: 'en', genre: '브릿팝',
+                key: 'F#m장조', capo: 2, progression: ['Em7','G','Dsus4','A7sus4'],
+                bpm: 87, difficulty: '초중급', range: 'A3 ~ C#5',
+                tip: 'Capo 2. sus 코드들이 특징적. 검지를 2줄에 고정하면 전환이 쉬워짐.'
+            },
+            {
+                title: 'Hotel California', artist: 'Eagles', year: 1977,
+                lang: 'en', genre: '록',
+                key: 'Bm', capo: 0, progression: ['Bm','F#','A','E','G','D','Em','F#'],
+                bpm: 75, difficulty: '중급', range: 'A3 ~ A4',
+                tip: '8개 코드, 바레 코드 다수 포함. 인트로 핑거피킹은 장기 목표로.'
+            },
+
+            // ── 한국 ──
+            {
+                title: '벚꽃 엔딩', artist: '버스커버스커', year: 2012,
+                lang: 'ko', genre: '인디',
+                key: 'E장조', capo: 4, progression: ['C','G','Am','F'],
+                bpm: 128, difficulty: '초급', range: 'E4 ~ G5',
+                tip: 'Capo 4로 Until I Found You와 같은 코드 모양. 보컬 음역이 높아 카포 조절 추천.'
+            },
+            {
+                title: '밤 편지', artist: '아이유', year: 2017,
+                lang: 'ko', genre: '발라드',
+                key: 'G장조', capo: 3, progression: ['G','D','Em','C'],
+                bpm: 70, difficulty: '초급', range: 'A3 ~ B4',
+                tip: 'Capo 3 권장. 느린 BPM이라 코드 전환 연습에 좋음.'
+            },
+            {
+                title: '모든 날 모든 순간', artist: '폴킴', year: 2017,
+                lang: 'ko', genre: '발라드',
+                key: 'D장조', capo: 0, progression: ['D','A','Bm','G'],
+                bpm: 78, difficulty: '초중급', range: 'A3 ~ C#5',
+                tip: 'Bm 바레 코드 필요. 깔끔한 4코드 진행으로 연습하기 좋은 곡.'
+            },
+            {
+                title: '주저하는 연인들을 위해', artist: '잔나비', year: 2017,
+                lang: 'ko', genre: '인디팝',
+                key: 'G장조', capo: 0, progression: ['G','Em','Am','D'],
+                bpm: 90, difficulty: '초급', range: 'G3 ~ G4',
+                tip: '오픈 코드 4개. 남성 음역대에 잘 맞아 입문곡으로 추천.'
+            },
+            {
+                title: '별 보러 가자', artist: '적재', year: 2015,
+                lang: 'ko', genre: '인디팝',
+                key: 'F장조', capo: 5, progression: ['C','G','Am','F'],
+                bpm: 110, difficulty: '초급', range: 'C4 ~ C5',
+                tip: 'Capo 5. 같은 4코드 패턴. 가사와 멜로디가 쉬워 노래하며 치기 좋음.'
+            },
+            {
+                title: '다행이다', artist: '이적', year: 2007,
+                lang: 'ko', genre: '발라드',
+                key: 'G장조', capo: 0, progression: ['G','D','Em','C'],
+                bpm: 76, difficulty: '초급', range: 'E3 ~ E5',
+                tip: '기본 4코드. 느린 발라드라 코드 전환 여유 있음.'
+            },
+            {
+                title: '오래된 노래', artist: '검정치마', year: 2011,
+                lang: 'ko', genre: '인디록',
+                key: 'E장조', capo: 0, progression: ['E','A','B','C#m'],
+                bpm: 120, difficulty: '초중급', range: 'B3 ~ F#4',
+                tip: 'B와 C#m 바레 코드 포함. 록 느낌의 업스트로킹이 잘 어울림.'
+            },
+            {
+                title: '사랑을 했다', artist: 'IKON', year: 2018,
+                lang: 'ko', genre: 'K팝',
+                key: 'G장조', capo: 0, progression: ['G','Em','C','D'],
+                bpm: 100, difficulty: '초급', range: 'D4 ~ D5',
+                tip: '깔끔한 4코드 반복. 스트로킹 패턴 익히기 좋은 곡.'
+            },
+            {
+                title: '너에게', artist: '015B / 강산에', year: 1990,
+                lang: 'ko', genre: '발라드',
+                key: 'G장조', capo: 0, progression: ['G','C','D','Em'],
+                bpm: 72, difficulty: '초급', range: 'D4 ~ E5',
+                tip: '클래식 발라드 4코드. 느린 속도로 코드 전환 연습에 최적.'
+            },
+            {
+                title: '동치미', artist: '멜로망스', year: 2015,
+                lang: 'ko', genre: '발라드',
+                key: 'G장조', capo: 2, progression: ['G','D','Em','C'],
+                bpm: 68, difficulty: '초중급', range: 'G3 ~ F5',
+                tip: 'Capo 2. 보컬 음역이 넓어 카포 조절 필요. 핑거피킹 버전도 아름다움.'
+            },
+        ];
+
+        let songFilterLang = 'all';
+        let songFilterDiff = 'all';
+        let songSearchQuery = '';
+
+        function renderSongGrid() {
+            const grid = document.getElementById('songGrid');
+            if (!grid) return;
+
+            const q = songSearchQuery.toLowerCase();
+            const filtered = songDB.filter(s => {
+                const matchLang = songFilterLang === 'all' || s.lang === songFilterLang;
+                const matchDiff = songFilterDiff === 'all' || s.difficulty === songFilterDiff;
+                const matchQ = !q || s.title.toLowerCase().includes(q) ||
+                               s.artist.toLowerCase().includes(q) ||
+                               (s.genre && s.genre.toLowerCase().includes(q));
+                return matchLang && matchDiff && matchQ;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `<div class="song-no-result">검색 결과가 없습니다 🎸</div>`;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(s => {
+                const capoText = s.capo > 0 ? `카포 ${s.capo}` : '카포 없음';
+                const chordArrows = s.progression.map((c, i) =>
+                    `<button class="song-chord-btn" onclick="loadSongChord('${c}')">${c}</button>` +
+                    (i < s.progression.length - 1 ? `<span class="song-chord-arrow">→</span>` : '')
+                ).join('');
+
+                return `
+                <div class="song-card">
+                    <div class="song-card-header">
+                        <div>
+                            <div class="song-title">${s.title}</div>
+                            <div class="song-artist">${s.artist} · ${s.year}</div>
+                        </div>
+                        <span class="song-difficulty diff-${s.difficulty}">${s.difficulty}</span>
+                    </div>
+                    <div class="song-meta">
+                        <span class="song-meta-item"><b>키</b> ${s.key}</span>
+                        <span class="song-meta-item"><b>카포</b> ${capoText}</span>
+                        <span class="song-meta-item"><b>BPM</b> ${s.bpm}</span>
+                        ${s.range ? `<span class="song-meta-item"><b>음역</b> ${s.range}</span>` : ''}
+                    </div>
+                    <div class="song-chords">${chordArrows}</div>
+                    <div class="song-tip"><b>팁:</b> ${s.tip}</div>
+                </div>`;
+            }).join('');
+        }
+
+        function loadSongChord(chordName) {
+            if (!chords[chordName]) return;
+            renderFretboard(chordName);
+            document.querySelectorAll('.chord-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.chord === chordName);
+            });
+            const display = document.querySelector('.chord-display');
+            if (display) display.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // 필터 태그
+        document.querySelectorAll('#songFilterTags .filter-tag').forEach(tag => {
+            tag.addEventListener('click', () => {
+                const f = tag.dataset.filter;
+                if (['all','ko','en'].includes(f)) {
+                    songFilterLang = f;
+                    document.querySelectorAll('#songFilterTags .filter-tag').forEach(t => {
+                        if (['all','ko','en'].includes(t.dataset.filter)) t.classList.remove('active');
+                    });
+                } else {
+                    songFilterDiff = (songFilterDiff === f) ? 'all' : f;
+                    document.querySelectorAll('#songFilterTags .filter-tag').forEach(t => {
+                        if (!['all','ko','en'].includes(t.dataset.filter)) t.classList.remove('active');
+                    });
+                }
+                tag.classList.toggle('active', true);
+                if (['all','ko','en'].includes(f)) tag.classList.add('active');
+                renderSongGrid();
+            });
+        });
+
+        // 검색 입력
+        const songInput = document.getElementById('songSearchInput');
+        if (songInput) {
+            songInput.addEventListener('input', () => {
+                songSearchQuery = songInput.value;
+                renderSongGrid();
+            });
+        }
+
+        renderSongGrid();
 
         initRootNoteSelector();
     </script>
