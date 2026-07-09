@@ -7,10 +7,11 @@ background: '/img/bg-post.jpg'
 
 	{% for post in site.categories.foreign_issue %}
 
-	<article class="post-preview">
+	<article class="post-preview cat-foreign_issue psps-reveal" data-cat="foreign_issue">
 	  <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+	    <span class="psps-cat-badge">해외 이슈</span>
 	    {% if post.feature %}
-	      <img class="post-feature" src="{{ post.feature }}" alt="">
+	      <img class="post-feature" src="{{ post.feature }}" alt="{{ post.title | escape }}" {% unless forloop.first %}loading="lazy"{% endunless %}>
 	    {% endif %}
 	    <h2 class="post-title">{{ post.title }}</h2>
 	    {% if post.description %}
