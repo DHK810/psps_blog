@@ -34,7 +34,7 @@ layout: default
     <a href="{{ "/" | relative_url }}">Home</a>
     <span class="sep">/</span>
     {% if cat %}
-      <a href="{{ "/category/" | append: cat | relative_url }}">{% case cat %}{% when 'marketing' %}마케팅{% when 'foreign_issue' %}해외 이슈{% when 'knowledge' %}지식{% else %}{{ cat }}{% endcase %}</a>
+      <a href="{{ "/category/" | append: cat | append: "/" | relative_url }}">{% case cat %}{% when 'marketing' %}마케팅{% when 'foreign_issue' %}해외 이슈{% when 'knowledge' %}지식{% else %}{{ cat }}{% endcase %}</a>
       <span class="sep">/</span>
     {% endif %}
     <span>{{ page.title }}</span>
@@ -64,9 +64,7 @@ layout: default
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
 
-          <div class="psps-reveal">
           {{ content }}
-          </div>
 
           <hr>
 
