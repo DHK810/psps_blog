@@ -2,6 +2,8 @@
 layout: default
 ---
 
+<div id="psps-progress"></div>
+
 <!-- Page Header -->
 {% if page.background %}
 <script>
@@ -27,12 +29,44 @@ layout: default
     </div>
   </header>
 
+  {% assign cat = page.categories | first %}
+  <nav class="psps-breadcrumb" aria-label="breadcrumb">
+    <a href="{{ "/" | relative_url }}">Home</a>
+    <span class="sep">/</span>
+    {% if cat %}
+      <a href="{{ "/category/" | append: cat | relative_url }}">{% case cat %}{% when 'marketing' %}마케팅{% when 'foreign_issue' %}해외 이슈{% when 'knowledge' %}지식{% else %}{{ cat }}{% endcase %}</a>
+      <span class="sep">/</span>
+    {% endif %}
+    <span>{{ page.title }}</span>
+  </nav>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": {{ page.title | jsonify }},
+    "description": {{ page.description | default: site.description | jsonify }},
+    "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+    "dateModified": {{ page.date | date_to_xmlschema | jsonify }},
+    "author": { "@type": "Person", "name": {{ site.author | jsonify }} },
+    "publisher": {
+      "@type": "Organization",
+      "name": {{ site.title | jsonify }},
+      "logo": { "@type": "ImageObject", "url": {{ site.thumbnail | prepend: site.url | jsonify }} }
+    },
+    "image": {{ page.feature | default: site.thumbnail | prepend: site.url | jsonify }},
+    "mainEntityOfPage": { "@type": "WebPage", "@id": {{ page.url | prepend: site.url | jsonify }} }
+  }
+  </script>
+
   <article id="post-content">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
 
+          <div class="psps-reveal">
           {{ content }}
+          </div>
 
           <hr>
 
