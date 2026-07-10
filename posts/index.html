@@ -4,18 +4,28 @@ title: 몰아보기
 background: '/img/psps_thumbnail.png'
 ---
 
-{% for post in paginator.posts %}
+<div class="psps-filters" data-psps-filters>
+  <div class="psps-filter-pill active" data-cat="all">전체</div>
+  <div class="psps-filter-pill" data-cat="marketing">마케팅</div>
+  <div class="psps-filter-pill" data-cat="foreign_issue">해외 이슈</div>
+  <div class="psps-filter-pill" data-cat="knowledge">지식</div>
+</div>
 
-<article class="post-preview">
+<div data-psps-post-list>
+{% for post in paginator.posts %}
+{% assign cat = post.categories | first %}
+
+<article class="post-preview cat-{{ cat }} psps-reveal" data-cat="{{ cat }}">
   <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+    <span class="psps-cat-badge">{% case cat %}{% when 'marketing' %}마케팅{% when 'foreign_issue' %}해외 이슈{% when 'knowledge' %}지식{% else %}{{ cat }}{% endcase %}</span>
     {% if post.feature %}
-      <img class="post-feature" src="{{ post.feature }}" alt="">
+      <img class="post-feature" src="{{ post.feature }}" alt="{{ post.title | escape }}" {% unless forloop.first %}loading="lazy"{% endunless %}>
     {% endif %}
     <h2 class="post-title">{{ post.title }}</h2>
     {% if post.description %}
-    <h3 class="post-subtitle">{{ post.description }}</h3>
+    <h4 class="post-subtitle">{{ post.description }}</h4>
     {% else %}
-    <h3 class="post-subtitle">{{ post.excerpt | strip_html | truncatewords: 15 }}</h3>
+    <h4 class="post-subtitle">{{ post.excerpt | strip_html | truncatewords: 15 }}</h4>
     {% endif %}
   </a>
   <p class="post-meta">
@@ -26,6 +36,7 @@ background: '/img/psps_thumbnail.png'
 <hr>
 
 {% endfor %}
+</div>
 
 <!-- Pager -->
 {% if paginator.total_pages > 1 %}

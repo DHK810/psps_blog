@@ -2,28 +2,7 @@
 layout: default
 ---
 
-<!-- Page Header -->
-{% if page.background %}
-<header class="masthead">
-  {% else %}
-  <header class="masthead">
-    {% endif %}
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="page-heading">
-            <h1>{{ site.title }}</h1>
-            {% if site.tagline %}
-            <span class="subheading">{{ site.tagline }}</span>
-            {% endif %}
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <div class="container">
+  <div class="container psps-home">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
 
@@ -31,11 +10,13 @@ layout: default
 
         <!-- Home Post List -->
         {% for post in site.posts limit : 5 %}
+        {% assign cat = post.categories | first %}
 
-        <article class="post-preview">
+        <article class="post-preview cat-{{ cat }} psps-reveal" data-cat="{{ cat }}">
           <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+            <span class="psps-cat-badge">{% case cat %}{% when 'marketing' %}마케팅{% when 'foreign_issue' %}해외 이슈{% when 'knowledge' %}지식{% else %}{{ cat }}{% endcase %}</span>
             {% if post.feature %}
-              <img class="post-feature" src="{{ post.feature }}" alt="">
+              <img class="post-feature" src="{{ post.feature }}" alt="{{ post.title | escape }}" {% unless forloop.first %}loading="lazy"{% endunless %}>
             {% endif %}
             <h2 class="post-title">{{ post.title }}</h2>
             {% if post.description %}

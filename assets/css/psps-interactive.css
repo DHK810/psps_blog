@@ -1,0 +1,273 @@
+/* PSPS Blog — Interactive Pop Art Design System (redesign/interactive-pop)
+   Loaded after /assets/main.css — override-only, does not touch clean-blog.scss */
+
+@font-face{
+  font-family: 'Cafe24Ssurround';
+  src: url('https://cdn.jsdelivr.net/npm/@noonnu/cafe24-ssurround@0.1.0/fonts/cafe24ssurround-normal.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root{
+  --psps-bg: #FFF8EC;
+  --psps-ink: #1A1A1A;
+  --psps-pink: #FF4D6D;
+  --psps-yellow: #FFD23F;
+  --psps-blue: #3D5AFE;
+  --psps-mint: #2EC4B6;
+  --psps-shadow-sm: 4px 4px 0 var(--psps-ink);
+  --psps-shadow-md: 6px 6px 0 var(--psps-ink);
+  --psps-shadow-lg: 10px 10px 0 var(--psps-ink);
+  --psps-radius: 14px;
+}
+
+/* ---------- Base ---------- */
+body{
+  background: var(--psps-bg) !important;
+  color: var(--psps-ink) !important;
+  font-family: 'Pretendard', -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif !important;
+}
+
+.psps-display{
+  font-family: 'Cafe24Ssurround', 'Pretendard', sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+/* ---------- Navbar (markup unchanged — style existing classes) ---------- */
+#mainNav{
+  background: var(--psps-bg) !important;
+  border-bottom: 3px solid var(--psps-ink);
+  box-shadow: none !important;
+}
+#mainNav .navbar-brand{
+  font-family: 'Cafe24Ssurround', sans-serif;
+  font-size: 24px;
+  color: var(--psps-ink) !important;
+}
+#mainNav .psps-nav-tagline{
+  background: var(--psps-yellow);
+  border: 2px solid var(--psps-ink);
+  border-radius: 999px;
+  padding: 4px 14px;
+  margin-left: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--psps-ink);
+  box-shadow: var(--psps-shadow-sm);
+  transform: rotate(-1deg);
+  white-space: nowrap;
+}
+/* Hero removed on home — offset the absolute-positioned navbar instead */
+.psps-home{
+  padding-top: 96px;
+}
+#mainNav .nav-link{
+  font-weight: 700;
+  color: var(--psps-ink) !important;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  padding: 8px 16px !important;
+  margin: 0 2px;
+  transition: transform .15s ease, background .15s ease, color .15s ease, border-color .15s ease;
+}
+#mainNav .nav-link:hover{
+  background: var(--psps-pink);
+  color: #fff !important;
+  border-color: var(--psps-ink);
+  transform: translateY(-2px);
+}
+
+/* ---------- Masthead / Hero (markup unchanged) ---------- */
+.masthead{
+  background-color: var(--psps-bg) !important;
+  background-image: radial-gradient(var(--psps-ink) 1.5px, transparent 1.5px) !important;
+  background-size: 18px 18px !important;
+  background-position: -9px -9px !important;
+  min-height: auto !important;
+  padding: 56px 0 40px !important;
+  margin-bottom: 32px !important;
+}
+/* Clean Blog gives inner headings their own 150-200px padding — kill it so
+   only the .masthead padding above controls hero height */
+.masthead .page-heading, .masthead .post-heading, .masthead .site-heading{
+  padding: 0 !important;
+}
+.masthead .overlay{
+  background: var(--psps-bg) !important;
+  opacity: .88;
+}
+.masthead .page-heading, .masthead .post-heading{ position: relative; }
+.masthead h1{
+  font-family: 'Cafe24Ssurround', sans-serif;
+  color: var(--psps-ink) !important;
+  transform: rotate(-2deg);
+  display: inline-block;
+}
+.masthead .subheading, .masthead .meta{
+  color: var(--psps-ink) !important;
+  font-weight: 700;
+}
+.masthead .subheading{
+  /* theme's .page-heading .subheading sets display:block at higher
+     specificity — !important keeps the pill shrink-wrapped to its text */
+  display: inline-block !important;
+  background: var(--psps-yellow);
+  border: 3px solid var(--psps-ink);
+  border-radius: 999px;
+  padding: 6px 20px;
+  box-shadow: var(--psps-shadow-sm);
+  transform: rotate(1deg);
+  font-size: 16px !important;
+}
+
+/* ---------- Breadcrumb ---------- */
+.psps-breadcrumb{
+  max-width: 700px;
+  margin: 0 auto 20px;
+  padding: 0 15px;
+  font-weight: 700;
+  font-size: 13px;
+}
+.psps-breadcrumb a{
+  color: var(--psps-ink);
+  text-decoration: none;
+  border-bottom: 2px solid var(--psps-yellow);
+}
+.psps-breadcrumb .sep{ margin: 0 6px; opacity: .5; }
+
+/* ---------- Filter pills ---------- */
+.psps-filters{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  padding: 0 15px;
+}
+.psps-filter-pill{
+  cursor: pointer;
+  border: 2.5px solid var(--psps-ink);
+  border-radius: 999px;
+  padding: 7px 18px;
+  font-weight: 700;
+  font-size: 13px;
+  background: #fff;
+  transition: transform .15s ease, background .15s ease, color .15s ease;
+  user-select: none;
+}
+.psps-filter-pill:hover{ transform: translateY(-2px); }
+.psps-filter-pill.active[data-cat="all"]{ background: var(--psps-ink); color: #fff; }
+.psps-filter-pill.active[data-cat="marketing"]{ background: var(--psps-pink); color: #fff; }
+.psps-filter-pill.active[data-cat="foreign_issue"]{ background: var(--psps-blue); color: #fff; }
+.psps-filter-pill.active[data-cat="knowledge"]{ background: var(--psps-mint); color: #fff; }
+
+/* ---------- Post cards ---------- */
+.post-preview{
+  background: #fff;
+  border: 3px solid var(--psps-ink);
+  border-radius: var(--psps-radius);
+  box-shadow: var(--psps-shadow-md);
+  padding: 20px;
+  margin-bottom: 26px;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.post-preview:hover{
+  transform: translate(-3px,-6px) rotate(-1deg);
+  box-shadow: var(--psps-shadow-lg);
+}
+.post-preview a{ text-decoration: none; color: inherit; }
+.post-preview .post-feature{
+  width: 100%;
+  border: 3px solid var(--psps-ink);
+  border-radius: 10px;
+  margin-bottom: 14px;
+}
+.post-preview .post-title{
+  font-family: 'Cafe24Ssurround', sans-serif;
+  color: var(--psps-ink) !important;
+  font-size: 20px;
+}
+.post-preview .post-subtitle{
+  color: #555 !important;
+  font-size: 14px;
+  font-weight: 400;
+}
+.post-preview .post-meta{
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--psps-ink) !important;
+  opacity: .7;
+}
+.psps-cat-badge{
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 2px solid var(--psps-ink);
+  margin-bottom: 8px;
+  color: #fff;
+}
+.post-preview.cat-marketing .psps-cat-badge{ background: var(--psps-pink); }
+.post-preview.cat-foreign_issue .psps-cat-badge{ background: var(--psps-blue); }
+.post-preview.cat-knowledge .psps-cat-badge{ background: var(--psps-mint); }
+
+/* ---------- Buttons ---------- */
+.btn-primary{
+  background: var(--psps-yellow) !important;
+  border: 3px solid var(--psps-ink) !important;
+  color: var(--psps-ink) !important;
+  font-weight: 800 !important;
+  border-radius: 10px !important;
+  box-shadow: var(--psps-shadow-sm) !important;
+  transition: transform .1s ease, box-shadow .1s ease !important;
+}
+.btn-primary:hover{ background: var(--psps-yellow) !important; color: var(--psps-ink) !important; }
+.btn-primary:active{ transform: translate(4px,4px); box-shadow: 0 0 0 var(--psps-ink) !important; }
+
+/* ---------- Forms (contact, shares .form-control across pages) ---------- */
+.form-control{
+  border: 2.5px solid var(--psps-ink) !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+}
+.form-control:focus{
+  border-color: var(--psps-pink) !important;
+  box-shadow: 3px 3px 0 var(--psps-ink) !important;
+}
+
+/* ---------- Scroll progress bar (post detail only) ---------- */
+#psps-progress{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--psps-pink), var(--psps-blue));
+  z-index: 1050;
+  transition: width .1s ease-out;
+}
+
+/* ---------- Scroll reveal (progressive enhancement) ---------- */
+/* Default: fully visible (no-JS / .js class absent) */
+.psps-reveal{ opacity: 1; transform: none; }
+/* Only animate when JS confirmed running (see head.html html.js hook) */
+.js .psps-reveal{
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+.js .psps-reveal.psps-visible{ opacity: 1; transform: translateY(0); }
+
+/* ---------- Footer (markup unchanged) ---------- */
+footer{ border-top: 3px solid var(--psps-ink); background: var(--psps-bg); }
+footer .fa-stack .fa-circle{ color: var(--psps-ink) !important; }
+footer .copyright{ font-weight: 700; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px){
+  .masthead h1{ font-size: 32px; }
+  .psps-filters{ gap: 8px; }
+}
