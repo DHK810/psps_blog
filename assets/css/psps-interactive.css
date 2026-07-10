@@ -46,6 +46,23 @@ body{
   font-size: 24px;
   color: var(--psps-ink) !important;
 }
+#mainNav .psps-nav-tagline{
+  background: var(--psps-yellow);
+  border: 2px solid var(--psps-ink);
+  border-radius: 999px;
+  padding: 4px 14px;
+  margin-left: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--psps-ink);
+  box-shadow: var(--psps-shadow-sm);
+  transform: rotate(-1deg);
+  white-space: nowrap;
+}
+/* Hero removed on home — offset the absolute-positioned navbar instead */
+.psps-home{
+  padding-top: 96px;
+}
 #mainNav .nav-link{
   font-weight: 700;
   color: var(--psps-ink) !important;
@@ -69,7 +86,13 @@ body{
   background-size: 18px 18px !important;
   background-position: -9px -9px !important;
   min-height: auto !important;
-  padding: 110px 0 60px !important;
+  padding: 56px 0 40px !important;
+  margin-bottom: 32px !important;
+}
+/* Clean Blog gives inner headings their own 150-200px padding — kill it so
+   only the .masthead padding above controls hero height */
+.masthead .page-heading, .masthead .post-heading, .masthead .site-heading{
+  padding: 0 !important;
 }
 .masthead .overlay{
   background: var(--psps-bg) !important;
@@ -87,7 +110,9 @@ body{
   font-weight: 700;
 }
 .masthead .subheading{
-  display: inline-block;
+  /* theme's .page-heading .subheading sets display:block at higher
+     specificity — !important keeps the pill shrink-wrapped to its text */
+  display: inline-block !important;
   background: var(--psps-yellow);
   border: 3px solid var(--psps-ink);
   border-radius: 999px;
