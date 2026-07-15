@@ -22,3 +22,14 @@ paginate:           5
 paginate_path:      "/posts/page:num/"
 plugins:
   - jekyll-paginate
+exclude:
+  - docs/
+  - node_modules/
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - gulpfile.js
+  - CLAUDE.md
+  - README.md
